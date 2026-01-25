@@ -67,8 +67,10 @@ UPDATE sectors SET
   testimonial_image_url = NULL
 WHERE slug = 'automotive';
 
--- 4. TURISMO
+-- 4. TURISMO (Cambia titolo da "Concierge" a "Assistenza Ospiti")
 UPDATE sectors SET
+  hero_title_it = 'Assistenza Ospiti AI su WhatsApp',
+  hero_title_en = 'AI Guest Assistance on WhatsApp',
   social_proof_stat_value = '24/7',
   social_proof_stat_suffix = '',
   social_proof_stat_label_it = 'Assistenza ospiti',

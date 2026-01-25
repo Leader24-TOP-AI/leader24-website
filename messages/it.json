@@ -172,7 +172,7 @@
                 "ecommerce": {
                     "user_message": "Dov'è il mio pacco?",
                     "ai_message": "Ciao! 👋 Il tuo ordine #123 è in consegna oggi entro le 18:00. Vuoi lasciare istruzioni per il corriere?",
-                    "stat": "+25% Recupero Carrelli",
+                    "stat": "Risposta 24/7",
                     "options": [
                         "Lascia al vicino",
                         "Chiama prima",
@@ -182,7 +182,7 @@
                 "realestate": {
                     "user_message": "Vorrei visitare l'appartamento in centro.",
                     "ai_message": "Certamente! Ho disponibilità domani alle 10:00 o alle 15:00. Quale preferisci?",
-                    "stat": "+40% Appuntamenti",
+                    "stat": "Disponibile 24/7",
                     "options": [
                         "Domani 10:00",
                         "Domani 15:00",
@@ -199,15 +199,15 @@
         "items": {
             "ecommerce": {
                 "title": "E-commerce",
-                "desc": "Recupera i carrelli abbandonati, invia notifiche sugli ordini e rispondi alle domande sui prodotti in tempo reale."
+                "desc": "Rispondi a domande su prodotti, spedizioni e disponibilità in tempo reale 24/7."
             },
             "realestate": {
                 "title": "Immobiliare",
-                "desc": "Qualifica i potenziali acquirenti, raccoglie richieste di visita e invia schede immobiliari automaticamente."
+                "desc": "Qualifica i potenziali acquirenti, raccogli preferenze su budget e zona, e organizza richieste di visita 24/7."
             },
             "automotive": {
                 "title": "Automotive",
-                "desc": "Raccogli richieste di test drive, ricorda le scadenze dei tagliandi e offri supporto post-vendita."
+                "desc": "Raccogli richieste di test drive, rispondi a domande sui veicoli e qualifica i potenziali acquirenti 24/7."
             },
             "restaurant": {
                 "title": "Ristorazione",
@@ -231,11 +231,11 @@
             },
             "beauty": {
                 "title": "Parrucchieri & Beauty",
-                "desc": "Raccogli richieste appuntamento 24/7, promemoria automatici e rispondi a domande su servizi e prezzi."
+                "desc": "Raccogli richieste appuntamento 24/7 e rispondi a domande su servizi e prezzi."
             },
             "mechanic": {
                 "title": "Officine Auto",
-                "desc": "Richieste tagliando, aggiornamenti sullo stato della riparazione e preventivi immediati."
+                "desc": "Raccogli richieste tagliando, rispondi a domande e fornisci preventivi."
             },
             "installers": {
                 "title": "Installatori",
@@ -282,52 +282,52 @@
     },
     "ecommerce": {
         "seo": {
-            "title": "E-commerce Automation - Vendi mentre dormi | Leader24",
-            "description": "Aumenta le vendite, recupera i carrelli abbandonati e offri supporto 24/7 con il tuo agente AI su WhatsApp per e-commerce."
+            "title": "E-commerce Automation - Supporto 24/7 | Leader24",
+            "description": "Offri supporto 24/7 ai clienti del tuo e-commerce con il tuo agente AI su WhatsApp. Rispondi a domande su prodotti, ordini e spedizioni."
         },
         "badge": "E-commerce Automation",
-        "title": "Vendi mentre dormi",
-        "subtitle": "Aumenta le vendite, recupera i carrelli abbandonati e offri supporto 24/7 con il tuo agente AI su WhatsApp.",
+        "title": "Supporto clienti 24/7",
+        "subtitle": "Offri supporto clienti 24/7, rispondi a domande su prodotti e ordini con il tuo agente AI su WhatsApp.",
         "hero": {
-            "title": "Il tuo miglior venditore,",
+            "title": "Il tuo supporto clienti,",
             "highlight": "sempre online.",
-            "desc": "Il tuo agente Leader24 non dorme mai. Guida i clienti all'acquisto, risponde alle domande sui prodotti e raccoglie richieste di reso, a qualsiasi ora del giorno e della notte.",
+            "desc": "Il tuo agente Leader24 non dorme mai. Risponde alle domande sui prodotti, fornisce info su ordini e spedizioni, e raccoglie richieste, a qualsiasi ora del giorno e della notte.",
             "list": {
-                "carts": "Recupero carrelli abbandonati (fino al 25%)",
-                "notifications": "Notifiche automatiche stato ordine",
-                "upsell": "Upselling e Cross-selling intelligente"
+                "carts": "Supporto clienti automatico 24/7",
+                "notifications": "Risposte immediate su ordini e spedizioni",
+                "upsell": "Qualificazione clienti e raccolta lead"
             },
-            "cta": "Inizia a Vendere di Più"
+            "cta": "Inizia Ora"
         },
         "features": {
             "tracking": {
-                "title": "Tracking Ordini",
+                "title": "Info Ordini",
                 "desc": "Risposte automatiche sullo stato della spedizione, riducendo i ticket \"Dov'è il mio pacco?\"."
             },
             "recommendations": {
-                "title": "Consigli Prodotti",
-                "desc": "L'AI impara dal tuo catalogo e consiglia i prodotti migliori in base alle esigenze del cliente."
+                "title": "Informazioni Prodotti",
+                "desc": "L'AI accede al tuo catalogo WooCommerce e fornisce dettagli precisi su prodotti e disponibilità."
             },
             "reviews": {
-                "title": "Raccolta Recensioni",
-                "desc": "Chiede automaticamente una recensione ai clienti soddisfatti dopo la consegna."
+                "title": "Raccolta Richieste",
+                "desc": "Raccoglie richieste dei clienti e genera lead qualificati pronti per il follow-up."
             }
         },
         "roi": {
-            "title": "Calcola il tuo ROI",
-            "desc": "Le aziende e-commerce che usano Leader24 vedono un aumento medio del fatturato del 15% nel primo mese.",
+            "title": "I Vantaggi",
+            "desc": "Offri supporto clienti automatizzato 24/7 e riduci il carico sul tuo team.",
             "stats": {
                 "carts": {
-                    "value": "+25%",
-                    "label": "Recupero Carrelli"
-                },
-                "support": {
-                    "value": "-70%",
-                    "label": "Costi Supporto"
-                },
-                "availability": {
                     "value": "24/7",
                     "label": "Disponibilità"
+                },
+                "support": {
+                    "value": "∞",
+                    "label": "Risposte Automatiche"
+                },
+                "availability": {
+                    "value": "WooCommerce",
+                    "label": "Integrazione"
                 }
             }
         }
@@ -370,12 +370,12 @@
                     "3 Agenti AI",
                     "Knowledge Base avanzata (Sito web + PDF)",
                     "Supporto prioritario",
-                    "Integrazione CRM (HubSpot, Salesforce)",
-                    "Analisi avanzate e report",
+                    "Integrazioni (Gmail, Calendar, Slack, Zendesk)",
+                    "Analisi e report",
                     "Training personalizzato AI"
                 ],
                 "notIncluded": [
-                    "API Access illimitato",
+                    "Agenti illimitati",
                     "Account Manager dedicato"
                 ]
             },
@@ -388,7 +388,7 @@
                     "Agenti AI illimitati",
                     "Knowledge Base illimitata",
                     "Supporto dedicato 24/7",
-                    "Integrazioni custom via API",
+                    "Tutte le integrazioni",
                     "SLA garantiti",
                     "Onboarding dedicato",
                     "Account Manager personale"
@@ -403,10 +403,10 @@
     "casestudies": {
         "seo": {
             "title": "Casi Studio - Storie di Successo | Leader24",
-            "description": "Scopri come le aziende stanno trasformando il loro servizio clienti e aumentando le vendite con Leader24. Casi studio reali e risultati misurabili."
+            "description": "Scopri come le aziende stanno trasformando il loro servizio clienti con Leader24. Casi studio reali e risultati misurabili."
         },
         "title": "Storie di Successo",
-        "subtitle": "Scopri come le aziende stanno trasformando il loro servizio clienti e aumentando le vendite con Leader24.",
+        "subtitle": "Scopri come le aziende stanno trasformando il loro servizio clienti con Leader24.",
         "cases": {
             "fibernet": {
                 "tag": "Telecomunicazioni",
@@ -496,9 +496,9 @@
             "privacy": "Inviando questo modulo accetti la nostra Privacy Policy."
         },
         "testimonial": {
-            "text": "\"Il team di Leader24 è stato incredibile nel guidarci attraverso il processo di automazione. Altamente raccomandato!\"",
-            "author": "Marco Rossi",
-            "role": "CEO, TechSolutions"
+            "text": "\"Il team di Leader24 ci ha guidato nel processo di automazione. L'agente risponde ai clienti 24/7 con informazioni accurate.\"",
+            "author": "Responsabile Aziendale",
+            "role": "Azienda Cliente"
         }
     },
     "privacy": {

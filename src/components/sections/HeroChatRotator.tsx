@@ -21,8 +21,8 @@ const defaultScenarios = [
     user_message_en: 'Hi, I would like to know if you have size M available for the blue jacket',
     ai_message_it: "Ciao! Sì, la giacca blu è disponibile in taglia M. Vuoi che ti invii il link per l'acquisto?",
     ai_message_en: 'Hello! Yes, the blue jacket is available in size M. Would you like me to send you the purchase link?',
-    stat_it: '+35% conversioni',
-    stat_en: '+35% conversions'
+    stat_it: 'Risposta istantanea',
+    stat_en: 'Instant response'
   },
   {
     id: 'hotel',
@@ -36,8 +36,8 @@ const defaultScenarios = [
     user_message_en: 'I would like to book a double room for the weekend of March 15',
     ai_message_it: 'Perfetto! Abbiamo disponibilità per il 15-16 marzo. Camera doppia con colazione a €120/notte. Procedo con la prenotazione?',
     ai_message_en: 'Perfect! We have availability for March 15-16. Double room with breakfast at €120/night. Shall I proceed with the booking?',
-    stat_it: '+40% prenotazioni',
-    stat_en: '+40% bookings'
+    stat_it: 'Prenotazioni 24/7',
+    stat_en: 'Bookings 24/7'
   },
   {
     id: 'restaurant',
@@ -51,8 +51,8 @@ const defaultScenarios = [
     user_message_en: 'Table for 4 people tonight at 8:30 PM, is it possible?',
     ai_message_it: 'Buongiorno! Sì, abbiamo disponibilità per 4 persone alle 20:30. A che nome devo registrare la prenotazione?',
     ai_message_en: 'Good morning! Yes, we have availability for 4 people at 8:30 PM. What name should I register the reservation under?',
-    stat_it: '+50% prenotazioni',
-    stat_en: '+50% bookings'
+    stat_it: 'Conferma immediata',
+    stat_en: 'Instant confirmation'
   }
 ]
 

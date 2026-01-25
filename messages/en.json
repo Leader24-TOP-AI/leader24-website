@@ -259,9 +259,9 @@
             "privacy": "By sending this form you agree to our Privacy Policy."
         },
         "testimonial": {
-            "text": "\"The Leader24 team was incredible in guiding us through the automation process. Highly recommended!\"",
-            "author": "Marco Rossi",
-            "role": "CEO, TechSolutions"
+            "text": "\"The Leader24 team guided us through the automation process. The agent responds to customers 24/7 with accurate information.\"",
+            "author": "Business Manager",
+            "role": "Client Company"
         }
     },
     "terms": {
@@ -342,7 +342,7 @@
     "hero": {
         "badge": "AI Active 24/7",
         "title": "Your AI Agent on",
-        "subtitle": "Automate customer support, qualify leads, and increase sales while you sleep. Setup in 5 minutes, no code required.",
+        "subtitle": "Automate customer support, qualify leads, and respond to customers 24/7. Setup in 5 minutes, no code required.",
         "ctaPrimary": "Start for Free",
         "ctaSecondary": "Learn More",
         "noCard": "No credit card required",
@@ -357,7 +357,7 @@
                 "ecommerce": {
                     "user_message": "Where is my package?",
                     "ai_message": "Hi! 👋 Your order #123 is out for delivery today by 6:00 PM. Do you want to leave instructions for the courier?",
-                    "stat": "+25% Cart Recovery",
+                    "stat": "24/7 Response",
                     "options": [
                         "Leave with neighbor",
                         "Call first",
@@ -367,7 +367,7 @@
                 "realestate": {
                     "user_message": "I'd like to visit the downtown apartment.",
                     "ai_message": "Sure! I have availability tomorrow at 10:00 AM or 3:00 PM. Which one do you prefer?",
-                    "stat": "+40% Appointments",
+                    "stat": "Available 24/7",
                     "options": [
                         "Tomorrow 10:00 AM",
                         "Tomorrow 3:00 PM",
@@ -384,15 +384,15 @@
         "items": {
             "ecommerce": {
                 "title": "E-commerce",
-                "desc": "Recover abandoned carts, send order notifications, and answer product questions in real-time."
+                "desc": "Answer questions about products, shipping, and availability in real-time 24/7."
             },
             "realestate": {
                 "title": "Real Estate",
-                "desc": "Qualify potential buyers, collect visit requests, and send property listings automatically."
+                "desc": "Qualify potential buyers, collect budget and area preferences, and organize visit requests 24/7."
             },
             "automotive": {
                 "title": "Automotive",
-                "desc": "Collect test drive requests, remind about service due dates, and offer post-sales support."
+                "desc": "Collect test drive requests, answer vehicle questions, and qualify potential buyers 24/7."
             },
             "restaurant": {
                 "title": "Restaurants",
@@ -416,11 +416,11 @@
             },
             "beauty": {
                 "title": "Beauty & Salons",
-                "desc": "Collect appointment requests 24/7, automated reminders, and answer questions about services and prices."
+                "desc": "Collect appointment requests 24/7 and answer questions about services and prices."
             },
             "mechanic": {
                 "title": "Auto Repair",
-                "desc": "Collect service requests, repair status updates, and immediate quotes."
+                "desc": "Collect service requests, answer questions, and provide quotes."
             },
             "installers": {
                 "title": "Installers",
@@ -467,52 +467,52 @@
     },
     "ecommerce": {
         "seo": {
-            "title": "E-commerce Automation - Sell While You Sleep | Leader24",
-            "description": "Increase sales, recover abandoned carts, and offer 24/7 support with your AI agent on WhatsApp for e-commerce."
+            "title": "E-commerce Automation - 24/7 Support | Leader24",
+            "description": "Offer 24/7 support to your e-commerce customers with your AI agent on WhatsApp. Answer questions about products, orders, and shipping."
         },
         "badge": "E-commerce Automation",
-        "title": "Sell While You Sleep",
-        "subtitle": "Increase sales, recover abandoned carts, and offer 24/7 support with your AI agent on WhatsApp.",
+        "title": "24/7 Customer Support",
+        "subtitle": "Offer 24/7 customer support, answer questions about products and orders with your AI agent on WhatsApp.",
         "hero": {
-            "title": "Your Best Salesperson,",
+            "title": "Your Customer Support,",
             "highlight": "Always Online.",
-            "desc": "Your Leader24 agent never sleeps. It guides customers to purchase, answers product questions, and collects return requests, at any time of day or night.",
+            "desc": "Your Leader24 agent never sleeps. It answers product questions, provides order and shipping info, and collects requests, at any time of day or night.",
             "list": {
-                "carts": "Recover abandoned carts (up to 25%)",
-                "notifications": "Automatic order status notifications",
-                "upsell": "Intelligent Upselling and Cross-selling"
+                "carts": "Automatic 24/7 customer support",
+                "notifications": "Immediate answers about orders and shipping",
+                "upsell": "Customer qualification and lead collection"
             },
-            "cta": "Start Selling More"
+            "cta": "Get Started"
         },
         "features": {
             "tracking": {
-                "title": "Order Tracking",
+                "title": "Order Info",
                 "desc": "Automatic responses on shipment status, reducing \"Where is my package?\" tickets."
             },
             "recommendations": {
-                "title": "Product Recommendations",
-                "desc": "AI learns from your catalog and recommends the best products based on customer needs."
+                "title": "Product Information",
+                "desc": "AI accesses your WooCommerce catalog and provides accurate details on products and availability."
             },
             "reviews": {
-                "title": "Review Collection",
-                "desc": "Automatically asks satisfied customers for a review after delivery."
+                "title": "Request Collection",
+                "desc": "Collects customer requests and generates qualified leads ready for follow-up."
             }
         },
         "roi": {
-            "title": "Calculate Your ROI",
-            "desc": "E-commerce businesses using Leader24 see an average revenue increase of 15% in the first month.",
+            "title": "The Benefits",
+            "desc": "Offer automated 24/7 customer support and reduce the workload on your team.",
             "stats": {
                 "carts": {
-                    "value": "+25%",
-                    "label": "Cart Recovery"
-                },
-                "support": {
-                    "value": "-70%",
-                    "label": "Support Costs"
-                },
-                "availability": {
                     "value": "24/7",
                     "label": "Availability"
+                },
+                "support": {
+                    "value": "∞",
+                    "label": "Automatic Responses"
+                },
+                "availability": {
+                    "value": "WooCommerce",
+                    "label": "Integration"
                 }
             }
         }
@@ -555,12 +555,12 @@
                     "3 AI Agents",
                     "Advanced Knowledge Base (Website + PDF)",
                     "Priority Support",
-                    "CRM Integration (HubSpot, Salesforce)",
-                    "Advanced Analytics & Reports",
+                    "Integrations (Gmail, Calendar, Slack, Zendesk)",
+                    "Analytics & Reports",
                     "Custom AI Training"
                 ],
                 "notIncluded": [
-                    "Unlimited API Access",
+                    "Unlimited Agents",
                     "Dedicated Account Manager"
                 ]
             },
@@ -573,7 +573,7 @@
                     "Unlimited AI Agents",
                     "Unlimited Knowledge Base",
                     "Dedicated 24/7 Support",
-                    "Custom API Integrations",
+                    "All integrations",
                     "Guaranteed SLAs",
                     "Dedicated Onboarding",
                     "Personal Account Manager"
@@ -588,10 +588,10 @@
     "casestudies": {
         "seo": {
             "title": "Case Studies - Success Stories | Leader24",
-            "description": "Discover how companies are transforming their customer service and increasing sales with Leader24. Real case studies with measurable results."
+            "description": "Discover how companies are transforming their customer service with Leader24. Real case studies with measurable results."
         },
         "title": "Success Stories",
-        "subtitle": "Discover how companies are transforming their customer service and increasing sales with Leader24.",
+        "subtitle": "Discover how companies are transforming their customer service with Leader24.",
         "cases": {
             "fibernet": {
                 "tag": "Telecommunications",

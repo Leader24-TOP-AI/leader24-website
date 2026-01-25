@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     default: "Leader24 - AI per WhatsApp Business",
     template: "%s | Leader24",
   },
-  description: "Automatizza il supporto clienti, qualifica i lead e aumenta le vendite con il tuo agente AI su WhatsApp. Attivo 24/7, setup in 5 minuti.",
+  description: "Automatizza il supporto clienti e qualifica i lead con il tuo agente AI su WhatsApp. Attivo 24/7, setup in 5 minuti.",
   metadataBase: new URL("https://leader24.ai"),
 };
 
