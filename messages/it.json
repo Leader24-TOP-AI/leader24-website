@@ -1,0 +1,695 @@
+{
+    "nav": {
+        "home": "Home",
+        "sectors": "Settori",
+        "ecommerce": "E-commerce",
+        "cases": "Casi Studio",
+        "contact": "Contatti",
+        "pricing": "Prezzi",
+        "login": "Login"
+    },
+    "routes": {
+        "home": "/",
+        "sectors": "/settori",
+        "ecommerce": "/ecommerce",
+        "cases": "/casi-studio",
+        "contact": "/contatti",
+        "pricing": "/prezzi",
+        "privacy": "/privacy-policy",
+        "cookie": "/cookie-policy",
+        "terms": "/terms-of-service",
+        "refund": "/refund-policy"
+    },
+    "home": {
+        "seo": {
+            "title": "Leader24 - AI per WhatsApp Business",
+            "description": "Automatizza il supporto clienti e qualifica i lead con il tuo agente AI su WhatsApp. Attivo 24/7, risponde ai clienti in modo naturale."
+        },
+        "trustedBy": {
+            "title": "Scelto da aziende innovative"
+        },
+        "integrations": {
+            "title": "Si integra con i tuoi strumenti preferiti",
+            "subtitle": "Collega Leader24 al tuo stack tecnologico in pochi click."
+        },
+        "features": {
+            "badge": "Caratteristiche",
+            "title": "Potenzia il tuo Business con l'AI",
+            "subtitle": "Una suite completa di strumenti per automatizzare, gestire e scalare le tue comunicazioni su WhatsApp.",
+            "items": {
+                "time": {
+                    "title": "Risparmia Tempo",
+                    "desc": "Automatizza le richieste ripetitive. Il tuo agente AI gestisce FAQ e pre-qualifica i clienti, raccogliendo informazioni utili prima del contatto umano."
+                },
+                "available": {
+                    "title": "Sempre Disponibile 24/7",
+                    "desc": "Non perdere mai più un'opportunità. Leader24 risponde istantaneamente ai tuoi clienti a qualsiasi ora del giorno e della notte."
+                },
+                "setup": {
+                    "title": "Setup Semplice",
+                    "desc": "Nessuna competenza tecnica richiesta. Collega il tuo numero WhatsApp Business in pochi minuti. Puoi iniziare subito e aggiungere contenuti alla base di conoscenza gradualmente."
+                },
+                "analytics": {
+                    "title": "Analisi e Insight",
+                    "desc": "Monitora le performance del tuo agente. Scopri quali sono le domande più frequenti e ottimizza le risposte."
+                },
+                "knowledge": {
+                    "title": "Base di Conoscenza",
+                    "desc": "L'agente apprende le informazioni aziendali tramite caricamento file (PDF, documenti) o scansione intelligente del sito web."
+                },
+                "security": {
+                    "title": "Sicurezza e Privacy",
+                    "desc": "I tuoi dati e quelli dei tuoi clienti sono protetti. Rispettiamo gli standard GDPR e utilizziamo connessioni sicure."
+                }
+            }
+        },
+        "testimonials": {
+            "title": "Cosa dicono i nostri clienti",
+            "subtitle": "Scopri come le aziende usano Leader24 per migliorare il servizio clienti."
+        },
+        "sectorPreview": {
+            "title": "Soluzioni per ogni settore",
+            "subtitle": "Leader24 non è un semplice chatbot. È un agente verticale addestrato sulle specificità del tuo mercato.",
+            "cta": "Vedi tutti i settori",
+            "items": {
+                "ecommerce": "E-commerce",
+                "realestate": "Immobiliare",
+                "automotive": "Automotive",
+                "tourism": "Turismo"
+            }
+        },
+        "howItWorks": {
+            "title": "Come funziona",
+            "subtitle": "Inizia ad automatizzare il tuo servizio clienti in 3 semplici passaggi.",
+            "steps": {
+                "1": {
+                    "title": "Addestra l'AI",
+                    "desc": "Carica i tuoi documenti (PDF, link sito) e l'AI apprenderà tutto sulla tua azienda."
+                },
+                "2": {
+                    "title": "Collega WhatsApp",
+                    "desc": "Scansiona il QR code e collega il tuo numero WhatsApp Business in pochi secondi."
+                },
+                "3": {
+                    "title": "Vai Live",
+                    "desc": "Attiva l'agente e inizia a rispondere automaticamente ai clienti 24/7."
+                }
+            }
+        },
+        "faq": {
+            "title": "Domande Frequenti",
+            "subtitle": "Tutto quello che devi sapere per iniziare.",
+            "items": {
+                "setup": {
+                    "q": "È difficile da configurare?",
+                    "a": "Assolutamente no. La configurazione di WhatsApp richiede pochi minuti: colleghi il numero e scansioni un QR code. Puoi poi aggiungere documenti e informazioni alla base di conoscenza gradualmente."
+                },
+                "accuracy": {
+                    "q": "L'AI risponde correttamente?",
+                    "a": "Sì, l'AI viene addestrata specificamente sui tuoi dati. Se non conosce una risposta, può essere configurata per chiedere l'intervento di un operatore umano o raccogliere i dati del cliente."
+                },
+                "number": {
+                    "q": "Posso usare il mio numero attuale?",
+                    "a": "Certamente. Puoi collegare il tuo numero WhatsApp Business esistente o utilizzarne uno nuovo dedicato all'assistenza automatica."
+                },
+                "security": {
+                    "q": "I dati sono al sicuro?",
+                    "a": "Sì. Utilizziamo connessioni sicure (HTTPS) e rispettiamo gli standard GDPR. I tuoi dati e quelli dei tuoi clienti sono protetti."
+                },
+                "cancel": {
+                    "q": "Posso cancellare l'abbonamento quando voglio?",
+                    "a": "Sì, non ci sono vincoli a lungo termine. Puoi gestire il tuo abbonamento direttamente dalla dashboard e cancellarlo in qualsiasi momento."
+                }
+            }
+        },
+        "stats": {
+            "availability": "Disponibilità",
+            "timeSaved": "Risparmio Tempo",
+            "leadIncrease": "Aumento Lead",
+            "setup": "Setup"
+        },
+        "cta": {
+            "title": "Pronto a provare Leader24?",
+            "subtitle": "Inizia con il piano gratuito. Nessuna carta di credito richiesta.",
+            "primary": "Inizia la Prova Gratuita",
+            "secondary": "Prenota una Demo",
+            "footer": "Configura il tuo agente AI in pochi minuti",
+            "button": "Inizia Gratis"
+        }
+    },
+    "footer": {
+        "description": "Soluzioni AI avanzate per il tuo business. Automatizza, ottimizza e cresci con Leader24.",
+        "quickLinks": "Link Rapidi",
+        "legal": "Legale",
+        "contact": "Contatti",
+        "privacy": "Privacy Policy",
+        "cookie": "Cookie Policy",
+        "terms": "Termini di Servizio",
+        "refund": "Politica di Rimborso",
+        "vat": "P.IVA",
+        "product": "Prodotto",
+        "features": "Funzionalità",
+        "support": "Supporto",
+        "documentation": "Documentazione",
+        "status": "Stato",
+        "rights": "Tutti i diritti riservati."
+    },
+    "hero": {
+        "badge": "AI Attiva 24/7",
+        "title": "Il Tuo Agente AI su",
+        "subtitle": "Automatizza il supporto clienti e qualifica i lead con il tuo agente AI su WhatsApp. Attivo 24/7, risponde ai clienti in modo naturale.",
+        "ctaPrimary": "Inizia Gratis",
+        "ctaSecondary": "Scopri di più",
+        "noCard": "Nessuna carta richiesta",
+        "trial": "14 giorni di prova",
+        "chat": {
+            "liveDemo": "Live Demo",
+            "online": "Online",
+            "typing": "Sta scrivendo...",
+            "today": "Oggi",
+            "placeholder": "Scrivi un messaggio...",
+            "scenarios": {
+                "ecommerce": {
+                    "user_message": "Dov'è il mio pacco?",
+                    "ai_message": "Ciao! 👋 Il tuo ordine #123 è in consegna oggi entro le 18:00. Vuoi lasciare istruzioni per il corriere?",
+                    "stat": "+25% Recupero Carrelli",
+                    "options": [
+                        "Lascia al vicino",
+                        "Chiama prima",
+                        "Nessuna istruzione"
+                    ]
+                },
+                "realestate": {
+                    "user_message": "Vorrei visitare l'appartamento in centro.",
+                    "ai_message": "Certamente! Ho disponibilità domani alle 10:00 o alle 15:00. Quale preferisci?",
+                    "stat": "+40% Appuntamenti",
+                    "options": [
+                        "Domani 10:00",
+                        "Domani 15:00",
+                        "Altra data"
+                    ]
+                }
+            }
+        }
+    },
+    "sectors": {
+        "title": "Soluzioni per ogni Settore",
+        "subtitle": "Leader24 si adatta alle esigenze specifiche del tuo business, offrendo automazioni su misura per massimizzare i risultati.",
+        "cta": "Scopri di più",
+        "items": {
+            "ecommerce": {
+                "title": "E-commerce",
+                "desc": "Recupera i carrelli abbandonati, invia notifiche sugli ordini e rispondi alle domande sui prodotti in tempo reale."
+            },
+            "realestate": {
+                "title": "Immobiliare",
+                "desc": "Qualifica i potenziali acquirenti, raccoglie richieste di visita e invia schede immobiliari automaticamente."
+            },
+            "automotive": {
+                "title": "Automotive",
+                "desc": "Raccogli richieste di test drive, ricorda le scadenze dei tagliandi e offri supporto post-vendita."
+            },
+            "restaurant": {
+                "title": "Ristorazione",
+                "desc": "Rispondi a domande su menu, allergeni e disponibilità, raccogliendo richieste di prenotazione."
+            },
+            "hospitality": {
+                "title": "Hotel & B&B",
+                "desc": "Rispondi a domande, raccogli richieste di prenotazione e fornisci informazioni turistiche locali 24/7."
+            },
+            "construction": {
+                "title": "Edilizia",
+                "desc": "Fornisci preventivi rapidi, raccogli richieste di sopralluogo e rispondi a domande sui lavori."
+            },
+            "logistics": {
+                "title": "Trasporto Merci",
+                "desc": "Tracking spedizioni in tempo reale, raccolta richieste ritiro e assistenza logistica automatizzata."
+            },
+            "professional": {
+                "title": "Servizi Professionali",
+                "desc": "Raccogli richieste di consulenza e documenti per studi legali, commercialisti e consulenti."
+            },
+            "beauty": {
+                "title": "Parrucchieri & Beauty",
+                "desc": "Raccogli richieste appuntamento 24/7, promemoria automatici e rispondi a domande su servizi e prezzi."
+            },
+            "mechanic": {
+                "title": "Officine Auto",
+                "desc": "Richieste tagliando, aggiornamenti sullo stato della riparazione e preventivi immediati."
+            },
+            "installers": {
+                "title": "Installatori",
+                "desc": "Raccogli richieste intervento, assistenza tecnica preliminare e info garanzie."
+            },
+            "care": {
+                "title": "Servizi per la Persona",
+                "desc": "Rispondi a domande sui servizi, raccogli richieste di assistenza e comunicazioni con le famiglie."
+            },
+            "wholesale": {
+                "title": "Commercio all'Ingrosso",
+                "desc": "Supporto clienti B2B, info listini personalizzati e raccolta richieste ordine."
+            },
+            "industry": {
+                "title": "Industria",
+                "desc": "Supporto tecnico macchinari, FAQ prodotti e raccolta segnalazioni manutenzione."
+            },
+            "finance": {
+                "title": "Finance",
+                "desc": "Fornisci supporto sicuro per domande su conti, prestiti e investimenti, nel rispetto della privacy."
+            },
+            "it": {
+                "title": "Servizi Informatici",
+                "desc": "Helpdesk di primo livello, apertura ticket automatica e risoluzione problemi comuni."
+            },
+            "creative": {
+                "title": "Attività Creative",
+                "desc": "Briefing clienti automatizzato, raccolta feedback e risposte a domande sui progetti."
+            },
+            "education": {
+                "title": "Scuole e Formazione",
+                "desc": "Informazioni sui corsi, raccolta richieste iscrizione e comunicazioni con studenti e genitori."
+            },
+            "media": {
+                "title": "Media",
+                "desc": "Supporto abbonati, info contenuti e interazione con la community."
+            }
+        },
+        "custom": {
+            "title": "Non trovi il tuo settore?",
+            "desc": "La nostra intelligenza artificiale è flessibile e può essere addestrata per qualsiasi tipo di business. Parla con un nostro esperto per una soluzione personalizzata.",
+            "cta": "Parla con un Esperto"
+        }
+    },
+    "ecommerce": {
+        "seo": {
+            "title": "E-commerce Automation - Vendi mentre dormi | Leader24",
+            "description": "Aumenta le vendite, recupera i carrelli abbandonati e offri supporto 24/7 con il tuo agente AI su WhatsApp per e-commerce."
+        },
+        "badge": "E-commerce Automation",
+        "title": "Vendi mentre dormi",
+        "subtitle": "Aumenta le vendite, recupera i carrelli abbandonati e offri supporto 24/7 con il tuo agente AI su WhatsApp.",
+        "hero": {
+            "title": "Il tuo miglior venditore,",
+            "highlight": "sempre online.",
+            "desc": "Il tuo agente Leader24 non dorme mai. Guida i clienti all'acquisto, risponde alle domande sui prodotti e raccoglie richieste di reso, a qualsiasi ora del giorno e della notte.",
+            "list": {
+                "carts": "Recupero carrelli abbandonati (fino al 25%)",
+                "notifications": "Notifiche automatiche stato ordine",
+                "upsell": "Upselling e Cross-selling intelligente"
+            },
+            "cta": "Inizia a Vendere di Più"
+        },
+        "features": {
+            "tracking": {
+                "title": "Tracking Ordini",
+                "desc": "Risposte automatiche sullo stato della spedizione, riducendo i ticket \"Dov'è il mio pacco?\"."
+            },
+            "recommendations": {
+                "title": "Consigli Prodotti",
+                "desc": "L'AI impara dal tuo catalogo e consiglia i prodotti migliori in base alle esigenze del cliente."
+            },
+            "reviews": {
+                "title": "Raccolta Recensioni",
+                "desc": "Chiede automaticamente una recensione ai clienti soddisfatti dopo la consegna."
+            }
+        },
+        "roi": {
+            "title": "Calcola il tuo ROI",
+            "desc": "Le aziende e-commerce che usano Leader24 vedono un aumento medio del fatturato del 15% nel primo mese.",
+            "stats": {
+                "carts": {
+                    "value": "+25%",
+                    "label": "Recupero Carrelli"
+                },
+                "support": {
+                    "value": "-70%",
+                    "label": "Costi Supporto"
+                },
+                "availability": {
+                    "value": "24/7",
+                    "label": "Disponibilità"
+                }
+            }
+        }
+    },
+    "pricing": {
+        "title": "Scegli il piano perfetto per te",
+        "subtitle": "Investi nella crescita del tuo business con piani trasparenti e scalabili. Nessun costo nascosto.",
+        "popular": "Più Popolare",
+        "monthly": "Mensile",
+        "yearly": "Annuale",
+        "perMonth": "mese",
+        "yearlyDiscount": "20% di sconto sui piani annuali",
+        "billedAnnually": "fatturato annualmente",
+        "year": "anno",
+        "plans": {
+            "starter": {
+                "name": "Starter",
+                "desc": "Per piccole attività che iniziano con l'automazione.",
+                "cta": "Inizia con Starter",
+                "features": [
+                    "Fino a 500 conversazioni/mese",
+                    "1 Agente AI",
+                    "Knowledge Base base (PDF)",
+                    "Supporto via email",
+                    "Integrazione WhatsApp base",
+                    "Dashboard statistiche"
+                ],
+                "notIncluded": [
+                    "Training personalizzato",
+                    "API Access",
+                    "Supporto prioritario"
+                ]
+            },
+            "growth": {
+                "name": "Growth",
+                "desc": "Per aziende in crescita che necessitano di funzionalità avanzate.",
+                "cta": "Scegli Growth",
+                "features": [
+                    "Fino a 2.000 conversazioni/mese",
+                    "3 Agenti AI",
+                    "Knowledge Base avanzata (Sito web + PDF)",
+                    "Supporto prioritario",
+                    "Integrazione CRM (HubSpot, Salesforce)",
+                    "Analisi avanzate e report",
+                    "Training personalizzato AI"
+                ],
+                "notIncluded": [
+                    "API Access illimitato",
+                    "Account Manager dedicato"
+                ]
+            },
+            "enterprise": {
+                "name": "Enterprise",
+                "desc": "Per grandi volumi e soluzioni personalizzate.",
+                "cta": "Contatta Vendite",
+                "features": [
+                    "Conversazioni illimitate",
+                    "Agenti AI illimitati",
+                    "Knowledge Base illimitata",
+                    "Supporto dedicato 24/7",
+                    "Integrazioni custom via API",
+                    "SLA garantiti",
+                    "Onboarding dedicato",
+                    "Account Manager personale"
+                ]
+            },
+            "custom": {
+                "text": "Hai bisogno di una soluzione personalizzata?",
+                "link": "Parla con il nostro team vendite"
+            }
+        }
+    },
+    "casestudies": {
+        "seo": {
+            "title": "Casi Studio - Storie di Successo | Leader24",
+            "description": "Scopri come le aziende stanno trasformando il loro servizio clienti e aumentando le vendite con Leader24. Casi studio reali e risultati misurabili."
+        },
+        "title": "Storie di Successo",
+        "subtitle": "Scopri come le aziende stanno trasformando il loro servizio clienti e aumentando le vendite con Leader24.",
+        "cases": {
+            "fibernet": {
+                "tag": "Telecomunicazioni",
+                "title": "Azienda Telecomunicazioni: Supporto Tecnico Automatizzato",
+                "challenge": {
+                    "title": "La Sfida",
+                    "desc": "Gestire un alto volume di richieste di assistenza tecnica con tempi di attesa lunghi per i clienti."
+                },
+                "solution": {
+                    "title": "La Soluzione",
+                    "desc": "Implementazione di un agente AI per rispondere alle domande frequenti, verificare lo stato dei servizi e raccogliere informazioni prima del contatto con l'operatore."
+                },
+                "results": {
+                    "title": "I Risultati",
+                    "list": [
+                        "Risposte immediate 24/7",
+                        "Riduzione del carico sul supporto umano",
+                        "Clienti pre-qualificati con informazioni già raccolte"
+                    ]
+                },
+                "stat": {
+                    "value": "24/7",
+                    "label": "Disponibilità"
+                }
+            },
+            "rentrush": {
+                "tag": "Noleggio",
+                "title": "Azienda Noleggio: Assistenza Clienti Multilingue",
+                "challenge": {
+                    "title": "La Sfida",
+                    "desc": "Clienti internazionali che richiedono assistenza per prenotazioni e informazioni fuori orario d'ufficio."
+                },
+                "solution": {
+                    "title": "La Soluzione",
+                    "desc": "Agente AI multilingue che risponde in italiano, inglese e altre lingue, gestendo domande frequenti e raccogliendo richieste di prenotazione."
+                },
+                "results": {
+                    "title": "I Risultati",
+                    "list": [
+                        "Copertura multilingue automatica",
+                        "Risposte anche fuori orario",
+                        "Richieste raccolte e organizzate"
+                    ]
+                },
+                "stat": {
+                    "value": "5+",
+                    "label": "Lingue Supportate"
+                }
+            }
+        },
+        "cta": {
+            "title": "Pronto a scrivere la tua storia di successo?",
+            "button": "Inizia Ora"
+        }
+    },
+    "contact": {
+        "title": "Contattaci",
+        "subtitle": "Parla con il nostro team per scoprire come l'AI può aiutare il tuo business. Richiedi una demo o inizia la tua prova gratuita.",
+        "hero": {
+            "title": "Parla con noi",
+            "desc": "Scopri come Leader24 può trasformare il tuo business. Prenota una demo gratuita o inviaci un messaggio."
+        },
+        "info": {
+            "email": "Email",
+            "location": "Sede",
+            "phone": "Telefono",
+            "address_line1": "Sevedo Co. Ltd.",
+            "address_line2": "9/291 Vichitsongkran Road",
+            "address_line3": "Phuket, Tailandia"
+        },
+        "form": {
+            "title": "Richiedi una Demo",
+            "name": "Nome",
+            "company": "Azienda",
+            "email": "Email Aziendale",
+            "message": "Messaggio",
+            "placeholders": {
+                "name": "Mario Rossi",
+                "company": "La tua azienda",
+                "email": "mario@azienda.com",
+                "message": "Raccontaci le tue esigenze..."
+            },
+            "submit": "Invia Richiesta",
+            "sending": "Invio in corso...",
+            "success": "Messaggio inviato con successo! Ti contatteremo presto.",
+            "error": "Errore durante l'invio.",
+            "privacy": "Inviando questo modulo accetti la nostra Privacy Policy."
+        },
+        "testimonial": {
+            "text": "\"Il team di Leader24 è stato incredibile nel guidarci attraverso il processo di automazione. Altamente raccomandato!\"",
+            "author": "Marco Rossi",
+            "role": "CEO, TechSolutions"
+        }
+    },
+    "privacy": {
+        "title": "Privacy Policy",
+        "meta_desc": "Privacy Policy di Leader24. Scopri come raccogliamo, utilizziamo e proteggiamo i tuoi dati.",
+        "intro": {
+            "title": "1. Introduzione",
+            "text": "Benvenuto su Leader24. La tua privacy è importante per noi. Questa Privacy Policy spiega come raccogliamo, utilizziamo, divulghiamo e proteggiamo le tue informazioni quando visiti il nostro sito web e utilizzi i nostri servizi."
+        },
+        "collection": {
+            "title": "2. Raccolta dei Dati",
+            "text": "Possiamo raccogliere le seguenti categorie di dati:",
+            "list": [
+                "<strong>Dati Personali:</strong> Nome, indirizzo email, numero di telefono e altre informazioni che ci fornisci volontariamente.",
+                "<strong>Dati di Utilizzo:</strong> Informazioni su come accedi e utilizzi il nostro sito, inclusi indirizzo IP, tipo di browser e pagine visitate."
+            ]
+        },
+        "usage": {
+            "title": "3. Utilizzo dei Dati",
+            "text": "Utilizziamo i dati raccolti per:",
+            "list": [
+                "Fornire e mantenere i nostri servizi.",
+                "Migliorare l'esperienza utente e personalizzare i contenuti.",
+                "Comunicare con te, inclusi aggiornamenti e offerte promozionali (se hai acconsentito).",
+                "Monitorare l'utilizzo del servizio e rilevare problemi tecnici."
+            ]
+        },
+        "sharing": {
+            "title": "4. Condivisione dei Dati",
+            "text": "Non vendiamo i tuoi dati personali a terzi. Possiamo condividere le tue informazioni con fornitori di servizi terzi che ci aiutano a gestire la nostra attività, a condizione che accettino di mantenere la riservatezza di tali informazioni."
+        },
+        "security": {
+            "title": "5. Sicurezza dei Dati",
+            "text": "Adottiamo misure di sicurezza adeguate per proteggere i tuoi dati personali da accessi non autorizzati, alterazioni, divulgazioni o distruzioni. Tuttavia, nessun metodo di trasmissione su Internet è sicuro al 100%."
+        },
+        "rights": {
+            "title": "6. I Tuoi Diritti",
+            "text": "Hai il diritto di accedere, correggere o cancellare i tuoi dati personali in nostro possesso. Puoi anche opporti al trattamento dei tuoi dati o richiederne la limitazione. Per esercitare questi diritti, contattaci all'indirizzo email fornito di seguito."
+        },
+        "changes": {
+            "title": "7. Modifiche a questa Policy",
+            "text": "Potremmo aggiornare la nostra Privacy Policy di tanto in tanto. Ti informeremo di eventuali modifiche pubblicando la nuova Privacy Policy su questa pagina. Ti consigliamo di rivedere periodicamente questa pagina per eventuali cambiamenti."
+        },
+        "contact": {
+            "title": "8. Contattaci",
+            "text": "Se hai domande su questa Privacy Policy, puoi contattarci:",
+            "address": "Indirizzo",
+            "phone": "Telefono"
+        }
+    },
+    "cookie": {
+        "title": "Cookie Policy",
+        "meta_desc": "Cookie Policy di Leader24. Scopri come utilizziamo i cookie e le tecnologie di tracciamento.",
+        "intro": {
+            "title": "1. Cosa sono i Cookie",
+            "text": "I cookie sono piccoli file di testo che vengono salvati sul tuo dispositivo quando visiti un sito web. Vengono utilizzati per far funzionare i siti web in modo più efficiente, per fornire informazioni ai proprietari del sito e per offrire un'esperienza utente personalizzata."
+        },
+        "types": {
+            "title": "2. Tipologie di Cookie che Utilizziamo",
+            "text": "Utilizziamo diverse tipologie di cookie per scopi differenti:",
+            "list": [
+                "<strong>Cookie Essenziali:</strong> Necessari per il funzionamento del sito. Senza questi cookie, il sito non potrebbe funzionare correttamente.",
+                "<strong>Cookie di Analisi e Prestazioni:</strong> Ci permettono di contare le visite e le fonti di traffico per misurare e migliorare le prestazioni del nostro sito.",
+                "<strong>Cookie di Marketing e Profilazione:</strong> Utilizzati per tracciare i visitatori attraverso i siti web. L'intento è quello di visualizzare annunci pertinenti e coinvolgenti per il singolo utente."
+            ]
+        },
+        "third_party": {
+            "title": "3. Tecnologie di Tracciamento di Terze Parti",
+            "text": "Oltre ai nostri cookie, utilizziamo diverse tecnologie di terze parti per analizzare l'utilizzo del sito, gestire i tag e ottimizzare le nostre campagne pubblicitarie. Nello specifico, utilizziamo:",
+            "tools": {
+                "ga": {
+                    "title": "Google Analytics",
+                    "desc": "Utilizziamo Google Analytics per raccogliere informazioni statistiche anonime sull'utilizzo del sito da parte degli utenti (es. numero di visitatori, pagine visitate, tempo di permanenza)."
+                },
+                "gtm": {
+                    "title": "Google Tag Manager",
+                    "desc": "Utilizziamo Google Tag Manager per gestire e distribuire i tag di marketing e analisi sul nostro sito web senza dover modificare direttamente il codice."
+                },
+                "fb": {
+                    "title": "Facebook Pixel",
+                    "desc": "Il Facebook Pixel ci permette di monitorare le conversioni delle nostre inserzioni su Facebook, ottimizzare le campagne e creare un pubblico mirato per le future inserzioni."
+                },
+                "tiktok": {
+                    "title": "TikTok Pixel",
+                    "desc": "Utilizziamo il TikTok Pixel per misurare l'efficacia delle nostre campagne pubblicitarie su TikTok e per capire meglio le azioni che gli utenti compiono sul nostro sito."
+                }
+            }
+        },
+        "management": {
+            "title": "4. Gestione dei Cookie",
+            "text": "Puoi controllare e/o eliminare i cookie come desideri. Puoi cancellare tutti i cookie già presenti sul tuo computer e impostare la maggior parte dei browser in modo da bloccarne l'installazione. Se scegli di bloccare i cookie, potresti dover modificare manualmente alcune preferenze ogni volta che visiti il sito e alcuni servizi e funzionalità potrebbero non funzionare."
+        },
+        "updates": {
+            "title": "5. Aggiornamenti",
+            "text": "La nostra Cookie Policy può essere aggiornata periodicamente. Ti invitiamo a consultare regolarmente questa pagina per essere informato su come utilizziamo i cookie."
+        },
+        "contact": {
+            "title": "6. Contatti",
+            "text": "Per qualsiasi domanda relativa alla nostra Cookie Policy, puoi contattarci a: <a href=\"mailto:info@leader24.ai\" class=\"text-blue-400 hover:text-blue-300 transition-colors\">info@leader24.ai</a>."
+        }
+    },
+    "refund": {
+        "title": "Politica di Rimborso",
+        "meta_desc": "Politica di Rimborso di Leader24. Leggi le condizioni per i rimborsi e le cancellazioni.",
+        "intro": {
+            "title": "1. Panoramica Generale",
+            "text": "In Leader24, ci impegniamo a fornire servizi di alta qualità per l'automazione di WhatsApp Business. Tuttavia, comprendiamo che le circostanze possono cambiare. Questa politica delinea i termini per rimborsi e cancellazioni."
+        },
+        "trial": {
+            "title": "2. Periodo di Prova",
+            "text": "Offriamo un periodo di prova gratuito per permetterti di valutare il nostro servizio senza rischi. Durante questo periodo, non ti verrà addebitato alcun costo. Puoi cancellare in qualsiasi momento prima della fine del periodo di prova per evitare addebiti futuri."
+        },
+        "subscriptions": {
+            "title": "3. Abbonamenti Mensili e Annuali",
+            "text": "Per i piani a pagamento:",
+            "list": [
+                "<strong>Abbonamenti Mensili:</strong> Puoi cancellare il tuo abbonamento mensile in qualsiasi momento. L'accesso al servizio continuerà fino alla fine del ciclo di fatturazione corrente. Non sono previsti rimborsi per i mesi parzialmente utilizzati.",
+                "<strong>Abbonamenti Annuali:</strong> Se cancelli un abbonamento annuale entro 14 giorni dall'acquisto iniziale, puoi richiedere un rimborso completo. Dopo i 14 giorni, la cancellazione impedirà il rinnovo automatico per l'anno successivo, ma non verrà emesso alcun rimborso per il periodo rimanente."
+            ]
+        },
+        "requests": {
+            "title": "4. Richieste di Rimborso",
+            "text": "Le richieste di rimborso devono essere inviate per iscritto al nostro team di supporto. Valuteremo ogni richiesta caso per caso. Ci riserviamo il diritto di rifiutare una richiesta di rimborso se riteniamo che vi sia stato un abuso del servizio o una violazione dei nostri Termini di Servizio."
+        },
+        "exceptions": {
+            "title": "5. Eccezioni",
+            "text": "Non verranno concessi rimborsi per:",
+            "list": [
+                "Mancato utilizzo del servizio durante il periodo di abbonamento attivo.",
+                "Insoddisfazione dovuta a funzionalità che non erano state promesse o pubblicizzate.",
+                "Problemi tecnici dovuti a terze parti (es. interruzioni di WhatsApp/Meta) che sono fuori dal nostro controllo, sebbene faremo il possibile per assisterti."
+            ]
+        },
+        "contact": {
+            "title": "6. Contatti",
+            "text": "Per inviare una richiesta di rimborso o per domande su questa politica, contattaci a: <a href=\"mailto:info@leader24.ai\" class=\"text-blue-400 hover:text-blue-300 transition-colors\">info@leader24.ai</a>."
+        }
+    },
+    "terms": {
+        "title": "Termini di Servizio",
+        "meta_desc": "Termini di Servizio di Leader24. Leggi le condizioni d'uso della nostra piattaforma.",
+        "intro": {
+            "title": "1. Accettazione dei Termini",
+            "text": "Accedendo e utilizzando il sito web Leader24, accetti di essere vincolato dai presenti Termini di Servizio, da tutte le leggi e i regolamenti applicabili e accetti di essere responsabile del rispetto di tutte le leggi locali applicabili. Se non sei d'accordo con uno qualsiasi di questi termini, ti è vietato utilizzare o accedere a questo sito."
+        },
+        "license": {
+            "title": "2. Licenza d'Uso",
+            "text": "È concesso il permesso di scaricare temporaneamente una copia dei materiali (informazioni o software) sul sito web di Leader24 solo per la visualizzazione transitoria personale e non commerciale. Questa è la concessione di una licenza, non un trasferimento di titolo, e in base a questa licenza non puoi:",
+            "list": [
+                "Modificare o copiare i materiali;",
+                "Utilizzare i materiali per qualsiasi scopo commerciale o per qualsiasi esposizione pubblica (commerciale o non commerciale);",
+                "Tentare di decompilare o decodificare qualsiasi software contenuto nel sito web di Leader24;",
+                "Rimuovere qualsiasi copyright o altra nota proprietaria dai materiali; o",
+                "Trasferire i materiali a un'altra persona o \"rispecchiare\" i materiali su qualsiasi altro server."
+            ],
+            "termination": "Questa licenza terminerà automaticamente se violi una qualsiasi di queste restrizioni e può essere terminata da Leader24 in qualsiasi momento."
+        },
+        "disclaimer": {
+            "title": "3. Disclaimer",
+            "text": "I materiali sul sito web di Leader24 sono forniti \"così come sono\". Leader24 non fornisce alcuna garanzia, espressa o implicita, e con la presente declina e nega tutte le altre garanzie, incluse, senza limitazione, garanzie implicite o condizioni di commerciabilità, idoneità per un scopo particolare o non violazione della proprietà intellettuale o altra violazione dei diritti."
+        },
+        "limitations": {
+            "title": "4. Limitazioni",
+            "text": "In nessun caso Leader24 o i suoi fornitori saranno responsabili per eventuali danni (inclusi, senza limitazione, danni per perdita di dati o profitti, o a causa di interruzione dell'attività) derivanti dall'uso o dall'impossibilità di utilizzare i materiali sul sito web di Leader24, anche se Leader24 o un rappresentante autorizzato di Leader24 è stato informato oralmente o per iscritto della possibilità di tali danni."
+        },
+        "accuracy": {
+            "title": "5. Accuratezza dei Materiali",
+            "text": "I materiali che appaiono sul sito web di Leader24 potrebbero includere errori tecnici, tipografici o fotografici. Leader24 non garantisce che nessuno dei materiali sul suo sito web sia accurato, completo o aggiornato. Leader24 può apportare modifiche ai materiali contenuti nel suo sito web in qualsiasi momento senza preavviso. Tuttavia Leader24 non si assume alcun impegno ad aggiornare i materiali."
+        },
+        "links": {
+            "title": "6. Link",
+            "text": "Leader24 non ha esaminato tutti i siti collegati al suo sito web e non è responsabile per i contenuti di tali siti collegati. L'inclusione di qualsiasi link non implica l'approvazione da parte di Leader24 del sito. L'uso di qualsiasi sito web collegato è a rischio e pericolo dell'utente."
+        },
+        "modifications": {
+            "title": "7. Modifiche",
+            "text": "Leader24 può rivedere questi Termini di Servizio per il suo sito web in qualsiasi momento senza preavviso. Utilizzando questo sito web accetti di essere vincolato dalla versione allora corrente di questi Termini di Servizio."
+        },
+        "governing_law": {
+            "title": "8. Legge Applicabile",
+            "text": "Questi termini e condizioni sono regolati e interpretati in conformità con le leggi della Thailandia e ti sottoponi irrevocabilmente alla giurisdizione esclusiva dei tribunali in quello Stato o luogo."
+        },
+        "contact": {
+            "title": "9. Contatti",
+            "text": "Per qualsiasi domanda relativa ai nostri Termini di Servizio, puoi contattarci a: <a href=\"mailto:info@leader24.ai\" class=\"text-blue-400 hover:text-blue-300 transition-colors\">info@leader24.ai</a>."
+        }
+    },
+    "common": {
+        "loading": "Caricamento...",
+        "error": "Errore",
+        "success": "Successo",
+        "send": "Invia",
+        "close": "Chiudi"
+    }
+}
