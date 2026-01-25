@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
-import LegalPage from '@/components/pages/LegalPage'
-import { getSiteSettings } from '@/lib/cms/server'
+import PrivacyPolicyPage from '@/components/pages/PrivacyPolicyPage'
 
 type Props = {
   params: Promise<{ locale: string }>
@@ -17,11 +16,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-export default async function PrivacyPolicyPage() {
-  const [legalSettings, contactSettings] = await Promise.all([
-    getSiteSettings('legal'),
-    getSiteSettings('contact')
-  ])
-
-  return <LegalPage pageKey="privacy" legalSettings={legalSettings} contactSettings={contactSettings} />
+export default function PrivacyPolicy() {
+  return <PrivacyPolicyPage />
 }
