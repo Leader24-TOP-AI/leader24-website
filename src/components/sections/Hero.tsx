@@ -19,10 +19,10 @@ const Hero = ({ chatScenarios, heroSettings }: HeroProps) => {
 
   // Use scenarios from props, with fallback
   const scenarios = chatScenarios.length > 0 ? chatScenarios : [
-    { id: 'ecommerce' },
-    { id: 'hotel' },
-    { id: 'restaurant' }
-  ]
+    { id: 'ecommerce', sector_key: 'ecommerce' },
+    { id: 'hotel', sector_key: 'hotel' },
+    { id: 'restaurant', sector_key: 'restaurant' }
+  ] as ChatScenario[]
 
   const [chatConfig, setChatConfig] = useState({
     selectedSectorId: 'ecommerce',
@@ -36,7 +36,7 @@ const Hero = ({ chatScenarios, heroSettings }: HeroProps) => {
 
   const handleScenarioComplete = () => {
     if (chatConfig.isAutoPlay && scenarios.length > 0) {
-      const currentIndex = scenarios.findIndex(s => s.id === chatConfig.selectedSectorId)
+      const currentIndex = scenarios.findIndex(s => s.id === chatConfig.selectedSectorId || s.sector_key === chatConfig.selectedSectorId)
       const nextIndex = (currentIndex + 1) % scenarios.length
       setChatConfig(prev => ({ ...prev, selectedSectorId: scenarios[nextIndex].id }))
     }
