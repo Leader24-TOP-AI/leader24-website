@@ -57,7 +57,7 @@ const HowItWorks = () => {
 
           {steps.map((step) => (
             <div key={step.number} className="relative z-10 flex flex-col items-center text-center group">
-              <div className="w-24 h-24 rounded-3xl bg-white dark:bg-dark-card border border-gray-200 dark:border-white/10 flex items-center justify-center mb-8 shadow-lg shadow-gray-200/50 dark:shadow-black/50 group-hover:border-primary/50 group-hover:shadow-primary/20 transition-all duration-300 relative">
+              <div className="w-20 sm:w-24 h-20 sm:h-24 rounded-2xl sm:rounded-3xl bg-white dark:bg-dark-card border border-gray-200 dark:border-white/10 flex items-center justify-center mb-8 shadow-lg shadow-gray-200/50 dark:shadow-black/50 group-hover:border-primary/50 group-hover:shadow-primary/20 transition-all duration-300 relative">
                 <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm border-2 border-gray-50 dark:border-dark-bg">
                   {step.number}
                 </div>

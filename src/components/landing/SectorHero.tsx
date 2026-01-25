@@ -2,7 +2,8 @@
 
 import { useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, ArrowLeft } from 'lucide-react'
+import Link from 'next/link'
 import type { Sector } from '@/hooks/useCMSContent'
 import { getLocalizedValue } from '@/hooks/useCMSContent'
 import { useNavbarContext } from '@/context/NavbarContext'
@@ -47,6 +48,21 @@ export default function SectorHero({ sector, locale }: SectorHeroProps) {
       {!hasBackgroundImage && (
         <div className="absolute inset-0 bg-gradient-to-b from-primary/10 to-transparent z-0" />
       )}
+
+      {/* Back to Sectors Link - Top Left */}
+      <Link
+        href={isEnglish ? '/en/sectors' : '/it/settori'}
+        className={`absolute top-24 left-4 sm:left-6 lg:left-8 z-20 inline-flex items-center gap-2 px-3 py-2 rounded-full backdrop-blur-sm transition-all ${
+          hasBackgroundImage
+            ? 'text-white/90 hover:text-white bg-white/10 hover:bg-white/20'
+            : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10'
+        }`}
+      >
+        <ArrowLeft className="w-4 h-4" />
+        <span className="text-sm font-medium">
+          {isEnglish ? 'Back to Sectors' : 'Torna ai Settori'}
+        </span>
+      </Link>
 
       <div className="max-w-4xl mx-auto relative z-10 w-full">
         <motion.div

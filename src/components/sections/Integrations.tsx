@@ -44,12 +44,12 @@ export default function Integrations() {
       </div>
 
       <div className="relative flex overflow-x-hidden group">
-        <div className="animate-marquee whitespace-nowrap flex items-center gap-12 px-8">
+        <div className="animate-marquee whitespace-nowrap flex items-center gap-6 sm:gap-8 md:gap-12 px-4 sm:px-6 md:px-8">
           {/* First set of logos */}
           {tools.map((tool) => (
             <div
               key={tool.id}
-              className="flex items-center justify-center w-32 h-16 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300 flex-shrink-0"
+              className="flex items-center justify-center w-20 sm:w-24 md:w-32 h-12 sm:h-14 md:h-16 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300 flex-shrink-0"
             >
               <Image
                 src={tool.logo_url}
@@ -65,7 +65,7 @@ export default function Integrations() {
           {tools.map((tool) => (
             <div
               key={`${tool.id}-duplicate`}
-              className="flex items-center justify-center w-32 h-16 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300 flex-shrink-0"
+              className="flex items-center justify-center w-20 sm:w-24 md:w-32 h-12 sm:h-14 md:h-16 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300 flex-shrink-0"
             >
               <Image
                 src={tool.logo_url}
@@ -80,8 +80,8 @@ export default function Integrations() {
         </div>
 
         {/* Gradient masks for smooth fade edges */}
-        <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-white dark:from-dark-bg to-transparent z-10 pointer-events-none"></div>
-        <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-white dark:from-dark-bg to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute top-0 left-0 w-12 sm:w-20 md:w-32 h-full bg-gradient-to-r from-white dark:from-dark-bg to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute top-0 right-0 w-12 sm:w-20 md:w-32 h-full bg-gradient-to-l from-white dark:from-dark-bg to-transparent z-10 pointer-events-none"></div>
       </div>
     </section>
   )

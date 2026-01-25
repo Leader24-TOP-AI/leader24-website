@@ -59,11 +59,11 @@ const Features = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="glass-card p-8 group hover:-translate-y-2 transition-transform duration-300"
+              className="glass-card p-4 sm:p-6 md:p-8 group hover:-translate-y-2 transition-transform duration-300"
             >
               <div className="flex items-center justify-center h-14 w-14 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 text-primary-light mb-6 group-hover:scale-110 transition-transform duration-300 border border-gray-200 dark:border-white/5 group-hover:border-primary/20 group-hover:shadow-lg group-hover:shadow-primary/10">
                 <feature.icon className="w-7 h-7" />

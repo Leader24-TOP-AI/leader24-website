@@ -34,9 +34,17 @@ const Navbar = () => {
   // Lock body scroll when menu is open
   useEffect(() => {
     if (isOpen) {
+      // Block scroll on both body and html for cross-browser support
       document.body.style.overflow = 'hidden'
+      document.documentElement.style.overflow = 'hidden'
+      // Fix for iOS Safari
+      document.body.style.position = 'fixed'
+      document.body.style.width = '100%'
     } else {
-      document.body.style.overflow = 'unset'
+      document.body.style.overflow = ''
+      document.documentElement.style.overflow = ''
+      document.body.style.position = ''
+      document.body.style.width = ''
     }
   }, [isOpen])
 
@@ -107,7 +115,7 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-6">
+          <div className="hidden lg:flex items-center space-x-6">
             {navLinks.map((link) => (
               <LocaleLink
                 key={link.href}
@@ -144,7 +152,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="flex items-center gap-2 md:hidden z-50">
+          <div className="flex items-center gap-2 lg:hidden z-50">
             <LanguageSwitcher forceLightMode={shouldUseLightText} />
             <ThemeToggle forceLightMode={shouldUseLightText} />
             <button
@@ -169,7 +177,7 @@ const Navbar = () => {
             animate="open"
             exit="closed"
             variants={menuVariants}
-            className="fixed inset-0 bg-white/95 dark:bg-dark-bg/95 backdrop-blur-xl z-40 md:hidden flex flex-col pt-24 px-6"
+            className="fixed inset-0 bg-white dark:bg-dark-bg z-40 lg:hidden flex flex-col pt-24 px-6 overflow-y-auto overscroll-contain"
           >
             <div className="flex flex-col space-y-6">
               {navLinks.map((link, i) => (

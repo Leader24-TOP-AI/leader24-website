@@ -1,0 +1,22 @@
+{
+  "name": "Leader24 - AI per WhatsApp Business",
+  "short_name": "Leader24",
+  "description": "Automatizza il supporto clienti e qualifica i lead con il tuo agente AI su WhatsApp",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#6366f1",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "/",
+  "scope": "/"
+}

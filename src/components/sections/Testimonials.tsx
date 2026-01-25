@@ -92,7 +92,7 @@ export default function Testimonials() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.id}
@@ -100,7 +100,7 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="bg-white dark:bg-dark-card border border-gray-200 dark:border-white/10 rounded-2xl p-8 hover:bg-gray-50 dark:hover:bg-white/5 transition-all duration-300"
+              className="bg-white dark:bg-dark-card border border-gray-200 dark:border-white/10 rounded-2xl p-4 sm:p-6 md:p-8 hover:bg-gray-50 dark:hover:bg-white/5 transition-all duration-300"
             >
               <div className="flex items-center mb-6">
                 {testimonial.image_url ? (

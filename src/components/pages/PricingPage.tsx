@@ -212,7 +212,7 @@ export default function PricingPage() {
               key={plan.id}
               className={`relative glass-card p-6 flex flex-col ${
                 plan.is_popular
-                  ? 'border-primary/50 shadow-lg shadow-primary/10 md:scale-105 z-10'
+                  ? 'border-primary/50 shadow-lg shadow-primary/10 lg:scale-105 z-10'
                   : 'border-gray-200 dark:border-white/5'
               }`}
             >

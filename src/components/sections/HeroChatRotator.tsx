@@ -152,7 +152,7 @@ const HeroChatRotator = ({
           {t('liveDemo')}
         </span>
       </div>
-      <div className="relative w-full max-w-[380px] mx-auto h-[600px] flex flex-col">
+      <div className="relative w-full max-w-[calc(100vw-2rem)] sm:max-w-[380px] mx-auto h-[550px] sm:h-[575px] md:h-[600px] flex flex-col">
         {/* Main Chat Interface */}
         <div className="bg-white dark:bg-dark-card border border-gray-200 dark:border-white/10 rounded-3xl overflow-hidden shadow-2xl flex flex-col h-full relative z-10 backdrop-blur-sm">
 

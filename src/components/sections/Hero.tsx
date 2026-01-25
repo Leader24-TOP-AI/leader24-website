@@ -38,7 +38,7 @@ const Hero = () => {
   }
 
   return (
-    <div className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+    <div className="relative min-h-screen flex items-center pt-20 pb-12 md:pb-16 lg:pb-0 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gray-100 dark:bg-dark-bg z-0 transition-colors duration-300">
         <video
@@ -66,7 +66,7 @@ const Hero = () => {
             <span className="text-sm font-medium text-gray-600 dark:text-gray-300">{t('badge')}</span>
           </div>
 
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold font-heading leading-[1.1] text-gray-900 dark:text-white">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold font-heading leading-[1.1] text-gray-900 dark:text-white">
             {t('title')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600">WhatsApp</span>
           </h1>
 

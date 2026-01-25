@@ -19,6 +19,42 @@ export const metadata: Metadata = {
   },
   description: "Automatizza il supporto clienti e qualifica i lead con il tuo agente AI su WhatsApp. Attivo 24/7, setup in 5 minuti.",
   metadataBase: new URL("https://leader24.ai"),
+  icons: {
+    icon: [
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
+  manifest: "/site.webmanifest",
+  openGraph: {
+    type: "website",
+    locale: "it_IT",
+    url: "https://leader24.ai",
+    siteName: "Leader24",
+    title: "Leader24 - AI per WhatsApp Business",
+    description: "Automatizza il supporto clienti e qualifica i lead con il tuo agente AI su WhatsApp. Attivo 24/7, setup in 5 minuti.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Leader24 - AI per WhatsApp Business",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Leader24 - AI per WhatsApp Business",
+    description: "Automatizza il supporto clienti e qualifica i lead con il tuo agente AI su WhatsApp.",
+    images: ["/og-image.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
