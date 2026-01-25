@@ -3,7 +3,8 @@
 import { useLocale, useTranslations } from 'next-intl'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { useSectionContent, useCaseStudies, getLocalizedValue, CaseStudy } from '@/hooks/useCMSContent'
+import { getLocalizedValue } from '@/lib/cms/types'
+import type { CaseStudy, SectionContent } from '@/lib/cms/types'
 
 // Color mapping for tags
 const tagColors = [
@@ -20,14 +21,14 @@ const bgGradients = [
   'bg-orange-500/10',
 ]
 
-export default function CaseStudiesPage() {
+interface CaseStudiesPageProps {
+  caseStudies: CaseStudy[]
+  sectionContent: Record<string, SectionContent>
+}
+
+export default function CaseStudiesPage({ caseStudies, sectionContent }: CaseStudiesPageProps) {
   const t = useTranslations('casestudies')
   const locale = useLocale() as 'it' | 'en'
-  const { content: sectionContent } = useSectionContent([
-    'casestudies_title', 'casestudies_subtitle',
-    'casestudies_cta_title', 'casestudies_cta_button'
-  ])
-  const { caseStudies, loading: casesLoading } = useCaseStudies()
 
   // Helper to get localized value from case study
   const getCS = (caseStudy: CaseStudy, field: string) => {
@@ -58,26 +59,7 @@ export default function CaseStudiesPage() {
       </motion.div>
 
       <div className="space-y-20">
-        {casesLoading ? (
-          // Loading skeleton
-          <div className="space-y-20">
-            {[1, 2].map((i) => (
-              <div key={i} className="glass-card p-8 md:p-12 animate-pulse">
-                <div className="flex flex-col md:flex-row gap-12 items-center">
-                  <div className="w-full md:w-1/2 space-y-4">
-                    <div className="h-6 w-24 bg-gray-200 dark:bg-gray-700 rounded-full"></div>
-                    <div className="h-8 w-3/4 bg-gray-200 dark:bg-gray-700 rounded"></div>
-                    <div className="space-y-2">
-                      <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded"></div>
-                      <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-5/6"></div>
-                    </div>
-                  </div>
-                  <div className="w-full md:w-1/2 h-48 bg-gray-200 dark:bg-gray-700 rounded-2xl"></div>
-                </div>
-              </div>
-            ))}
-          </div>
-        ) : caseStudies.length === 0 ? (
+        {caseStudies.length === 0 ? (
           // Empty state
           <div className="text-center py-20">
             <p className="text-gray-500 dark:text-gray-400 text-lg">

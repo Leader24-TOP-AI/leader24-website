@@ -2,33 +2,25 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronDown, ChevronUp, Loader2 } from 'lucide-react'
-import { useSectorFAQs, getLocalizedValue } from '@/hooks/useCMSContent'
+import { ChevronDown, ChevronUp } from 'lucide-react'
+import { getLocalizedValue } from '@/lib/cms/types'
+import type { FAQ } from '@/lib/cms/types'
 
 interface SectorFAQProps {
-  sectorSlug: string
+  faqs: FAQ[]
   locale: 'it' | 'en'
 }
 
-export default function SectorFAQ({ sectorSlug, locale }: SectorFAQProps) {
+export default function SectorFAQ({ faqs, locale }: SectorFAQProps) {
   const isEnglish = locale === 'en'
   const [activeIndex, setActiveIndex] = useState<number | null>(null)
-  const { faqs, loading } = useSectorFAQs(sectorSlug)
 
   const toggleAccordion = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index)
   }
 
   // Don't render if no FAQs
-  if (!loading && faqs.length === 0) return null
-
-  if (loading) {
-    return (
-      <div className="py-20 bg-gray-50 dark:bg-dark-bg flex items-center justify-center">
-        <Loader2 className="w-8 h-8 text-primary animate-spin" />
-      </div>
-    )
-  }
+  if (faqs.length === 0) return null
 
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-dark-bg">

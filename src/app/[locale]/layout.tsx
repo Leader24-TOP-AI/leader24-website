@@ -6,6 +6,7 @@ import { ThemeProvider } from '@/context/ThemeContext'
 import { NavbarProvider } from '@/context/NavbarContext'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import { getSiteSettings } from '@/lib/cms/server'
 
 type Props = {
   children: React.ReactNode
@@ -20,15 +21,18 @@ export default async function LocaleLayout({ children, params }: Props) {
     notFound()
   }
 
-  // Get messages for the current locale
-  const messages = await getMessages()
+  // Fetch messages and navbar settings in parallel
+  const [messages, navbarSettings] = await Promise.all([
+    getMessages(),
+    getSiteSettings('navbar')
+  ])
 
   return (
     <NextIntlClientProvider messages={messages}>
       <ThemeProvider>
         <NavbarProvider>
           <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-dark-bg transition-colors duration-300">
-            <Navbar />
+            <Navbar settings={navbarSettings} />
             <main className="flex-grow">
               {children}
             </main>

@@ -4,8 +4,8 @@ import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
-import type { Sector } from '@/hooks/useCMSContent'
-import { getLocalizedValue } from '@/hooks/useCMSContent'
+import { getLocalizedValue } from '@/lib/cms/types'
+import type { Sector } from '@/lib/cms/types'
 import { useNavbarContext } from '@/context/NavbarContext'
 
 interface SectorHeroProps {

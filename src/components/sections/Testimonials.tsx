@@ -1,12 +1,13 @@
 'use client'
 
 import { useLocale, useTranslations } from 'next-intl'
-import { Star, Loader2 } from 'lucide-react'
+import { Star } from 'lucide-react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { useTestimonials, useSectionContent, getLocalizedValue, Testimonial } from '@/hooks/useCMSContent'
+import { getLocalizedValue } from '@/lib/cms/types'
+import type { Testimonial, SectionContent } from '@/lib/cms/types'
 
-// Fallback testimonials (used while loading or if DB is empty)
+// Fallback testimonials (used if DB is empty)
 // Using generic titles instead of fake names to be truthful
 const fallbackTestimonials: Testimonial[] = [
   {
@@ -50,11 +51,14 @@ const fallbackTestimonials: Testimonial[] = [
   }
 ]
 
-export default function Testimonials() {
+interface TestimonialsProps {
+  testimonials: Testimonial[]
+  sectionContent: Record<string, SectionContent>
+}
+
+export default function Testimonials({ testimonials: dbTestimonials, sectionContent }: TestimonialsProps) {
   const locale = useLocale() as 'it' | 'en'
   const t = useTranslations('home.testimonials')
-  const { testimonials: dbTestimonials, loading } = useTestimonials()
-  const { content: sectionContent } = useSectionContent(['testimonials_title', 'testimonials_subtitle'])
 
   // Use DB testimonials if available, otherwise fallback
   const testimonials = dbTestimonials.length > 0 ? dbTestimonials : fallbackTestimonials
@@ -67,14 +71,6 @@ export default function Testimonials() {
   const subtitle = sectionContent.testimonials_subtitle
     ? getLocalizedValue(sectionContent.testimonials_subtitle, 'content', locale) || t('subtitle')
     : t('subtitle')
-
-  if (loading) {
-    return (
-      <div className="py-24 bg-gray-50 dark:bg-dark-bg flex items-center justify-center">
-        <Loader2 className="w-8 h-8 text-primary animate-spin" />
-      </div>
-    )
-  }
 
   return (
     <section className="py-24 bg-gray-50 dark:bg-dark-bg relative overflow-hidden transition-colors duration-300">

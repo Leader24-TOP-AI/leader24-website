@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 import SectorsPage from '@/components/pages/SectorsPage'
+import { getSectors, getSectionContent } from '@/lib/cms/server'
 
 type Props = {
   params: Promise<{ locale: string }>
@@ -25,5 +26,13 @@ export default async function SectorsRoute({ params }: Props) {
     redirect('/it/settori')
   }
 
-  return <SectorsPage />
+  const [sectors, sectionContent] = await Promise.all([
+    getSectors(),
+    getSectionContent([
+      'sectors_title', 'sectors_subtitle',
+      'sectors_cta_title', 'sectors_cta_desc', 'sectors_cta_button'
+    ])
+  ])
+
+  return <SectorsPage sectors={sectors} sectionContent={sectionContent} />
 }

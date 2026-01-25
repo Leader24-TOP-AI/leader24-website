@@ -1,14 +1,16 @@
 'use client'
 
 import { useLocale, useTranslations } from 'next-intl'
-import { useSectionContent, getLocalizedValue } from '@/hooks/useCMSContent'
+import { getLocalizedValue } from '@/lib/cms/types'
+import type { SectionContent } from '@/lib/cms/types'
 
-const CTA = () => {
+interface CTAProps {
+  sectionContent: Record<string, SectionContent>
+}
+
+const CTA = ({ sectionContent }: CTAProps) => {
   const locale = useLocale()
   const t = useTranslations('home.cta')
-  const { content: sectionContent } = useSectionContent([
-    'cta_title', 'cta_subtitle', 'cta_button', 'cta_footer'
-  ])
 
   const getCMS = (key: string, i18nKey: string) => {
     return getLocalizedValue(sectionContent[key], 'content', locale) || t(i18nKey)

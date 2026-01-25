@@ -1,19 +1,23 @@
 'use client'
 
-import { MessageSquare, Bot, BarChart3, FolderOpen, Zap, Upload, Settings, Play, Loader2 } from 'lucide-react'
+import { MessageSquare, Bot, BarChart3, FolderOpen, Zap, Upload, Settings, Play } from 'lucide-react'
 import { useTranslations, useLocale } from 'next-intl'
-import { useHomepageSteps, useSectionContent, getLocalizedValue } from '@/hooks/useCMSContent'
+import { getLocalizedValue } from '@/lib/cms/types'
+import type { HomepageStep, SectionContent } from '@/lib/cms/types'
 import type { LucideIcon } from 'lucide-react'
 
 const iconMap: Record<string, LucideIcon> = {
   FolderOpen, MessageSquare, BarChart3, Zap, Upload, Settings, Play, Bot
 }
 
-const HowItWorks = () => {
+interface HowItWorksProps {
+  steps: HomepageStep[]
+  sectionContent: Record<string, SectionContent>
+}
+
+const HowItWorks = ({ steps: dbSteps, sectionContent }: HowItWorksProps) => {
   const t = useTranslations('home.howItWorks')
   const locale = useLocale()
-  const { steps: dbSteps, loading } = useHomepageSteps()
-  const { content: sectionContent } = useSectionContent(['how_it_works_title', 'how_it_works_subtitle'])
 
   // Use DB steps if available, otherwise use fallback i18n
   const steps = dbSteps.length > 0
@@ -32,14 +36,6 @@ const HowItWorks = () => {
   // Get title and subtitle from CMS or fallback to i18n
   const title = getLocalizedValue(sectionContent.how_it_works_title, 'content', locale) || t('title')
   const subtitle = getLocalizedValue(sectionContent.how_it_works_subtitle, 'content', locale) || t('subtitle')
-
-  if (loading) {
-    return (
-      <div className="py-24 bg-gray-50 dark:bg-dark-bg flex items-center justify-center">
-        <Loader2 className="w-8 h-8 text-primary animate-spin" />
-      </div>
-    )
-  }
 
   return (
     <div className="py-24 bg-gray-50 dark:bg-dark-bg relative overflow-hidden transition-colors duration-300">

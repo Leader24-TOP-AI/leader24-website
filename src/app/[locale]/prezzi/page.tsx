@@ -2,6 +2,7 @@ import { getTranslations } from 'next-intl/server'
 import { redirect } from 'next/navigation'
 import type { Metadata } from 'next'
 import PricingPage from '@/components/pages/PricingPage'
+import { getPricingPlans } from '@/lib/cms/server'
 
 type Props = {
   params: Promise<{ locale: string }>
@@ -25,5 +26,7 @@ export default async function PrezziPage({ params }: Props) {
     redirect('/en/pricing')
   }
 
-  return <PricingPage />
+  const plans = await getPricingPlans()
+
+  return <PricingPage plans={plans} />
 }

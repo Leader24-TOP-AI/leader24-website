@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
 import SectorLandingPage from '@/components/pages/SectorLandingPage'
+import { getSectorBySlug, getSectorFAQs } from '@/lib/cms/server'
 
 type Props = {
   params: Promise<{ locale: string; slug: string }>
@@ -49,5 +50,10 @@ export default async function SectorSlugPage({ params }: Props) {
     redirect(`/it/settori/${slug}`)
   }
 
-  return <SectorLandingPage slug={slug} />
+  const [sector, sectorFAQs] = await Promise.all([
+    getSectorBySlug(slug),
+    getSectorFAQs(slug)
+  ])
+
+  return <SectorLandingPage sector={sector} sectorFAQs={sectorFAQs} />
 }

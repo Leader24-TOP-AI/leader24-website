@@ -1,9 +1,10 @@
 'use client'
 
 import { useState } from 'react'
-import { Check, X, Zap, Rocket, Building2, Loader2, Sparkles } from 'lucide-react'
+import { Check, X, Zap, Rocket, Building2, Sparkles } from 'lucide-react'
 import { useTranslations, useLocale } from 'next-intl'
-import { usePricingPlans, getLocalizedValue } from '@/hooks/useCMSContent'
+import { getLocalizedValue } from '@/lib/cms/types'
+import type { PricingPlan } from '@/lib/cms/types'
 import type { LucideIcon } from 'lucide-react'
 
 const iconMap: Record<string, LucideIcon> = {
@@ -125,10 +126,13 @@ const planStyles: Record<string, { color: string; bg: string; border: string }> 
   enterprise: { color: 'text-purple-400', bg: 'bg-purple-500/10', border: 'border-purple-500/20' }
 }
 
-export default function PricingPage() {
+interface PricingPageProps {
+  plans: PricingPlan[]
+}
+
+export default function PricingPage({ plans: dbPlans }: PricingPageProps) {
   const t = useTranslations('pricing')
   const locale = useLocale()
-  const { plans: dbPlans, loading } = usePricingPlans()
   const [billingPeriod, setBillingPeriod] = useState<'monthly' | 'yearly'>('monthly')
 
   const plans = dbPlans.length > 0 ? dbPlans : fallbackPlans
@@ -139,14 +143,6 @@ export default function PricingPage() {
       try { return JSON.parse(value) } catch { return [] }
     }
     return Array.isArray(value) ? value : []
-  }
-
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-gray-50 dark:bg-dark-bg flex items-center justify-center">
-        <Loader2 className="w-8 h-8 text-primary animate-spin" />
-      </div>
-    )
   }
 
   return (

@@ -2,18 +2,19 @@
 
 import { useLocale } from 'next-intl'
 import Link from 'next/link'
-import { ArrowRight, Loader2 } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
-import { useSectors, useSectionContent, getLocalizedValue } from '@/hooks/useCMSContent'
+import { getLocalizedValue } from '@/lib/cms/types'
+import type { Sector, SectionContent } from '@/lib/cms/types'
 import { getIconComponent } from '@/lib/iconMap'
 
-export default function SectorsPage() {
+interface SectorsPageProps {
+  sectors: Sector[]
+  sectionContent: Record<string, SectionContent>
+}
+
+export default function SectorsPage({ sectors, sectionContent }: SectorsPageProps) {
   const locale = useLocale() as 'it' | 'en'
-  const { sectors, loading } = useSectors()
-  const { content: sectionContent } = useSectionContent([
-    'sectors_title', 'sectors_subtitle',
-    'sectors_cta_title', 'sectors_cta_desc', 'sectors_cta_button'
-  ])
 
   // Helper to get CMS content with fallback
   const getCMS = (key: string, fallback: string) => {
@@ -57,15 +58,7 @@ export default function SectorsPage() {
       </div>
 
       {/* Sectors Grid */}
-      {loading ? (
-        <div className="text-center py-12">
-          <Loader2 className="w-12 h-12 text-primary mx-auto animate-spin" />
-          <p className="text-gray-600 dark:text-gray-400 mt-4">
-            {locale === 'it' ? 'Caricamento settori...' : 'Loading sectors...'}
-          </p>
-        </div>
-      ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {sectors.map((sector, index) => {
             const Icon = getIconComponent(sector.icon_name)
             const title = getLocalizedValue(sector, 'title', locale)
@@ -113,8 +106,7 @@ export default function SectorsPage() {
               </motion.div>
             )
           })}
-        </div>
-      )}
+      </div>
 
       {/* CTA Section */}
       <motion.div

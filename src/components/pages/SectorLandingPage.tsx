@@ -2,8 +2,8 @@
 
 import { useLocale } from 'next-intl'
 import Link from 'next/link'
-import { ArrowLeft, Loader2 } from 'lucide-react'
-import { useSector } from '@/hooks/useCMSContent'
+import { ArrowLeft } from 'lucide-react'
+import type { Sector, FAQ } from '@/lib/cms/types'
 
 // Landing page sections
 import SectorHero from '@/components/landing/SectorHero'
@@ -13,25 +13,16 @@ import SectorFAQ from '@/components/landing/SectorFAQ'
 import SectorFinalCTA from '@/components/landing/SectorFinalCTA'
 
 interface SectorLandingPageProps {
-  slug: string
+  sector: Sector | null
+  sectorFAQs: FAQ[]
 }
 
-export default function SectorLandingPage({ slug }: SectorLandingPageProps) {
+export default function SectorLandingPage({ sector, sectorFAQs }: SectorLandingPageProps) {
   const locale = useLocale() as 'it' | 'en'
   const isEnglish = locale === 'en'
-  const { sector, loading, error } = useSector(slug)
-
-  // Loading state
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <Loader2 className="w-12 h-12 text-primary animate-spin" />
-      </div>
-    )
-  }
 
   // Error or not found state
-  if (error || !sector) {
+  if (!sector) {
     return (
       <main className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto text-center">
         <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
@@ -66,7 +57,7 @@ export default function SectorLandingPage({ slug }: SectorLandingPageProps) {
       <SectorSocialProof sector={sector} locale={locale} />
 
       {/* Section 4: FAQ */}
-      <SectorFAQ sectorSlug={slug} locale={locale} />
+      <SectorFAQ faqs={sectorFAQs} locale={locale} />
 
       {/* Section 5: Final CTA */}
       <SectorFinalCTA sector={sector} locale={locale} />

@@ -1,8 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import type { Sector } from '@/hooks/useCMSContent'
-import { getLocalizedValue } from '@/hooks/useCMSContent'
+import { getLocalizedValue } from '@/lib/cms/types'
+import type { Sector } from '@/lib/cms/types'
 import { getIconComponent } from '@/lib/iconMap'
 
 interface SectorUseCasesProps {
@@ -18,8 +18,8 @@ export default function SectorUseCases({ sector, locale }: SectorUseCasesProps) 
     (isEnglish ? `How Leader24 helps ${sectorTitle}` : `Come Leader24 aiuta ${sectorTitle}`)
 
   const usecases = locale === 'en'
-    ? (sector?.usecases_en || sector?.usecases_it || [])
-    : (sector?.usecases_it || [])
+    ? (sector.usecases_en || sector.usecases_it || [])
+    : (sector.usecases_it || [])
 
   // Don't render if no use cases
   if (!usecases || usecases.length === 0) return null

@@ -1,11 +1,10 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import { Loader2 } from 'lucide-react'
 import Image from 'next/image'
-import { useIntegrations, Integration } from '@/hooks/useCMSContent'
+import type { Integration } from '@/lib/cms/types'
 
-// Fallback integrations (used while loading or if DB is empty)
+// Fallback integrations (used if DB is empty)
 const fallbackIntegrations: Integration[] = [
   { id: 'gmail', name: 'Gmail', logo_url: 'https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg', is_active: true, display_order: 1 },
   { id: 'gcal', name: 'Google Calendar', logo_url: 'https://upload.wikimedia.org/wikipedia/commons/a/a5/Google_Calendar_icon_%282020%29.svg', is_active: true, display_order: 2 },
@@ -17,20 +16,15 @@ const fallbackIntegrations: Integration[] = [
   { id: 'wordpress', name: 'WordPress', logo_url: 'https://upload.wikimedia.org/wikipedia/commons/9/98/WordPress_blue_logo.svg', is_active: true, display_order: 8 },
 ]
 
-export default function Integrations() {
+interface IntegrationsProps {
+  integrations: Integration[]
+}
+
+export default function Integrations({ integrations: dbIntegrations }: IntegrationsProps) {
   const t = useTranslations('home.integrations')
-  const { integrations: dbIntegrations, loading } = useIntegrations()
 
   // Use DB integrations if available, otherwise fallback
   const tools = dbIntegrations.length > 0 ? dbIntegrations : fallbackIntegrations
-
-  if (loading) {
-    return (
-      <div className="py-20 bg-white dark:bg-dark-bg flex items-center justify-center">
-        <Loader2 className="w-8 h-8 text-primary animate-spin" />
-      </div>
-    )
-  }
 
   return (
     <section className="py-20 bg-white dark:bg-dark-bg border-y border-gray-200 dark:border-white/5 relative overflow-hidden transition-colors duration-300">

@@ -1,10 +1,12 @@
 'use client'
 
 import { useTranslations, useLocale } from 'next-intl'
-import { useSiteSettings } from '@/hooks/useCMSContent'
+import type { SiteSetting } from '@/lib/cms/types'
 
 interface LegalPageProps {
   pageKey: 'privacy' | 'cookie' | 'terms' | 'refund'
+  legalSettings: Record<string, SiteSetting>
+  contactSettings: Record<string, SiteSetting>
 }
 
 const pageTitles = {
@@ -33,11 +35,9 @@ const pageDescriptions = {
   }
 }
 
-export default function LegalPage({ pageKey }: LegalPageProps) {
+export default function LegalPage({ pageKey, legalSettings, contactSettings }: LegalPageProps) {
   const t = useTranslations('footer')
   const locale = useLocale() as 'it' | 'en'
-  const { settings: legalSettings } = useSiteSettings('legal')
-  const { settings: contactSettings } = useSiteSettings('contact')
 
   const title = pageTitles[pageKey][locale]
   const description = pageDescriptions[pageKey][locale]

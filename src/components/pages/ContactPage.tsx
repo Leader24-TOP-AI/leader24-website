@@ -2,19 +2,17 @@
 
 import { useState } from 'react'
 import { useTranslations, useLocale } from 'next-intl'
-import { useSiteSettings, useSectionContent, getLocalizedValue } from '@/hooks/useCMSContent'
+import { getLocalizedValue } from '@/lib/cms/types'
+import type { SiteSetting, SectionContent } from '@/lib/cms/types'
 
-export default function ContactPage() {
+interface ContactPageProps {
+  contactSettings: Record<string, SiteSetting>
+  sectionContent: Record<string, SectionContent>
+}
+
+export default function ContactPage({ contactSettings, sectionContent }: ContactPageProps) {
   const t = useTranslations('contact')
   const locale = useLocale()
-  const { settings: contactSettings } = useSiteSettings('contact')
-  const { content: sectionContent } = useSectionContent([
-    'contact_hero_title', 'contact_hero_desc',
-    'contact_form_title', 'contact_form_submit', 'contact_privacy',
-    'contact_testimonial_text', 'contact_testimonial_author', 'contact_testimonial_role',
-    'contact_placeholder_name', 'contact_placeholder_company',
-    'contact_placeholder_email', 'contact_placeholder_message'
-  ])
 
   const getCMS = (key: string, fallbackKey: string) => {
     return getLocalizedValue(sectionContent[key], 'content', locale) || t(fallbackKey)

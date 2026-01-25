@@ -4,13 +4,17 @@ import { useLocale, useTranslations } from 'next-intl'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
-import { useSectors, getLocalizedValue } from '@/hooks/useCMSContent'
+import { getLocalizedValue } from '@/lib/cms/types'
+import type { Sector } from '@/lib/cms/types'
 import { getIconComponent } from '@/lib/iconMap'
 
-export default function SectorPreview() {
+interface SectorPreviewProps {
+  sectors: Sector[]
+}
+
+export default function SectorPreview({ sectors }: SectorPreviewProps) {
   const t = useTranslations('home.sectorPreview')
   const locale = useLocale() as 'it' | 'en'
-  const { sectors, loading } = useSectors()
 
   // Get sector link based on locale
   const getSectorLink = (slug: string) =>
@@ -51,42 +55,34 @@ export default function SectorPreview() {
           </Link>
         </motion.div>
 
-        {loading ? (
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[...Array(4)].map((_, i) => (
-              <div key={i} className="p-8 rounded-2xl bg-gray-100 dark:bg-white/5 animate-pulse h-40" />
-            ))}
-          </div>
-        ) : (
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {displaySectors.map((sector, index) => {
-              const Icon = getIconComponent(sector.icon_name)
-              const title = getLocalizedValue(sector, 'title', locale)
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          {displaySectors.map((sector, index) => {
+            const Icon = getIconComponent(sector.icon_name)
+            const title = getLocalizedValue(sector, 'title', locale)
 
-              return (
-                <motion.div
-                  key={sector.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1, duration: 0.4 }}
+            return (
+              <motion.div
+                key={sector.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.4 }}
+              >
+                <Link
+                  href={getSectorLink(sector.slug)}
+                  className="group p-8 rounded-2xl bg-white dark:bg-white/5 hover:bg-gray-50 dark:hover:bg-white/10 border border-gray-300 dark:border-white/5 hover:border-primary/50 transition-all duration-300 flex flex-col items-center justify-center text-center hover:-translate-y-1 shadow-sm hover:shadow-lg hover:shadow-primary/10 h-full"
                 >
-                  <Link
-                    href={getSectorLink(sector.slug)}
-                    className="group p-8 rounded-2xl bg-white dark:bg-white/5 hover:bg-gray-50 dark:hover:bg-white/10 border border-gray-300 dark:border-white/5 hover:border-primary/50 transition-all duration-300 flex flex-col items-center justify-center text-center hover:-translate-y-1 shadow-sm hover:shadow-lg hover:shadow-primary/10 h-full"
-                  >
-                    <div className={`p-4 rounded-xl ${sector.color_bg || 'bg-primary/10'} mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                      <Icon className={`w-8 h-8 ${sector.color_text || 'text-primary'}`} />
-                    </div>
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-gray-900 dark:group-hover:text-white transition-colors">
-                      {title}
-                    </h3>
-                  </Link>
-                </motion.div>
-              )
-            })}
-          </div>
-        )}
+                  <div className={`p-4 rounded-xl ${sector.color_bg || 'bg-primary/10'} mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                    <Icon className={`w-8 h-8 ${sector.color_text || 'text-primary'}`} />
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-gray-900 dark:group-hover:text-white transition-colors">
+                    {title}
+                  </h3>
+                </Link>
+              </motion.div>
+            )
+          })}
+        </div>
 
         <div className="mt-10 text-center md:hidden">
           <Link

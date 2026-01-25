@@ -1,17 +1,21 @@
 'use client'
 
 import { useState } from 'react'
-import { ChevronDown, ChevronUp, Loader2 } from 'lucide-react'
+import { ChevronDown, ChevronUp } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useTranslations, useLocale } from 'next-intl'
-import { useFAQs, useSectionContent, getLocalizedValue } from '@/hooks/useCMSContent'
+import { getLocalizedValue } from '@/lib/cms/types'
+import type { FAQ as FAQType, SectionContent } from '@/lib/cms/types'
 
-const FAQ = () => {
+interface FAQProps {
+  faqs: FAQType[]
+  sectionContent: Record<string, SectionContent>
+}
+
+const FAQ = ({ faqs: dbFaqs, sectionContent }: FAQProps) => {
   const t = useTranslations('home.faq')
   const locale = useLocale()
   const [activeIndex, setActiveIndex] = useState<number | null>(null)
-  const { faqs: dbFaqs, loading } = useFAQs()
-  const { content: sectionContent } = useSectionContent(['faq_title', 'faq_subtitle'])
 
   // Use DB FAQs if available, otherwise use fallback i18n
   const faqs = dbFaqs.length > 0
@@ -33,14 +37,6 @@ const FAQ = () => {
 
   const toggleAccordion = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index)
-  }
-
-  if (loading) {
-    return (
-      <div className="py-24 bg-gray-50 dark:bg-dark-bg flex items-center justify-center">
-        <Loader2 className="w-8 h-8 text-primary animate-spin" />
-      </div>
-    )
   }
 
   return (

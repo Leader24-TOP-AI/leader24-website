@@ -8,17 +8,20 @@ import { usePathname } from 'next/navigation'
 import LocaleLink from './LocaleLink'
 import LanguageSwitcher from './LanguageSwitcher'
 import ThemeToggle from './ThemeToggle'
-import { useSiteSettings } from '@/hooks/useCMSContent'
 import { useNavbarContext } from '@/context/NavbarContext'
+import type { SiteSetting } from '@/lib/cms/types'
 
-const Navbar = () => {
+interface NavbarProps {
+  settings: Record<string, SiteSetting>
+}
+
+const Navbar = ({ settings: navbarSettings }: NavbarProps) => {
   const { forceDarkText } = useNavbarContext()
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const t = useTranslations()
   const locale = useLocale()
   const pathname = usePathname()
-  const { settings: navbarSettings } = useSiteSettings('navbar')
 
   // When on dark hero (forceDarkText) and not scrolled, use light text
   const shouldUseLightText = forceDarkText && !scrolled

@@ -1,19 +1,23 @@
 'use client'
 
-import { Clock, Zap, BarChart3, ShieldCheck, BookOpen, FileCheck, Loader2 } from 'lucide-react'
+import { Clock, Zap, BarChart3, ShieldCheck, BookOpen, FileCheck } from 'lucide-react'
 import { useTranslations, useLocale } from 'next-intl'
-import { useHomepageFeatures, useSectionContent, getLocalizedValue } from '@/hooks/useCMSContent'
+import { getLocalizedValue } from '@/lib/cms/types'
+import type { HomepageFeature, SectionContent } from '@/lib/cms/types'
 import type { LucideIcon } from 'lucide-react'
 
 const iconMap: Record<string, LucideIcon> = {
   Clock, Zap, BarChart3, ShieldCheck, BookOpen, FileCheck
 }
 
-const Features = () => {
+interface FeaturesProps {
+  features: HomepageFeature[]
+  sectionContent: Record<string, SectionContent>
+}
+
+const Features = ({ features: dbFeatures, sectionContent }: FeaturesProps) => {
   const t = useTranslations('home.features')
   const locale = useLocale()
-  const { features: dbFeatures, loading } = useHomepageFeatures()
-  const { content: sectionContent } = useSectionContent(['features_title', 'features_subtitle'])
 
   // Use DB features if available, otherwise use fallback i18n
   const features = dbFeatures.length > 0
@@ -34,14 +38,6 @@ const Features = () => {
   // Get title and subtitle from CMS or fallback to i18n
   const title = getLocalizedValue(sectionContent.features_title, 'content', locale) || t('title')
   const subtitle = getLocalizedValue(sectionContent.features_subtitle, 'content', locale) || t('subtitle')
-
-  if (loading) {
-    return (
-      <div className="py-20 lg:py-32 bg-gray-50 dark:bg-dark-bg flex items-center justify-center">
-        <Loader2 className="w-8 h-8 text-primary animate-spin" />
-      </div>
-    )
-  }
 
   return (
     <div id="features" className="py-20 lg:py-32 bg-gray-50 dark:bg-dark-bg relative overflow-hidden transition-colors duration-300">

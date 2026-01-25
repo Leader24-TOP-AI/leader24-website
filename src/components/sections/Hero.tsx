@@ -4,20 +4,25 @@ import { useState } from 'react'
 import { ArrowRight, CheckCircle2 } from 'lucide-react'
 import { useTranslations, useLocale } from 'next-intl'
 import { useTheme } from '@/context/ThemeContext'
-import { useSiteSettings } from '@/hooks/useCMSContent'
 import HeroChatRotator from './HeroChatRotator'
+import type { ChatScenario, SiteSetting } from '@/lib/cms/types'
 
-const defaultScenarios = [
-  { id: 'ecommerce' },
-  { id: 'hotel' },
-  { id: 'restaurant' }
-]
+interface HeroProps {
+  chatScenarios: ChatScenario[]
+  heroSettings: Record<string, SiteSetting>
+}
 
-const Hero = () => {
+const Hero = ({ chatScenarios, heroSettings }: HeroProps) => {
   const t = useTranslations('hero')
   const locale = useLocale()
   const { theme } = useTheme()
-  const { settings: urlSettings } = useSiteSettings('urls')
+
+  // Use scenarios from props, with fallback
+  const scenarios = chatScenarios.length > 0 ? chatScenarios : [
+    { id: 'ecommerce' },
+    { id: 'hotel' },
+    { id: 'restaurant' }
+  ]
 
   const [chatConfig, setChatConfig] = useState({
     selectedSectorId: 'ecommerce',
@@ -26,14 +31,14 @@ const Hero = () => {
   })
 
   // Video URLs from database with fallback
-  const darkVideo = urlSettings?.hero_video_dark?.value_it || "https://vz-0e0772bf-9fb.b-cdn.net/e5530b4c-71c1-43d7-b166-4ee9c827afc2/play_720p.mp4"
-  const lightVideo = urlSettings?.hero_video_light?.value_it || "https://vz-0e0772bf-9fb.b-cdn.net/75ce1227-684d-4df2-b651-0ac818788b9b/play_720p.mp4"
+  const darkVideo = heroSettings?.hero_video_dark?.value_it || "https://vz-0e0772bf-9fb.b-cdn.net/e5530b4c-71c1-43d7-b166-4ee9c827afc2/play_720p.mp4"
+  const lightVideo = heroSettings?.hero_video_light?.value_it || "https://vz-0e0772bf-9fb.b-cdn.net/75ce1227-684d-4df2-b651-0ac818788b9b/play_720p.mp4"
 
   const handleScenarioComplete = () => {
-    if (chatConfig.isAutoPlay && defaultScenarios.length > 0) {
-      const currentIndex = defaultScenarios.findIndex(s => s.id === chatConfig.selectedSectorId)
-      const nextIndex = (currentIndex + 1) % defaultScenarios.length
-      setChatConfig(prev => ({ ...prev, selectedSectorId: defaultScenarios[nextIndex].id }))
+    if (chatConfig.isAutoPlay && scenarios.length > 0) {
+      const currentIndex = scenarios.findIndex(s => s.id === chatConfig.selectedSectorId)
+      const nextIndex = (currentIndex + 1) % scenarios.length
+      setChatConfig(prev => ({ ...prev, selectedSectorId: scenarios[nextIndex].id }))
     }
   }
 
@@ -100,6 +105,7 @@ const Hero = () => {
         <div className="relative flex flex-col items-center gap-8">
           <div className="w-full max-w-md">
             <HeroChatRotator
+              scenarios={chatScenarios}
               selectedSectorId={chatConfig.selectedSectorId}
               speed={chatConfig.speed}
               isAutoPlay={chatConfig.isAutoPlay}

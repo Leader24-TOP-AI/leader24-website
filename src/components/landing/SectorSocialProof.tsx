@@ -3,8 +3,8 @@
 import { motion } from 'framer-motion'
 import { Quote } from 'lucide-react'
 import Image from 'next/image'
-import type { Sector } from '@/hooks/useCMSContent'
-import { getLocalizedValue } from '@/hooks/useCMSContent'
+import { getLocalizedValue } from '@/lib/cms/types'
+import type { Sector } from '@/lib/cms/types'
 
 interface SectorSocialProofProps {
   sector: Sector
@@ -12,13 +12,13 @@ interface SectorSocialProofProps {
 }
 
 export default function SectorSocialProof({ sector, locale }: SectorSocialProofProps) {
-  const statValue = sector?.social_proof_stat_value
-  const statSuffix = sector?.social_proof_stat_suffix || ''
+  const statValue = sector.social_proof_stat_value
+  const statSuffix = sector.social_proof_stat_suffix || ''
   const statLabel = getLocalizedValue(sector, 'social_proof_stat_label', locale)
   const testimonialQuote = getLocalizedValue(sector, 'testimonial_quote', locale)
-  const testimonialAuthor = sector?.testimonial_author
-  const testimonialCompany = sector?.testimonial_company
-  const testimonialImage = sector?.testimonial_image_url
+  const testimonialAuthor = sector.testimonial_author
+  const testimonialCompany = sector.testimonial_company
+  const testimonialImage = sector.testimonial_image_url
 
   // Don't render if no social proof content
   const hasStats = statValue && statLabel

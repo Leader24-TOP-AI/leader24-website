@@ -4,11 +4,11 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Send } from 'lucide-react'
 import { useTranslations, useLocale } from 'next-intl'
-import { useChatScenarios } from '@/hooks/useCMSContent'
 import { getIconComponent } from '@/lib/iconMap'
+import type { ChatScenario } from '@/lib/cms/types'
 
-// Fallback scenarios (used while loading from DB)
-const defaultScenarios = [
+// Fallback scenarios (used if DB is empty)
+const defaultScenarios: ChatScenario[] = [
   {
     id: 'ecommerce',
     sector_key: 'ecommerce',
@@ -21,8 +21,12 @@ const defaultScenarios = [
     user_message_en: 'Hi, I would like to know if you have size M available for the blue jacket',
     ai_message_it: "Ciao! Sì, la giacca blu è disponibile in taglia M. Vuoi che ti invii il link per l'acquisto?",
     ai_message_en: 'Hello! Yes, the blue jacket is available in size M. Would you like me to send you the purchase link?',
+    options_it: [],
+    options_en: [],
     stat_it: 'Risposta istantanea',
-    stat_en: 'Instant response'
+    stat_en: 'Instant response',
+    is_active: true,
+    display_order: 1
   },
   {
     id: 'hotel',
@@ -36,8 +40,12 @@ const defaultScenarios = [
     user_message_en: 'I would like to book a double room for the weekend of March 15',
     ai_message_it: 'Perfetto! Abbiamo disponibilità per il 15-16 marzo. Camera doppia con colazione a €120/notte. Procedo con la prenotazione?',
     ai_message_en: 'Perfect! We have availability for March 15-16. Double room with breakfast at €120/night. Shall I proceed with the booking?',
+    options_it: [],
+    options_en: [],
     stat_it: 'Prenotazioni 24/7',
-    stat_en: 'Bookings 24/7'
+    stat_en: 'Bookings 24/7',
+    is_active: true,
+    display_order: 2
   },
   {
     id: 'restaurant',
@@ -51,12 +59,17 @@ const defaultScenarios = [
     user_message_en: 'Table for 4 people tonight at 8:30 PM, is it possible?',
     ai_message_it: 'Buongiorno! Sì, abbiamo disponibilità per 4 persone alle 20:30. A che nome devo registrare la prenotazione?',
     ai_message_en: 'Good morning! Yes, we have availability for 4 people at 8:30 PM. What name should I register the reservation under?',
+    options_it: [],
+    options_en: [],
     stat_it: 'Conferma immediata',
-    stat_en: 'Instant confirmation'
+    stat_en: 'Instant confirmation',
+    is_active: true,
+    display_order: 3
   }
 ]
 
 interface HeroChatRotatorProps {
+  scenarios?: ChatScenario[]
   selectedSectorId: string
   speed?: number
   isAutoPlay?: boolean
@@ -64,17 +77,17 @@ interface HeroChatRotatorProps {
 }
 
 const HeroChatRotator = ({
+  scenarios: propScenarios = [],
   selectedSectorId,
   speed = 1,
   isAutoPlay = true,
   onScenarioComplete
 }: HeroChatRotatorProps) => {
-  const { scenarios: dbScenarios } = useChatScenarios()
   const t = useTranslations('hero.chat')
   const locale = useLocale()
 
-  // Use DB scenarios if loaded, otherwise fallback to defaults
-  const scenarios = dbScenarios.length > 0 ? dbScenarios : defaultScenarios
+  // Use prop scenarios if available, otherwise fallback to defaults
+  const scenarios = propScenarios.length > 0 ? propScenarios : defaultScenarios
   const [step, setStep] = useState(0)
   const [displayedMessages, setDisplayedMessages] = useState<Array<{ role: string; content: string }>>([])
 
