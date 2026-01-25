@@ -88,7 +88,7 @@
                 },
                 "2": {
                     "title": "Collega WhatsApp",
-                    "desc": "Scansiona il QR code e collega il tuo numero WhatsApp Business in pochi secondi."
+                    "desc": "Scansiona il QR code e collega il tuo numero WhatsApp Business in poco tempo."
                 },
                 "3": {
                     "title": "Vai Live",
@@ -170,24 +170,19 @@
             "placeholder": "Scrivi un messaggio...",
             "scenarios": {
                 "ecommerce": {
-                    "user_message": "Dov'è il mio pacco?",
-                    "ai_message": "Ciao! 👋 Il tuo ordine #123 è in consegna oggi entro le 18:00. Vuoi lasciare istruzioni per il corriere?",
-                    "stat": "Risposta 24/7",
-                    "options": [
-                        "Lascia al vicino",
-                        "Chiama prima",
-                        "Nessuna istruzione"
-                    ]
+                    "user_message": "Ciao, vorrei sapere se avete la taglia M disponibile per la giacca blu",
+                    "ai_message": "Ciao! La giacca blu è disponibile in taglia M secondo il nostro catalogo. Posso aiutarti con altro?",
+                    "stat": "Risposta istantanea"
                 },
-                "realestate": {
-                    "user_message": "Vorrei visitare l'appartamento in centro.",
-                    "ai_message": "Certamente! Ho disponibilità domani alle 10:00 o alle 15:00. Quale preferisci?",
-                    "stat": "Disponibile 24/7",
-                    "options": [
-                        "Domani 10:00",
-                        "Domani 15:00",
-                        "Altra data"
-                    ]
+                "immobiliare": {
+                    "user_message": "Buongiorno, cerco un appartamento in centro con 2 camere da letto",
+                    "ai_message": "Ciao! Raccolgo le tue preferenze: budget indicativo, zona preferita e tempistiche? Ti invieremo gli immobili più adatti.",
+                    "stat": "Raccolta info 24/7"
+                },
+                "automotive": {
+                    "user_message": "Ciao, vorrei informazioni sulla Fiat 500 elettrica che avete in esposizione",
+                    "ai_message": "Ciao! La Fiat 500 elettrica ha autonomia di 320km e prezzo da €29.900. Vuoi che raccolga i tuoi dati per un test drive?",
+                    "stat": "Info veicoli 24/7"
                 }
             }
         }
@@ -199,15 +194,15 @@
         "items": {
             "ecommerce": {
                 "title": "E-commerce",
-                "desc": "Rispondi a domande su prodotti, spedizioni e disponibilità in tempo reale 24/7."
+                "desc": "Rispondi a domande su prodotti, spedizioni e disponibilità dalla tua knowledge base, 24/7."
             },
             "realestate": {
                 "title": "Immobiliare",
-                "desc": "Qualifica i potenziali acquirenti, raccogli preferenze su budget e zona, e organizza richieste di visita 24/7."
+                "desc": "Raccogli informazioni dai potenziali acquirenti (budget, zona, preferenze) e richieste di visita 24/7."
             },
             "automotive": {
                 "title": "Automotive",
-                "desc": "Raccogli richieste di test drive, rispondi a domande sui veicoli e qualifica i potenziali acquirenti 24/7."
+                "desc": "Raccogli richieste di test drive, rispondi a domande sui veicoli e raccogli informazioni dai potenziali acquirenti 24/7."
             },
             "restaurant": {
                 "title": "Ristorazione",
@@ -219,11 +214,11 @@
             },
             "construction": {
                 "title": "Edilizia",
-                "desc": "Fornisci preventivi rapidi, raccogli richieste di sopralluogo e rispondi a domande sui lavori."
+                "desc": "Raccogli richieste di preventivo e sopralluogo, rispondi a domande sui lavori 24/7."
             },
             "logistics": {
                 "title": "Trasporto Merci",
-                "desc": "Tracking spedizioni in tempo reale, raccolta richieste ritiro e assistenza logistica automatizzata."
+                "desc": "Raccogli richieste info spedizioni, richieste ritiro e fornisci assistenza logistica 24/7."
             },
             "professional": {
                 "title": "Servizi Professionali",
@@ -259,7 +254,7 @@
             },
             "it": {
                 "title": "Servizi Informatici",
-                "desc": "Helpdesk di primo livello, apertura ticket automatica e risoluzione problemi comuni."
+                "desc": "Helpdesk di primo livello, raccogli segnalazioni per il team tecnico e rispondi a domande comuni."
             },
             "creative": {
                 "title": "Attività Creative",

@@ -88,7 +88,7 @@
                 },
                 "2": {
                     "title": "Connect WhatsApp",
-                    "desc": "Scan the QR code and connect your WhatsApp Business number in seconds."
+                    "desc": "Scan the QR code and connect your WhatsApp Business number quickly."
                 },
                 "3": {
                     "title": "Go Live",
@@ -355,24 +355,19 @@
             "placeholder": "Write a message...",
             "scenarios": {
                 "ecommerce": {
-                    "user_message": "Where is my package?",
-                    "ai_message": "Hi! 👋 Your order #123 is out for delivery today by 6:00 PM. Do you want to leave instructions for the courier?",
-                    "stat": "24/7 Response",
-                    "options": [
-                        "Leave with neighbor",
-                        "Call first",
-                        "No instructions"
-                    ]
+                    "user_message": "Hi, I would like to know if you have size M available for the blue jacket",
+                    "ai_message": "Hi! The blue jacket is available in size M according to our catalog. Can I help you with anything else?",
+                    "stat": "Instant response"
                 },
-                "realestate": {
-                    "user_message": "I'd like to visit the downtown apartment.",
-                    "ai_message": "Sure! I have availability tomorrow at 10:00 AM or 3:00 PM. Which one do you prefer?",
-                    "stat": "Available 24/7",
-                    "options": [
-                        "Tomorrow 10:00 AM",
-                        "Tomorrow 3:00 PM",
-                        "Other date"
-                    ]
+                "immobiliare": {
+                    "user_message": "Hello, I am looking for a 2-bedroom apartment in the city center",
+                    "ai_message": "Hi! Let me collect your preferences: approximate budget, preferred area, and timeline? We will send you the most suitable properties.",
+                    "stat": "Info collection 24/7"
+                },
+                "automotive": {
+                    "user_message": "Hi, I would like information about the electric Fiat 500 you have on display",
+                    "ai_message": "Hi! The electric Fiat 500 has a 320km range and starts at €29,900. Would you like me to collect your details for a test drive?",
+                    "stat": "Vehicle info 24/7"
                 }
             }
         }
@@ -384,15 +379,15 @@
         "items": {
             "ecommerce": {
                 "title": "E-commerce",
-                "desc": "Answer questions about products, shipping, and availability in real-time 24/7."
+                "desc": "Answer questions about products, shipping, and availability from your knowledge base, 24/7."
             },
             "realestate": {
                 "title": "Real Estate",
-                "desc": "Qualify potential buyers, collect budget and area preferences, and organize visit requests 24/7."
+                "desc": "Collect information from potential buyers (budget, area, preferences) and viewing requests 24/7."
             },
             "automotive": {
                 "title": "Automotive",
-                "desc": "Collect test drive requests, answer vehicle questions, and qualify potential buyers 24/7."
+                "desc": "Collect test drive requests, answer vehicle questions, and collect information from potential buyers 24/7."
             },
             "restaurant": {
                 "title": "Restaurants",
@@ -404,11 +399,11 @@
             },
             "construction": {
                 "title": "Construction",
-                "desc": "Provide quick quotes, collect site visit requests, and answer questions about projects."
+                "desc": "Collect quote and site visit requests, answer questions about projects 24/7."
             },
             "logistics": {
                 "title": "Logistics",
-                "desc": "Real-time shipment tracking, collect pickup requests, and automated logistics assistance."
+                "desc": "Collect shipment info requests, pickup requests, and provide logistics assistance 24/7."
             },
             "professional": {
                 "title": "Professional Services",
@@ -444,7 +439,7 @@
             },
             "it": {
                 "title": "IT Services",
-                "desc": "First-level helpdesk, automated ticket opening, and resolution of common problems."
+                "desc": "First-level helpdesk, collect reports for the technical team, and answer common questions."
             },
             "creative": {
                 "title": "Creative Services",
