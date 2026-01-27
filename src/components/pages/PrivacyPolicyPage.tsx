@@ -14,7 +14,7 @@ const PrivacyPolicyPage = () => {
 
       <div className="space-y-8 text-gray-600 dark:text-gray-300 leading-relaxed">
         {/* Section 1 */}
-        <section className="glass-card p-8">
+        <section className="bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-2xl p-8">
           <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
             {isItalian ? '1. Titolare del Trattamento' : '1. Data Controller'}
           </h2>
@@ -37,7 +37,7 @@ const PrivacyPolicyPage = () => {
         </section>
 
         {/* Section 2 */}
-        <section className="glass-card p-8">
+        <section className="bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-2xl p-8">
           <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
             {isItalian ? '2. Dati Personali Raccolti' : '2. Personal Data Collected'}
           </h2>
@@ -84,7 +84,7 @@ const PrivacyPolicyPage = () => {
         </section>
 
         {/* Section 3 */}
-        <section className="glass-card p-8">
+        <section className="bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-2xl p-8">
           <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
             {isItalian ? '3. Finalità e Base Giuridica del Trattamento' : '3. Purposes and Legal Basis for Processing'}
           </h2>
@@ -169,7 +169,7 @@ const PrivacyPolicyPage = () => {
         </section>
 
         {/* Section 4 */}
-        <section className="glass-card p-8">
+        <section className="bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-2xl p-8">
           <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
             {isItalian ? '4. Servizi di Terze Parti' : '4. Third-Party Services'}
           </h2>
@@ -195,7 +195,7 @@ const PrivacyPolicyPage = () => {
         </section>
 
         {/* Section 5 */}
-        <section className="glass-card p-8">
+        <section className="bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-2xl p-8">
           <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
             {isItalian ? '5. Cookie e Tecnologie di Tracciamento' : '5. Cookies and Tracking Technologies'}
           </h2>
@@ -234,7 +234,7 @@ const PrivacyPolicyPage = () => {
         </section>
 
         {/* Section 6 */}
-        <section className="glass-card p-8">
+        <section className="bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-2xl p-8">
           <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
             {isItalian ? '6. Conservazione dei Dati' : '6. Data Retention'}
           </h2>
@@ -273,7 +273,7 @@ const PrivacyPolicyPage = () => {
         </section>
 
         {/* Section 7 */}
-        <section className="glass-card p-8">
+        <section className="bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-2xl p-8">
           <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
             {isItalian ? '7. Trasferimento dei Dati' : '7. Data Transfers'}
           </h2>
@@ -297,7 +297,7 @@ const PrivacyPolicyPage = () => {
         </section>
 
         {/* Section 8 */}
-        <section className="glass-card p-8">
+        <section className="bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-2xl p-8">
           <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
             {isItalian ? '8. Diritti dell\'Interessato' : '8. Data Subject Rights'}
           </h2>
@@ -366,7 +366,7 @@ const PrivacyPolicyPage = () => {
         </section>
 
         {/* Section 9 */}
-        <section className="glass-card p-8">
+        <section className="bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-2xl p-8">
           <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
             {isItalian ? '9. Sicurezza dei Dati' : '9. Data Security'}
           </h2>
@@ -387,7 +387,7 @@ const PrivacyPolicyPage = () => {
         </section>
 
         {/* Section 10 */}
-        <section className="glass-card p-8">
+        <section className="bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-2xl p-8">
           <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
             {isItalian ? '10. Requisiti di Età' : '10. Age Requirements'}
           </h2>
@@ -399,7 +399,7 @@ const PrivacyPolicyPage = () => {
         </section>
 
         {/* Section 11 */}
-        <section className="glass-card p-8">
+        <section className="bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-2xl p-8">
           <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
             {isItalian ? '11. Modifiche alla Privacy Policy' : '11. Changes to the Privacy Policy'}
           </h2>
@@ -416,7 +416,7 @@ const PrivacyPolicyPage = () => {
         </section>
 
         {/* Section 12 - Contatti */}
-        <section className="glass-card p-8">
+        <section className="bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-2xl p-8">
           <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
             {isItalian ? '12. Contatti' : '12. Contact Us'}
           </h2>
