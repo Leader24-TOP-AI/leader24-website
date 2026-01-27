@@ -192,13 +192,20 @@ const TermsOfServicePage = () => {
           </h2>
           <p className="mb-4">
             {isItalian
-              ? 'Il Servizio può interfacciarsi con prodotti, servizi o applicazioni di terze parti che non sono di proprietà o controllati da Leader24 ("Servizi di Terze Parti").'
-              : 'The Service may interface with third-party products, services, or applications that are not owned or controlled by Leader24 ("Third-Party Services").'}
+              ? 'Il Servizio si integra con prodotti, servizi o applicazioni di terze parti che non sono di proprietà o controllati da Leader24 ("Servizi di Terze Parti"). Questi includono:'
+              : 'The Service integrates with third-party products, services, or applications that are not owned or controlled by Leader24 ("Third-Party Services"). These include:'}
           </p>
+          <ul className="list-disc pl-6 space-y-1 mb-4">
+            <li><strong>Stripe, Inc.</strong> - {isItalian ? 'Elaborazione pagamenti' : 'Payment processing'}</li>
+            <li><strong>Google Analytics (Google LLC)</strong> - {isItalian ? 'Analisi del traffico web' : 'Web traffic analytics'}</li>
+            <li><strong>Meta Platforms, Inc.</strong> - {isItalian ? 'Remarketing pubblicitario (Facebook Pixel)' : 'Advertising remarketing (Facebook Pixel)'}</li>
+            <li><strong>Supabase, Inc.</strong> - {isItalian ? 'Database e autenticazione' : 'Database and authentication'}</li>
+            <li><strong>WhatsApp Business API (Meta Platforms, Inc.)</strong> - {isItalian ? 'Integrazione messaggistica' : 'Messaging integration'}</li>
+          </ul>
           <p className="mb-4">
             {isItalian
-              ? 'Quando integri Servizi di Terze Parti, potresti dover fornire credenziali di accesso a Leader24 esclusivamente per l\'erogazione del Servizio. Dichiari di avere l\'autorità per condividere tali informazioni senza violare i termini di terze parti.'
-              : 'When integrating Third-Party Services, you may need to provide login credentials to Leader24 solely for service delivery purposes. You represent that you have the authority to share such information without violating third-party terms.'}
+              ? 'Quando utilizzi funzionalità che coinvolgono Servizi di Terze Parti, potresti dover accettare i loro termini separati. Dichiari di avere l\'autorità per utilizzare tali servizi.'
+              : 'When using features involving Third-Party Services, you may need to accept their separate terms. You represent that you have the authority to use such services.'}
           </p>
           <div className="bg-gray-100 dark:bg-gray-800/50 rounded-lg p-4">
             <p className="text-sm text-gray-700 dark:text-gray-300">
