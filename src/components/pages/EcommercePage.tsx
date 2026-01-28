@@ -10,7 +10,7 @@ export default function EcommercePage() {
   const t = useTranslations('ecommerce')
   const locale = useLocale()
 
-  const contactLink = locale === 'en' ? '/en/contact' : '/it/contatti'
+  const contactLink = `/${locale}/contact`
 
   return (
     <div className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">

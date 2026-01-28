@@ -8,7 +8,7 @@ import {
     HelpCircle, ImageIcon, Upload
 } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
-import { translateText, translateChangedFields, hasArrayChanged } from '@/services/deeplService'
+import { translateText, translateToAllLanguages, translateChangedFieldsMultiLang, translateArrayToAllLanguages, hasArrayChanged } from '@/services/deeplService'
 import ConfirmModal from '@/components/admin/ConfirmModal'
 import IconPicker, { getIconComponent } from '@/components/admin/IconPicker'
 import ColorPicker from '@/components/admin/ColorPicker'
@@ -250,19 +250,19 @@ export default function SectorsPage() {
         }
         setSavingFaq(true)
         try {
-            const [question_en, answer_en] = await Promise.all([translateText(faqForm.question_it), translateText(faqForm.answer_it)])
+            const [qTrans, aTrans] = await Promise.all([translateToAllLanguages(faqForm.question_it), translateToAllLanguages(faqForm.answer_it)])
             const maxOrder = sectorFaqs.length > 0 ? Math.max(...sectorFaqs.map(f => f.display_order || 0)) : 199
             const { error } = await supabase.from('faqs').insert({
-                question_it: faqForm.question_it, question_en,
-                answer_it: faqForm.answer_it, answer_en,
-                sector_slug: sectorSlug, display_order: maxOrder + 1,
-                is_active: true, auto_translated_en: true
+                question_it: faqForm.question_it, question_en: qTrans.en, question_es: qTrans.es, question_fr: qTrans.fr, question_de: qTrans.de,
+                answer_it: faqForm.answer_it, answer_en: aTrans.en, answer_es: aTrans.es, answer_fr: aTrans.fr, answer_de: aTrans.de,
+                sector_slug: sectorSlug, display_order: maxOrder + 1, is_active: true,
+                auto_translated_en: true, auto_translated_es: true, auto_translated_fr: true, auto_translated_de: true
             })
             if (error) throw error
             await fetchSectorFaqs(sectorSlug)
             setShowFaqModal(false)
             setFaqForm({ question_it: '', answer_it: '' })
-            setSuccess('FAQ creata!')
+            setSuccess('FAQ creata (5 lingue)!')
             setTimeout(() => setSuccess(''), 2000)
         } catch (err: unknown) {
             setError(err instanceof Error ? err.message : 'Errore')
@@ -274,17 +274,18 @@ export default function SectorsPage() {
     const handleUpdateFaq = async (faqId: string, sectorSlug: string) => {
         setSavingFaq(true)
         try {
-            const [question_en, answer_en] = await Promise.all([translateText(faqForm.question_it), translateText(faqForm.answer_it)])
+            const [qTrans, aTrans] = await Promise.all([translateToAllLanguages(faqForm.question_it), translateToAllLanguages(faqForm.answer_it)])
             const { error } = await supabase.from('faqs').update({
-                question_it: faqForm.question_it, question_en,
-                answer_it: faqForm.answer_it, answer_en,
-                auto_translated_en: true, updated_at: new Date().toISOString()
+                question_it: faqForm.question_it, question_en: qTrans.en, question_es: qTrans.es, question_fr: qTrans.fr, question_de: qTrans.de,
+                answer_it: faqForm.answer_it, answer_en: aTrans.en, answer_es: aTrans.es, answer_fr: aTrans.fr, answer_de: aTrans.de,
+                auto_translated_en: true, auto_translated_es: true, auto_translated_fr: true, auto_translated_de: true,
+                updated_at: new Date().toISOString()
             }).eq('id', faqId)
             if (error) throw error
             await fetchSectorFaqs(sectorSlug)
             setEditingFaqId(null)
             setFaqForm({ question_it: '', answer_it: '' })
-            setSuccess('FAQ aggiornata!')
+            setSuccess('FAQ aggiornata (5 lingue)!')
             setTimeout(() => setSuccess(''), 2000)
         } catch (err: unknown) {
             setError(err instanceof Error ? err.message : 'Errore')
@@ -351,7 +352,8 @@ export default function SectorsPage() {
                 is_active: editForm.is_active, updated_at: new Date().toISOString()
             }
 
-            const translations = await translateChangedFields(editForm as Record<string, unknown>, originalValues as Record<string, unknown>, [
+            // Traduce SOLO i campi testuali modificati in TUTTE le lingue (EN, ES, FR, DE)
+            const translations = await translateChangedFieldsMultiLang(editForm as Record<string, unknown>, originalValues as Record<string, unknown>, [
                 'title_it', 'description_it', 'hero_title_it', 'hero_subtitle_it', 'hero_cta_text_it',
                 'usecases_title_it', 'social_proof_stat_label_it', 'testimonial_quote_it',
                 'final_cta_title_it', 'final_cta_subtitle_it', 'seo_title_it', 'seo_description_it'
@@ -359,25 +361,47 @@ export default function SectorsPage() {
 
             const usecasesChanged = hasArrayChanged(editForm.usecases_it || [], originalValues.usecases_it || [])
             if (usecasesChanged) {
-                updateData.usecases_en = await Promise.all((editForm.usecases_it || []).filter(u => u.title?.trim()).map(async (u) => ({
-                    icon: u.icon, title: await translateText(u.title || ''), description: await translateText(u.description || '')
-                })))
+                const filteredUsecases = (editForm.usecases_it || []).filter(u => u.title?.trim())
+                // Traduce use cases in tutte le lingue
+                const usecasesTranslations = await Promise.all(filteredUsecases.map(async (u) => {
+                    const [titleTrans, descTrans] = await Promise.all([
+                        translateToAllLanguages(u.title || ''),
+                        translateToAllLanguages(u.description || '')
+                    ])
+                    return { icon: u.icon, titleTrans, descTrans }
+                }))
+                updateData.usecases_en = usecasesTranslations.map(t => ({ icon: t.icon, title: t.titleTrans.en, description: t.descTrans.en }))
+                updateData.usecases_es = usecasesTranslations.map(t => ({ icon: t.icon, title: t.titleTrans.es, description: t.descTrans.es }))
+                updateData.usecases_fr = usecasesTranslations.map(t => ({ icon: t.icon, title: t.titleTrans.fr, description: t.descTrans.fr }))
+                updateData.usecases_de = usecasesTranslations.map(t => ({ icon: t.icon, title: t.titleTrans.de, description: t.descTrans.de }))
             }
 
             const keywordsChanged = hasArrayChanged(editForm.seo_keywords_it || [], originalValues.seo_keywords_it || [])
             if (keywordsChanged) {
-                updateData.seo_keywords_en = await Promise.all((editForm.seo_keywords_it || []).filter(k => k?.trim()).map(k => translateText(k)))
+                const filteredKeywords = (editForm.seo_keywords_it || []).filter(k => k?.trim())
+                const keywordsTrans = await translateArrayToAllLanguages(filteredKeywords)
+                updateData.seo_keywords_en = keywordsTrans.en
+                updateData.seo_keywords_es = keywordsTrans.es
+                updateData.seo_keywords_fr = keywordsTrans.fr
+                updateData.seo_keywords_de = keywordsTrans.de
             }
 
             const hasTranslations = Object.keys(translations).length > 0 || usecasesChanged || keywordsChanged
-            if (hasTranslations) { setSuccess('Traduzione automatica in corso...'); Object.assign(updateData, translations); updateData.auto_translated_en = true }
+            if (hasTranslations) {
+                setSuccess('Traduzione automatica in corso (EN, ES, FR, DE)...')
+                Object.assign(updateData, translations)
+                updateData.auto_translated_en = true
+                updateData.auto_translated_es = true
+                updateData.auto_translated_fr = true
+                updateData.auto_translated_de = true
+            }
 
             const { error } = await supabase.from('sectors').update(updateData).eq('id', editingId)
             if (error) throw error
             await fetchSectors()
             setEditingId(null)
             setOriginalValues({})
-            setSuccess(hasTranslations ? 'Salvato con traduzione automatica!' : 'Salvato!')
+            setSuccess(hasTranslations ? 'Salvato con traduzione automatica (5 lingue)!' : 'Salvato!')
             setTimeout(() => setSuccess(''), 3000)
         } catch (err: unknown) {
             setError(err instanceof Error ? err.message : 'Errore nel salvataggio')
@@ -404,58 +428,73 @@ export default function SectorsPage() {
     const handleCreateSubmit = async () => {
         if (!createForm.slug.trim() || !createForm.title_it.trim()) { setError('Compila almeno slug e titolo'); return }
         setSaving(true)
-        setSuccess('Creazione e traduzione in corso...')
+        setSuccess('Creazione e traduzione in corso (EN, ES, FR, DE)...')
         try {
-            const [title_en, description_en, hero_title_en, hero_subtitle_en, hero_cta_text_en, usecases_title_en,
-                social_proof_stat_label_en, testimonial_quote_en, final_cta_title_en, final_cta_subtitle_en, seo_title_en, seo_description_en
+            // Traduce tutti i campi testuali in tutte le lingue
+            const [titleTrans, descTrans, heroTitleTrans, heroSubtitleTrans, heroCtaTrans, usecasesTitleTrans,
+                statLabelTrans, testimonialTrans, finalCtaTitleTrans, finalCtaSubtitleTrans, seoTitleTrans, seoDescTrans
             ] = await Promise.all([
-                translateText(createForm.title_it), translateText(createForm.description_it || ''),
-                translateText(createForm.hero_title_it || ''), translateText(createForm.hero_subtitle_it || ''),
-                translateText(createForm.hero_cta_text_it || 'Prova Gratis'), translateText(createForm.usecases_title_it || ''),
-                translateText(createForm.social_proof_stat_label_it || ''), translateText(createForm.testimonial_quote_it || ''),
-                translateText(createForm.final_cta_title_it || ''), translateText(createForm.final_cta_subtitle_it || ''),
-                translateText(createForm.seo_title_it || ''), translateText(createForm.seo_description_it || '')
+                translateToAllLanguages(createForm.title_it), translateToAllLanguages(createForm.description_it || ''),
+                translateToAllLanguages(createForm.hero_title_it || ''), translateToAllLanguages(createForm.hero_subtitle_it || ''),
+                translateToAllLanguages(createForm.hero_cta_text_it || 'Prova Gratis'), translateToAllLanguages(createForm.usecases_title_it || ''),
+                translateToAllLanguages(createForm.social_proof_stat_label_it || ''), translateToAllLanguages(createForm.testimonial_quote_it || ''),
+                translateToAllLanguages(createForm.final_cta_title_it || ''), translateToAllLanguages(createForm.final_cta_subtitle_it || ''),
+                translateToAllLanguages(createForm.seo_title_it || ''), translateToAllLanguages(createForm.seo_description_it || '')
             ])
 
-            const usecases_en = await Promise.all((createForm.usecases_it || []).filter(u => u.title?.trim()).map(async (u) => ({
-                icon: u.icon, title: await translateText(u.title || ''), description: await translateText(u.description || '')
-            })))
-            const seo_keywords_en = await Promise.all((createForm.seo_keywords_it || []).filter(k => k?.trim()).map(k => translateText(k)))
+            // Traduce use cases in tutte le lingue
+            const filteredUsecases = (createForm.usecases_it || []).filter(u => u.title?.trim())
+            const usecasesTranslations = await Promise.all(filteredUsecases.map(async (u) => {
+                const [tTrans, dTrans] = await Promise.all([translateToAllLanguages(u.title || ''), translateToAllLanguages(u.description || '')])
+                return { icon: u.icon, titleTrans: tTrans, descTrans: dTrans }
+            }))
+            const usecases_en = usecasesTranslations.map(t => ({ icon: t.icon, title: t.titleTrans.en, description: t.descTrans.en }))
+            const usecases_es = usecasesTranslations.map(t => ({ icon: t.icon, title: t.titleTrans.es, description: t.descTrans.es }))
+            const usecases_fr = usecasesTranslations.map(t => ({ icon: t.icon, title: t.titleTrans.fr, description: t.descTrans.fr }))
+            const usecases_de = usecasesTranslations.map(t => ({ icon: t.icon, title: t.titleTrans.de, description: t.descTrans.de }))
+
+            // Traduce keywords in tutte le lingue
+            const filteredKeywords = (createForm.seo_keywords_it || []).filter(k => k?.trim())
+            const keywordsTrans = await translateArrayToAllLanguages(filteredKeywords)
 
             const maxOrder = sectors.length > 0 ? Math.max(...sectors.map(s => s.display_order || 0)) : -1
 
             const { error } = await supabase.from('sectors').insert({
                 slug: createForm.slug.toLowerCase().replace(/\s+/g, '-'),
                 icon_name: createForm.icon_name, color_bg: createForm.color_bg, color_text: createForm.color_text,
-                title_it: createForm.title_it, title_en, description_it: createForm.description_it, description_en,
-                hero_title_it: createForm.hero_title_it, hero_title_en,
-                hero_subtitle_it: createForm.hero_subtitle_it, hero_subtitle_en,
-                hero_cta_text_it: createForm.hero_cta_text_it, hero_cta_text_en,
+                title_it: createForm.title_it, title_en: titleTrans.en, title_es: titleTrans.es, title_fr: titleTrans.fr, title_de: titleTrans.de,
+                description_it: createForm.description_it, description_en: descTrans.en, description_es: descTrans.es, description_fr: descTrans.fr, description_de: descTrans.de,
+                hero_title_it: createForm.hero_title_it, hero_title_en: heroTitleTrans.en, hero_title_es: heroTitleTrans.es, hero_title_fr: heroTitleTrans.fr, hero_title_de: heroTitleTrans.de,
+                hero_subtitle_it: createForm.hero_subtitle_it, hero_subtitle_en: heroSubtitleTrans.en, hero_subtitle_es: heroSubtitleTrans.es, hero_subtitle_fr: heroSubtitleTrans.fr, hero_subtitle_de: heroSubtitleTrans.de,
+                hero_cta_text_it: createForm.hero_cta_text_it, hero_cta_text_en: heroCtaTrans.en, hero_cta_text_es: heroCtaTrans.es, hero_cta_text_fr: heroCtaTrans.fr, hero_cta_text_de: heroCtaTrans.de,
                 hero_cta_url: createForm.hero_cta_url?.trim() || null, hero_background_url: createForm.hero_background_url?.trim() || null,
-                usecases_title_it: createForm.usecases_title_it, usecases_title_en,
-                usecases_it: (createForm.usecases_it || []).filter(u => u.title?.trim()), usecases_en,
+                usecases_title_it: createForm.usecases_title_it, usecases_title_en: usecasesTitleTrans.en, usecases_title_es: usecasesTitleTrans.es, usecases_title_fr: usecasesTitleTrans.fr, usecases_title_de: usecasesTitleTrans.de,
+                usecases_it: filteredUsecases, usecases_en, usecases_es, usecases_fr, usecases_de,
                 social_proof_stat_value: createForm.social_proof_stat_value, social_proof_stat_suffix: createForm.social_proof_stat_suffix,
-                social_proof_stat_label_it: createForm.social_proof_stat_label_it, social_proof_stat_label_en,
-                testimonial_quote_it: createForm.testimonial_quote_it, testimonial_quote_en,
+                social_proof_stat_label_it: createForm.social_proof_stat_label_it, social_proof_stat_label_en: statLabelTrans.en, social_proof_stat_label_es: statLabelTrans.es, social_proof_stat_label_fr: statLabelTrans.fr, social_proof_stat_label_de: statLabelTrans.de,
+                testimonial_quote_it: createForm.testimonial_quote_it, testimonial_quote_en: testimonialTrans.en, testimonial_quote_es: testimonialTrans.es, testimonial_quote_fr: testimonialTrans.fr, testimonial_quote_de: testimonialTrans.de,
                 testimonial_author: createForm.testimonial_author, testimonial_company: createForm.testimonial_company,
-                final_cta_title_it: createForm.final_cta_title_it, final_cta_title_en,
-                final_cta_subtitle_it: createForm.final_cta_subtitle_it, final_cta_subtitle_en,
-                seo_title_it: createForm.seo_title_it, seo_title_en,
-                seo_description_it: createForm.seo_description_it, seo_description_en,
-                seo_keywords_it: createForm.seo_keywords_it?.filter(k => k?.trim()) || [], seo_keywords_en,
-                display_order: maxOrder + 1, is_active: true, auto_translated_en: true
+                final_cta_title_it: createForm.final_cta_title_it, final_cta_title_en: finalCtaTitleTrans.en, final_cta_title_es: finalCtaTitleTrans.es, final_cta_title_fr: finalCtaTitleTrans.fr, final_cta_title_de: finalCtaTitleTrans.de,
+                final_cta_subtitle_it: createForm.final_cta_subtitle_it, final_cta_subtitle_en: finalCtaSubtitleTrans.en, final_cta_subtitle_es: finalCtaSubtitleTrans.es, final_cta_subtitle_fr: finalCtaSubtitleTrans.fr, final_cta_subtitle_de: finalCtaSubtitleTrans.de,
+                seo_title_it: createForm.seo_title_it, seo_title_en: seoTitleTrans.en, seo_title_es: seoTitleTrans.es, seo_title_fr: seoTitleTrans.fr, seo_title_de: seoTitleTrans.de,
+                seo_description_it: createForm.seo_description_it, seo_description_en: seoDescTrans.en, seo_description_es: seoDescTrans.es, seo_description_fr: seoDescTrans.fr, seo_description_de: seoDescTrans.de,
+                seo_keywords_it: filteredKeywords, seo_keywords_en: keywordsTrans.en, seo_keywords_es: keywordsTrans.es, seo_keywords_fr: keywordsTrans.fr, seo_keywords_de: keywordsTrans.de,
+                display_order: maxOrder + 1, is_active: true,
+                auto_translated_en: true, auto_translated_es: true, auto_translated_fr: true, auto_translated_de: true
             })
             if (error) throw error
 
             const sectorSlug = createForm.slug.toLowerCase().replace(/\s+/g, '-')
             if (pendingFaqs.length > 0) {
-                setSuccess('Salvando FAQ...')
+                setSuccess('Salvando FAQ (5 lingue)...')
                 for (let i = 0; i < pendingFaqs.length; i++) {
                     const faq = pendingFaqs[i]
-                    const [question_en, answer_en] = await Promise.all([translateText(faq.question_it), translateText(faq.answer_it)])
+                    const [qTrans, aTrans] = await Promise.all([translateToAllLanguages(faq.question_it), translateToAllLanguages(faq.answer_it)])
                     await supabase.from('faqs').insert({
-                        question_it: faq.question_it, question_en, answer_it: faq.answer_it, answer_en,
-                        sector_slug: sectorSlug, display_order: 200 + i, is_active: true, auto_translated_en: true
+                        question_it: faq.question_it, question_en: qTrans.en, question_es: qTrans.es, question_fr: qTrans.fr, question_de: qTrans.de,
+                        answer_it: faq.answer_it, answer_en: aTrans.en, answer_es: aTrans.es, answer_fr: aTrans.fr, answer_de: aTrans.de,
+                        sector_slug: sectorSlug, display_order: 200 + i, is_active: true,
+                        auto_translated_en: true, auto_translated_es: true, auto_translated_fr: true, auto_translated_de: true
                     })
                 }
             }
@@ -463,7 +502,7 @@ export default function SectorsPage() {
             await fetchSectors()
             setPendingFaqs([])
             setShowCreateModal(false)
-            setSuccess(`Settore creato${pendingFaqs.length > 0 ? ` con ${pendingFaqs.length} FAQ` : ''}!`)
+            setSuccess(`Settore creato con traduzione automatica (5 lingue)${pendingFaqs.length > 0 ? ` + ${pendingFaqs.length} FAQ` : ''}!`)
             setTimeout(() => setSuccess(''), 3000)
         } catch (err: unknown) {
             setError(err instanceof Error ? err.message : 'Errore nella creazione')

@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Edit2, Loader2, Check, AlertCircle, X, Languages, Star, Plus } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
-import { translateJsonArray, translateChangedFields, hasArrayChanged } from '@/services/deeplService'
+import { translateArrayToAllLanguages, translateChangedFieldsMultiLang, hasArrayChanged } from '@/services/deeplService'
 
 // Componente per editare lista di features
 interface FeatureListEditorProps {
@@ -158,30 +158,41 @@ export default function PricingPage() {
                 price_yearly_display_en: editForm.price_yearly_display_it || null
             }
 
-            // Traduce SOLO i campi testuali modificati
-            const translations = await translateChangedFields(
+            // Traduce SOLO i campi testuali modificati in TUTTE le lingue (EN, ES, FR, DE)
+            const translations = await translateChangedFieldsMultiLang(
                 editForm as Record<string, unknown>,
                 originalValues as Record<string, unknown>,
                 ['name_it', 'description_it', 'cta_text_it', 'billing_period_it']
             )
 
-            // Traduce gli array solo se modificati
+            // Traduce gli array solo se modificati - in tutte le lingue
             const featuresChanged = hasArrayChanged(features_it, originalValues.features_it || [])
             const notIncludedChanged = hasArrayChanged(not_included_it, originalValues.not_included_it || [])
 
             if (featuresChanged) {
-                updateData.features_en = await translateJsonArray(features_it)
+                const featuresTrans = await translateArrayToAllLanguages(features_it)
+                updateData.features_en = featuresTrans.en
+                updateData.features_es = featuresTrans.es
+                updateData.features_fr = featuresTrans.fr
+                updateData.features_de = featuresTrans.de
             }
             if (notIncludedChanged) {
-                updateData.not_included_en = await translateJsonArray(not_included_it)
+                const notIncludedTrans = await translateArrayToAllLanguages(not_included_it)
+                updateData.not_included_en = notIncludedTrans.en
+                updateData.not_included_es = notIncludedTrans.es
+                updateData.not_included_fr = notIncludedTrans.fr
+                updateData.not_included_de = notIncludedTrans.de
             }
 
             const hasTranslations = Object.keys(translations).length > 0 || featuresChanged || notIncludedChanged
 
             if (hasTranslations) {
-                setSuccess('Traduzione automatica in corso...')
+                setSuccess('Traduzione automatica in corso (EN, ES, FR, DE)...')
                 Object.assign(updateData, translations)
                 updateData.auto_translated_en = true
+                updateData.auto_translated_es = true
+                updateData.auto_translated_fr = true
+                updateData.auto_translated_de = true
             }
 
             const { error } = await supabase
@@ -194,7 +205,7 @@ export default function PricingPage() {
             setEditingId(null)
             setOriginalValues({})
             setSuccess(hasTranslations
-                ? 'Salvato con traduzione automatica!'
+                ? 'Salvato con traduzione automatica (5 lingue)!'
                 : 'Salvato!')
             setTimeout(() => setSuccess(''), 3000)
         } catch (err: unknown) {

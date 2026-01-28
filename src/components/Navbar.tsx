@@ -86,12 +86,12 @@ const Navbar = ({ settings: navbarSettings }: NavbarProps) => {
     })
   }
 
-  // Navigation links with localized routes
+  // Navigation links (all use English slugs now)
   const navLinks = [
     { name: t('nav.home'), href: '/' },
-    { name: t('nav.sectors'), href: locale === 'it' ? '/settori' : '/sectors' },
-    { name: t('nav.pricing'), href: locale === 'it' ? '/prezzi' : '/pricing' },
-    { name: t('nav.cases'), href: locale === 'it' ? '/casi-studio' : '/case-studies' },
+    { name: t('nav.sectors'), href: '/sectors' },
+    { name: t('nav.pricing'), href: '/pricing' },
+    { name: t('nav.cases'), href: '/case-studies' },
   ]
 
   return (
@@ -150,7 +150,7 @@ const Navbar = ({ settings: navbarSettings }: NavbarProps) => {
               {t('nav.login')}
             </a>
             <a href={`https://dash.leader24.ai/${locale}/signup`} className="btn-primary text-sm">
-              Prova Gratis
+              {t('sectors.hero.tryFree')}
             </a>
           </div>
 
@@ -216,7 +216,7 @@ const Navbar = ({ settings: navbarSettings }: NavbarProps) => {
                   href={`https://dash.leader24.ai/${locale}/signup`}
                   className="flex items-center justify-center w-full py-4 rounded-xl btn-primary font-bold text-lg shadow-lg shadow-primary/20"
                 >
-                  Inizia la Prova Gratuita
+                  {t('sectors.hero.startFreeTrial')}
                 </a>
               </motion.div>
             </div>

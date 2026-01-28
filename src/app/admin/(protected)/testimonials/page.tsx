@@ -7,7 +7,7 @@ import {
     Check, AlertCircle, Star, Eye, EyeOff, AlertTriangle
 } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
-import { translateText, translateChangedFields } from '@/services/deeplService'
+import { translateToAllLanguages, translateChangedFieldsMultiLang } from '@/services/deeplService'
 import TestimonialPreview from '@/components/admin/TestimonialPreview'
 
 interface Testimonial {
@@ -137,33 +137,45 @@ export default function TestimonialsPage() {
             }
 
             if (isCreating) {
-                // Per nuove testimonianze, traduce sempre
-                setSuccess('Traduzione automatica in corso...')
-                const [role_en, content_en] = await Promise.all([
-                    translateText(editForm.role_it || ''),
-                    translateText(editForm.content_it || '')
+                // Per nuove testimonianze, traduce in TUTTE le lingue (EN, ES, FR, DE)
+                setSuccess('Traduzione automatica in corso (EN, ES, FR, DE)...')
+                const [roleTrans, contentTrans] = await Promise.all([
+                    translateToAllLanguages(editForm.role_it || ''),
+                    translateToAllLanguages(editForm.content_it || '')
                 ])
-                dataToSave.role_en = role_en
-                dataToSave.content_en = content_en
+                dataToSave.role_en = roleTrans.en
+                dataToSave.role_es = roleTrans.es
+                dataToSave.role_fr = roleTrans.fr
+                dataToSave.role_de = roleTrans.de
+                dataToSave.content_en = contentTrans.en
+                dataToSave.content_es = contentTrans.es
+                dataToSave.content_fr = contentTrans.fr
+                dataToSave.content_de = contentTrans.de
                 dataToSave.auto_translated_en = true
+                dataToSave.auto_translated_es = true
+                dataToSave.auto_translated_fr = true
+                dataToSave.auto_translated_de = true
 
                 const { error } = await supabase
                     .from('testimonials')
                     .insert(dataToSave)
                 if (error) throw error
-                setSuccess('Testimonianza creata con traduzione automatica!')
+                setSuccess('Testimonianza creata con traduzione automatica (5 lingue)!')
             } else {
-                // Per update, traduce SOLO i campi modificati
-                const translations = await translateChangedFields(
+                // Per update, traduce SOLO i campi modificati in TUTTE le lingue (EN, ES, FR, DE)
+                const translations = await translateChangedFieldsMultiLang(
                     editForm as Record<string, unknown>,
                     originalValues as Record<string, unknown>,
                     ['role_it', 'content_it']
                 )
 
                 if (Object.keys(translations).length > 0) {
-                    setSuccess('Traduzione automatica in corso...')
+                    setSuccess('Traduzione automatica in corso (EN, ES, FR, DE)...')
                     Object.assign(dataToSave, translations)
                     dataToSave.auto_translated_en = true
+                    dataToSave.auto_translated_es = true
+                    dataToSave.auto_translated_fr = true
+                    dataToSave.auto_translated_de = true
                 }
 
                 const { error } = await supabase
@@ -172,7 +184,7 @@ export default function TestimonialsPage() {
                     .eq('id', editingId)
                 if (error) throw error
                 setSuccess(Object.keys(translations).length > 0
-                    ? 'Salvato con traduzione automatica!'
+                    ? 'Salvato con traduzione automatica (5 lingue)!'
                     : 'Salvato!')
             }
 

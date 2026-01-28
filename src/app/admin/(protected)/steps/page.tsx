@@ -8,7 +8,7 @@ import {
     LucideIcon
 } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
-import { translateChangedFields } from '@/services/deeplService'
+import { translateChangedFieldsMultiLang } from '@/services/deeplService'
 
 // Icon map for steps
 const iconMap: Record<string, LucideIcon> = {
@@ -76,17 +76,20 @@ export default function StepsPage() {
                 updated_at: new Date().toISOString()
             }
 
-            // Traduce SOLO i campi modificati
-            const translations = await translateChangedFields(
+            // Traduce SOLO i campi modificati in TUTTE le lingue (EN, ES, FR, DE)
+            const translations = await translateChangedFieldsMultiLang(
                 editForm as Record<string, unknown>,
                 originalValues as Record<string, unknown>,
                 ['title_it', 'description_it']
             )
 
             if (Object.keys(translations).length > 0) {
-                setSuccess('Traduzione automatica in corso...')
+                setSuccess('Traduzione automatica in corso (EN, ES, FR, DE)...')
                 Object.assign(updateData, translations)
                 updateData.auto_translated_en = true
+                updateData.auto_translated_es = true
+                updateData.auto_translated_fr = true
+                updateData.auto_translated_de = true
             }
 
             const { error } = await supabase

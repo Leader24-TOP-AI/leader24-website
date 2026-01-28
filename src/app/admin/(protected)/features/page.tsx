@@ -7,7 +7,7 @@ import {
     ChevronUp, ChevronDown, Plus, Trash2
 } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
-import { translateText, translateChangedFields } from '@/services/deeplService'
+import { translateToAllLanguages, translateChangedFieldsMultiLang } from '@/services/deeplService'
 import ConfirmModal from '@/components/admin/ConfirmModal'
 import IconPicker, { getIconComponent } from '@/components/admin/IconPicker'
 
@@ -78,17 +78,20 @@ export default function FeaturesPage() {
                 updated_at: new Date().toISOString()
             }
 
-            // Traduce SOLO i campi modificati
-            const translations = await translateChangedFields(
+            // Traduce SOLO i campi modificati in TUTTE le lingue (EN, ES, FR, DE)
+            const translations = await translateChangedFieldsMultiLang(
                 editForm as Record<string, unknown>,
                 originalValues as Record<string, unknown>,
                 ['title_it', 'description_it']
             )
 
             if (Object.keys(translations).length > 0) {
-                setSuccess('Traduzione automatica in corso...')
+                setSuccess('Traduzione automatica in corso (EN, ES, FR, DE)...')
                 Object.assign(updateData, translations)
                 updateData.auto_translated_en = true
+                updateData.auto_translated_es = true
+                updateData.auto_translated_fr = true
+                updateData.auto_translated_de = true
             }
 
             const { error } = await supabase
@@ -126,12 +129,12 @@ export default function FeaturesPage() {
         }
 
         setSaving(true)
-        setSuccess('Traduzione automatica in corso...')
+        setSuccess('Traduzione automatica in corso (EN, ES, FR, DE)...')
         try {
-            // Auto-translate Italian to English
-            const [title_en, description_en] = await Promise.all([
-                translateText(createForm.title_it),
-                translateText(createForm.description_it)
+            // Auto-translate Italian to ALL languages (EN, ES, FR, DE)
+            const [titleTrans, descTrans] = await Promise.all([
+                translateToAllLanguages(createForm.title_it),
+                translateToAllLanguages(createForm.description_it)
             ])
 
             const maxOrder = Math.max(...features.map(f => f.display_order || 0), 0)
@@ -139,20 +142,29 @@ export default function FeaturesPage() {
                 .from('homepage_features')
                 .insert({
                     title_it: createForm.title_it,
-                    title_en: title_en,
+                    title_en: titleTrans.en,
+                    title_es: titleTrans.es,
+                    title_fr: titleTrans.fr,
+                    title_de: titleTrans.de,
                     description_it: createForm.description_it,
-                    description_en: description_en,
+                    description_en: descTrans.en,
+                    description_es: descTrans.es,
+                    description_fr: descTrans.fr,
+                    description_de: descTrans.de,
                     icon_name: createForm.icon_name,
                     display_order: maxOrder + 1,
                     is_active: true,
-                    auto_translated_en: true
+                    auto_translated_en: true,
+                    auto_translated_es: true,
+                    auto_translated_fr: true,
+                    auto_translated_de: true
                 })
 
             if (error) throw error
             await fetchFeatures()
             setShowCreateModal(false)
             setCreateForm({ title_it: '', description_it: '', icon_name: 'Clock' })
-            setSuccess('Feature creata con traduzione automatica!')
+            setSuccess('Feature creata con traduzione automatica (5 lingue)!')
             setTimeout(() => setSuccess(''), 3000)
         } catch (err: unknown) {
             const message = err instanceof Error ? err.message : 'Errore nella creazione'
@@ -475,7 +487,7 @@ export default function FeaturesPage() {
                                 </div>
 
                                 <p className="text-xs text-gray-500 dark:text-gray-400">
-                                    La traduzione inglese verra generata automaticamente al salvataggio.
+                                    Le traduzioni (EN, ES, FR, DE) verranno generate automaticamente al salvataggio.
                                 </p>
                             </div>
 

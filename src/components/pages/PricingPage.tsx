@@ -250,7 +250,7 @@ export default function PricingPage({ plans: dbPlans }: PricingPageProps) {
 
               <a
                 href={planKey === 'enterprise'
-                  ? (locale === 'it' ? '/it/contatti' : '/en/contact')
+                  ? `/${locale}/contact`
                   : (plan.signup_url || `https://dash.leader24.ai/${locale}/signup`)
                 }
                 className={`w-full py-2.5 rounded-xl font-bold text-center transition-all duration-300 mb-6 block ${

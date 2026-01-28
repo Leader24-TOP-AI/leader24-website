@@ -1,0 +1,1175 @@
+{
+    "nav": {
+        "home": "Inicio",
+        "sectors": "Sectores",
+        "ecommerce": "E-commerce",
+        "cases": "Casos de Éxito",
+        "contact": "Contacto",
+        "pricing": "Precios",
+        "login": "Iniciar Sesión"
+    },
+    "routes": {
+        "home": "/es",
+        "sectors": "/es/sectors",
+        "ecommerce": "/es/ecommerce",
+        "cases": "/es/case-studies",
+        "contact": "/es/contact",
+        "pricing": "/es/pricing",
+        "privacy": "/es/privacy-policy",
+        "cookie": "/es/cookie-policy",
+        "terms": "/es/terms-of-service",
+        "refund": "/es/refund-policy"
+    },
+    "home": {
+        "seo": {
+            "title": "Leader24 - IA para WhatsApp Business",
+            "description": "Automatiza la atención al cliente y califica leads con tu agente de IA en WhatsApp. Activo 24/7, responde a los clientes de forma natural."
+        },
+        "trustedBy": {
+            "title": "Empresas innovadoras confían en nosotros"
+        },
+        "integrations": {
+            "title": "Se integra con tus herramientas favoritas",
+            "subtitle": "Conecta Leader24 a tu stack tecnológico en pocos clics."
+        },
+        "features": {
+            "badge": "Características",
+            "title": "Potencia tu Negocio con IA",
+            "subtitle": "Una suite completa de herramientas para automatizar, gestionar y escalar tus comunicaciones de WhatsApp.",
+            "items": {
+                "time": {
+                    "title": "Ahorra Tiempo",
+                    "desc": "Automatiza solicitudes repetitivas. Tu agente de IA maneja preguntas frecuentes y precalifica clientes, recopilando información útil antes del contacto humano."
+                },
+                "available": {
+                    "title": "Siempre Disponible 24/7",
+                    "desc": "No pierdas más oportunidades. Leader24 responde instantáneamente a tus clientes a cualquier hora del día o la noche."
+                },
+                "setup": {
+                    "title": "Configuración Simple",
+                    "desc": "No se requieren habilidades técnicas. Conecta tu número de WhatsApp Business en minutos. Comienza de inmediato y añade contenido a tu base de conocimientos gradualmente."
+                },
+                "analytics": {
+                    "title": "Analíticas e Insights",
+                    "desc": "Monitorea el rendimiento de tu agente. Descubre las preguntas más frecuentes y optimiza las respuestas."
+                },
+                "knowledge": {
+                    "title": "Base de Conocimientos",
+                    "desc": "El agente aprende información de la empresa mediante carga de archivos (PDF, documentos) o escaneo inteligente del sitio web."
+                },
+                "security": {
+                    "title": "Seguridad y Privacidad",
+                    "desc": "Tus datos y los de tus clientes están protegidos. Cumplimos con los estándares RGPD y usamos conexiones seguras."
+                }
+            }
+        },
+        "testimonials": {
+            "title": "Lo que dicen nuestros clientes",
+            "subtitle": "Descubre cómo las empresas usan Leader24 para mejorar su servicio al cliente."
+        },
+        "sectorPreview": {
+            "title": "Soluciones para cada sector",
+            "subtitle": "Leader24 no es solo un chatbot simple. Es un agente vertical entrenado en las especificidades de tu mercado.",
+            "cta": "Ver todos los sectores",
+            "items": {
+                "ecommerce": "E-commerce",
+                "realestate": "Inmobiliaria",
+                "automotive": "Automotriz",
+                "tourism": "Turismo"
+            }
+        },
+        "howItWorks": {
+            "title": "Cómo Funciona",
+            "subtitle": "Comienza a automatizar tu servicio al cliente en 3 simples pasos.",
+            "steps": {
+                "1": {
+                    "title": "Entrena la IA",
+                    "desc": "Sube tus documentos (PDF, enlaces web) y la IA aprenderá todo sobre tu empresa."
+                },
+                "2": {
+                    "title": "Conecta WhatsApp",
+                    "desc": "Escanea el código QR y conecta tu número de WhatsApp Business rápidamente."
+                },
+                "3": {
+                    "title": "Lanza tu Agente",
+                    "desc": "Activa el agente y comienza a responder automáticamente a los clientes 24/7."
+                }
+            }
+        },
+        "faq": {
+            "title": "Preguntas Frecuentes",
+            "subtitle": "Todo lo que necesitas saber para comenzar.",
+            "items": {
+                "setup": {
+                    "q": "¿Es difícil de configurar?",
+                    "a": "Para nada. La configuración de WhatsApp toma solo unos minutos: conecta tu número y escanea un código QR. Luego puedes añadir documentos e información a tu base de conocimientos gradualmente."
+                },
+                "accuracy": {
+                    "q": "¿La IA responde correctamente?",
+                    "a": "Sí, la IA está entrenada específicamente con tus datos. Si no sabe una respuesta, puede configurarse para solicitar intervención humana o recopilar datos del cliente."
+                },
+                "number": {
+                    "q": "¿Puedo usar mi número actual?",
+                    "a": "Por supuesto. Puedes conectar tu número de WhatsApp Business existente o usar uno nuevo dedicado al soporte automatizado."
+                },
+                "security": {
+                    "q": "¿Los datos están seguros?",
+                    "a": "Sí. Usamos conexiones seguras (HTTPS) y cumplimos con los estándares RGPD. Tus datos y los de tus clientes están protegidos."
+                },
+                "cancel": {
+                    "q": "¿Puedo cancelar mi suscripción en cualquier momento?",
+                    "a": "Sí, no hay contratos a largo plazo. Puedes gestionar tu suscripción directamente desde el panel y cancelarla cuando quieras."
+                }
+            }
+        },
+        "stats": {
+            "availability": "Disponibilidad",
+            "timeSaved": "Tiempo Ahorrado",
+            "leadIncrease": "Aumento de Leads",
+            "setup": "Configuración"
+        },
+        "cta": {
+            "title": "¿Listo para probar Leader24?",
+            "subtitle": "Comienza con el plan gratuito. No se requiere tarjeta de crédito.",
+            "primary": "Prueba Gratis",
+            "secondary": "Reservar Demo",
+            "footer": "Configura tu agente de IA en minutos",
+            "button": "Comenzar Gratis"
+        }
+    },
+    "cookie": {
+        "title": "Política de Cookies",
+        "meta_desc": "Política de Cookies de Leader24. Aprende cómo usamos cookies y tecnologías de seguimiento.",
+        "intro": {
+            "title": "1. ¿Qué son las Cookies?",
+            "text": "Las cookies son pequeños archivos de texto que se guardan en tu dispositivo cuando visitas un sitio web. Se utilizan para hacer que los sitios web funcionen más eficientemente, proporcionar información a los propietarios del sitio y ofrecer una experiencia de usuario personalizada."
+        },
+        "types": {
+            "title": "2. Tipos de Cookies que Usamos",
+            "text": "Usamos diferentes tipos de cookies para diferentes propósitos:",
+            "list": [
+                "<strong>Cookies Esenciales:</strong> Necesarias para el funcionamiento del sitio web. Sin estas cookies, el sitio no podría funcionar correctamente.",
+                "<strong>Cookies de Análisis y Rendimiento:</strong> Nos permiten contar visitas y fuentes de tráfico para medir y mejorar el rendimiento de nuestro sitio.",
+                "<strong>Cookies de Marketing y Perfilado:</strong> Se utilizan para rastrear visitantes en sitios web. La intención es mostrar anuncios relevantes y atractivos para el usuario individual."
+            ]
+        },
+        "third_party": {
+            "title": "3. Tecnologías de Seguimiento de Terceros",
+            "text": "Además de nuestras cookies, utilizamos diversas tecnologías de terceros para analizar el uso del sitio, gestionar etiquetas y optimizar nuestras campañas publicitarias. Específicamente, usamos:",
+            "tools": {
+                "ga": {
+                    "title": "Google Analytics",
+                    "desc": "Usamos Google Analytics para recopilar información estadística anónima sobre el uso del sitio por los usuarios (ej. número de visitantes, páginas visitadas, tiempo de permanencia)."
+                },
+                "gtm": {
+                    "title": "Google Tag Manager",
+                    "desc": "Usamos Google Tag Manager para gestionar e implementar etiquetas de marketing y análisis en nuestro sitio web sin tener que modificar directamente el código."
+                },
+                "fb": {
+                    "title": "Facebook Pixel",
+                    "desc": "El Facebook Pixel nos permite rastrear conversiones de nuestros anuncios de Facebook, optimizar campañas y crear audiencias segmentadas para futuros anuncios."
+                },
+                "tiktok": {
+                    "title": "TikTok Pixel",
+                    "desc": "Usamos el TikTok Pixel para medir la efectividad de nuestras campañas publicitarias en TikTok y comprender mejor las acciones que los usuarios realizan en nuestro sitio."
+                }
+            }
+        },
+        "management": {
+            "title": "4. Gestión de Cookies",
+            "text": "Puedes controlar y/o eliminar cookies como desees. Puedes eliminar todas las cookies ya en tu ordenador y configurar la mayoría de los navegadores para evitar que se coloquen. Si eliges bloquear las cookies, puede que tengas que ajustar manualmente algunas preferencias cada vez que visites el sitio y algunos servicios y funcionalidades pueden no funcionar."
+        },
+        "updates": {
+            "title": "5. Actualizaciones",
+            "text": "Nuestra Política de Cookies puede actualizarse periódicamente. Te animamos a consultar esta página regularmente para mantenerte informado sobre cómo usamos las cookies."
+        },
+        "contact": {
+            "title": "6. Contáctanos",
+            "text": "Para cualquier pregunta sobre nuestra Política de Cookies, puedes contactarnos en: <a href=\"mailto:info@leader24.ai\" class=\"text-blue-400 hover:text-blue-300 transition-colors\">info@leader24.ai</a>."
+        }
+    },
+    "refund": {
+        "title": "Política de Reembolso",
+        "meta_desc": "Política de Reembolso de Leader24. Lee las condiciones para reembolsos y cancelaciones.",
+        "intro": {
+            "title": "1. Visión General",
+            "text": "En Leader24, nos comprometemos a proporcionar servicios de alta calidad para la automatización de WhatsApp Business. Sin embargo, entendemos que las circunstancias pueden cambiar. Esta política describe los términos para reembolsos y cancelaciones."
+        },
+        "trial": {
+            "title": "2. Período de Prueba",
+            "text": "Ofrecemos un período de prueba gratuito para que evalúes nuestro servicio sin riesgo. Durante este período, no se te cobrará. Puedes cancelar en cualquier momento antes del fin del período de prueba para evitar cargos futuros."
+        },
+        "subscriptions": {
+            "title": "3. Suscripciones Mensuales y Anuales",
+            "text": "Para planes de pago:",
+            "list": [
+                "<strong>Suscripciones Mensuales:</strong> Puedes cancelar tu suscripción mensual en cualquier momento. El acceso al servicio continuará hasta el final del ciclo de facturación actual. No se proporcionan reembolsos por meses parcialmente utilizados.",
+                "<strong>Suscripciones Anuales:</strong> Si cancelas una suscripción anual dentro de los 14 días de la compra inicial, puedes solicitar un reembolso completo. Después de 14 días, la cancelación evitará la renovación automática para el año siguiente, pero no se emitirá reembolso por el período restante."
+            ]
+        },
+        "requests": {
+            "title": "4. Solicitudes de Reembolso",
+            "text": "Las solicitudes de reembolso deben enviarse por escrito a nuestro equipo de soporte. Evaluaremos cada solicitud caso por caso. Nos reservamos el derecho de rechazar una solicitud de reembolso si creemos que ha habido un abuso del servicio o una violación de nuestros Términos de Servicio."
+        },
+        "exceptions": {
+            "title": "5. Excepciones",
+            "text": "No se otorgarán reembolsos por:",
+            "list": [
+                "No usar el servicio durante el período de suscripción activa.",
+                "Insatisfacción debido a características que no fueron prometidas o anunciadas.",
+                "Problemas técnicos debidos a terceros (ej. interrupciones de WhatsApp/Meta) que están fuera de nuestro control, aunque haremos lo posible por ayudarte."
+            ]
+        },
+        "contact": {
+            "title": "6. Contáctanos",
+            "text": "Para enviar una solicitud de reembolso o preguntas sobre esta política, contáctanos en: <a href=\"mailto:info@leader24.ai\" class=\"text-blue-400 hover:text-blue-300 transition-colors\">info@leader24.ai</a>."
+        }
+    },
+    "contact": {
+        "title": "Contáctanos",
+        "subtitle": "Habla con nuestro equipo para descubrir cómo la IA puede ayudar a tu negocio. Solicita una demo o comienza tu prueba gratuita.",
+        "hero": {
+            "title": "Habla con Nosotros",
+            "desc": "Descubre cómo Leader24 puede transformar tu negocio. Reserva una demo gratuita o envíanos un mensaje."
+        },
+        "info": {
+            "email": "Email",
+            "location": "Sede Central",
+            "phone": "Teléfono",
+            "address_line1": "Sevedo Co. Ltd.",
+            "address_line2": "9/291 Vichitsongkran Road",
+            "address_line3": "Phuket, Tailandia"
+        },
+        "form": {
+            "title": "Solicitar una Demo",
+            "name": "Nombre",
+            "company": "Empresa",
+            "email": "Email Empresarial",
+            "message": "Mensaje",
+            "placeholders": {
+                "name": "Juan Pérez",
+                "company": "Tu Empresa",
+                "email": "juan@empresa.com",
+                "message": "Cuéntanos tus necesidades..."
+            },
+            "submit": "Enviar Solicitud",
+            "sending": "Enviando...",
+            "success": "¡Mensaje enviado con éxito! Te contactaremos pronto.",
+            "error": "Error al enviar el mensaje.",
+            "privacy": "Al enviar este formulario aceptas nuestra Política de Privacidad."
+        },
+        "testimonial": {
+            "text": "\"El equipo de Leader24 nos guió en el proceso de automatización. El agente responde a los clientes 24/7 con información precisa.\"",
+            "author": "Gerente de Negocio",
+            "role": "Empresa Cliente"
+        }
+    },
+    "terms": {
+        "title": "Términos de Servicio",
+        "meta_desc": "Términos de Servicio de Leader24. Lee las condiciones de uso de nuestra plataforma.",
+        "intro": {
+            "title": "1. Aceptación de los Términos",
+            "text": "Al acceder y usar el sitio web de Leader24, aceptas estar sujeto a estos Términos de Servicio, todas las leyes y regulaciones aplicables, y aceptas que eres responsable del cumplimiento de cualquier ley local aplicable. Si no estás de acuerdo con alguno de estos términos, tienes prohibido usar o acceder a este sitio."
+        },
+        "license": {
+            "title": "2. Licencia de Uso",
+            "text": "Se concede permiso para descargar temporalmente una copia de los materiales (información o software) del sitio web de Leader24 solo para visualización personal, no comercial y transitoria. Esta es una concesión de licencia, no una transferencia de título, y bajo esta licencia no puedes:",
+            "list": [
+                "Modificar o copiar los materiales;",
+                "Usar los materiales para cualquier propósito comercial, o para cualquier exhibición pública (comercial o no comercial);",
+                "Intentar descompilar o realizar ingeniería inversa de cualquier software contenido en el sitio web de Leader24;",
+                "Eliminar cualquier derecho de autor u otras notaciones de propiedad de los materiales; o",
+                "Transferir los materiales a otra persona o \"reflejar\" los materiales en cualquier otro servidor."
+            ],
+            "termination": "Esta licencia terminará automáticamente si violas cualquiera de estas restricciones y puede ser terminada por Leader24 en cualquier momento."
+        },
+        "disclaimer": {
+            "title": "3. Descargo de Responsabilidad",
+            "text": "Los materiales en el sitio web de Leader24 se proporcionan \"tal cual\". Leader24 no ofrece garantías, expresas o implícitas, y por la presente renuncia y niega todas las demás garantías, incluyendo, sin limitación, garantías implícitas o condiciones de comerciabilidad, idoneidad para un propósito particular, o no infracción de propiedad intelectual u otra violación de derechos."
+        },
+        "limitations": {
+            "title": "4. Limitaciones",
+            "text": "En ningún caso Leader24 o sus proveedores serán responsables por cualquier daño (incluyendo, sin limitación, daños por pérdida de datos o beneficios, o debido a interrupción del negocio) derivado del uso o la incapacidad de usar los materiales en el sitio web de Leader24, incluso si Leader24 o un representante autorizado de Leader24 ha sido notificado oralmente o por escrito de la posibilidad de tal daño."
+        },
+        "accuracy": {
+            "title": "5. Precisión de los Materiales",
+            "text": "Los materiales que aparecen en el sitio web de Leader24 podrían incluir errores técnicos, tipográficos o fotográficos. Leader24 no garantiza que ninguno de los materiales en su sitio web sea preciso, completo o actual. Leader24 puede hacer cambios a los materiales contenidos en su sitio web en cualquier momento sin previo aviso. Sin embargo, Leader24 no se compromete a actualizar los materiales."
+        },
+        "links": {
+            "title": "6. Enlaces",
+            "text": "Leader24 no ha revisado todos los sitios enlazados a su sitio web y no es responsable del contenido de ningún sitio enlazado. La inclusión de cualquier enlace no implica respaldo por parte de Leader24 del sitio. El uso de cualquier sitio web enlazado es bajo el propio riesgo del usuario."
+        },
+        "modifications": {
+            "title": "7. Modificaciones",
+            "text": "Leader24 puede revisar estos Términos de Servicio para su sitio web en cualquier momento sin previo aviso. Al usar este sitio web estás aceptando estar sujeto a la versión actual de estos Términos de Servicio."
+        },
+        "governing_law": {
+            "title": "8. Ley Aplicable",
+            "text": "Estos términos y condiciones se rigen e interpretan de acuerdo con las leyes de Tailandia y te sometes irrevocablemente a la jurisdicción exclusiva de los tribunales en ese Estado o ubicación."
+        },
+        "contact": {
+            "title": "9. Contáctanos",
+            "text": "Para cualquier pregunta sobre nuestros Términos de Servicio, puedes contactarnos en: <a href=\"mailto:info@leader24.ai\" class=\"text-blue-400 hover:text-blue-300 transition-colors\">info@leader24.ai</a>."
+        }
+    },
+    "common": {
+        "description": "Soluciones avanzadas de IA para tu negocio. Automatiza, optimiza y crece con Leader24.",
+        "quickLinks": "Enlaces Rápidos",
+        "legal": "Legal",
+        "contact": "Contacto",
+        "privacy": "Política de Privacidad",
+        "terms": "Términos de Servicio",
+        "refund": "Política de Reembolso",
+        "vat": "IVA",
+        "address": "Dirección",
+        "phone": "Teléfono",
+        "lastUpdated": "Última actualización: Enero 2026",
+        "moreInfo": "Para más información, contáctanos usando los datos de abajo."
+    },
+    "legal": {
+        "contact": "Contacto",
+        "titles": {
+            "privacy": "Política de Privacidad",
+            "cookie": "Política de Cookies",
+            "terms": "Términos de Servicio",
+            "refund": "Política de Reembolso"
+        },
+        "descriptions": {
+            "privacy": "Esta política describe cómo Leader24 (Sevedo Co. Ltd.) recopila, utiliza y protege la información personal de los usuarios.",
+            "cookie": "Esta política describe cómo Leader24 utiliza cookies y tecnologías similares en nuestro sitio web.",
+            "terms": "Estos términos rigen el uso de los servicios de Leader24. Al usar nuestros servicios, aceptas estos términos.",
+            "refund": "Esta política describe las condiciones para solicitar un reembolso por los servicios de Leader24."
+        }
+    },
+    "footer": {
+        "description": "Soluciones avanzadas de IA para tu negocio. Automatiza, optimiza y crece con Leader24.",
+        "quickLinks": "Enlaces Rápidos",
+        "legal": "Legal",
+        "contact": "Contacto",
+        "privacy": "Política de Privacidad",
+        "cookie": "Política de Cookies",
+        "terms": "Términos de Servicio",
+        "refund": "Política de Reembolso",
+        "vat": "IVA",
+        "product": "Producto",
+        "features": "Características",
+        "support": "Soporte",
+        "documentation": "Documentación",
+        "status": "Estado",
+        "rights": "Todos los derechos reservados."
+    },
+    "hero": {
+        "badge": "IA Activa 24/7",
+        "title": "Tu Agente de IA en",
+        "subtitle": "Automatiza la atención al cliente, califica leads y responde a clientes 24/7. Configuración en 5 minutos, sin código.",
+        "ctaPrimary": "Comenzar Gratis",
+        "ctaSecondary": "Saber Más",
+        "noCard": "No se requiere tarjeta de crédito",
+        "trial": "14 días de prueba",
+        "chat": {
+            "liveDemo": "Demo en Vivo",
+            "online": "En Línea",
+            "typing": "Escribiendo...",
+            "today": "Hoy",
+            "placeholder": "Escribe un mensaje...",
+            "scenarios": {
+                "ecommerce": {
+                    "user_message": "Hola, me gustaría saber si tienen la talla M disponible para la chaqueta azul",
+                    "ai_message": "¡Hola! La chaqueta azul está disponible en talla M según nuestro catálogo. ¿Puedo ayudarte con algo más?",
+                    "stat": "Respuesta instantánea"
+                },
+                "immobiliare": {
+                    "user_message": "Hola, estoy buscando un apartamento de 2 habitaciones en el centro",
+                    "ai_message": "¡Hola! Permíteme recopilar tus preferencias: ¿presupuesto aproximado, zona preferida y plazo? Te enviaremos las propiedades más adecuadas.",
+                    "stat": "Recopilación de info 24/7"
+                },
+                "automotive": {
+                    "user_message": "Hola, me gustaría información sobre el Fiat 500 eléctrico que tienen en exposición",
+                    "ai_message": "¡Hola! El Fiat 500 eléctrico tiene una autonomía de 320km y parte de 29.900€. ¿Te gustaría que recoja tus datos para una prueba de manejo?",
+                    "stat": "Info de vehículos 24/7"
+                }
+            }
+        }
+    },
+    "sectors": {
+        "title": "Soluciones para Cada Sector",
+        "subtitle": "Leader24 se adapta a las necesidades específicas de tu negocio, ofreciendo automatización personalizada para maximizar resultados.",
+        "cta": "Saber Más",
+        "items": {
+            "ecommerce": {
+                "title": "E-commerce",
+                "desc": "Responde preguntas sobre productos, envíos y disponibilidad desde tu base de conocimientos, 24/7."
+            },
+            "realestate": {
+                "title": "Inmobiliaria",
+                "desc": "Recopila información de compradores potenciales (presupuesto, zona, preferencias) y solicitudes de visita 24/7."
+            },
+            "automotive": {
+                "title": "Automotriz",
+                "desc": "Recopila solicitudes de prueba de manejo, responde preguntas sobre vehículos y recopila información de compradores potenciales 24/7."
+            },
+            "restaurant": {
+                "title": "Restaurantes",
+                "desc": "Responde preguntas sobre menús, alérgenos y disponibilidad, recopilando solicitudes de reserva."
+            },
+            "hospitality": {
+                "title": "Hotel y B&B",
+                "desc": "Responde preguntas, recopila solicitudes de reserva y proporciona información turística local 24/7."
+            },
+            "construction": {
+                "title": "Construcción",
+                "desc": "Recopila solicitudes de presupuesto y visita de obra, responde preguntas sobre proyectos 24/7."
+            },
+            "logistics": {
+                "title": "Logística",
+                "desc": "Recopila solicitudes de información de envío, solicitudes de recogida y proporciona asistencia logística 24/7."
+            },
+            "professional": {
+                "title": "Servicios Profesionales",
+                "desc": "Recopila solicitudes de consulta y documentos para despachos de abogados, contables y consultores."
+            },
+            "beauty": {
+                "title": "Belleza y Salones",
+                "desc": "Recopila solicitudes de cita 24/7 y responde preguntas sobre servicios y precios."
+            },
+            "mechanic": {
+                "title": "Taller Mecánico",
+                "desc": "Recopila solicitudes de servicio, responde preguntas y proporciona presupuestos."
+            },
+            "installers": {
+                "title": "Instaladores",
+                "desc": "Recopila solicitudes de intervención, asistencia técnica preliminar e información de garantía."
+            },
+            "care": {
+                "title": "Cuidado Personal",
+                "desc": "Responde preguntas sobre servicios, recopila solicitudes de asistencia y comunicación con familias."
+            },
+            "wholesale": {
+                "title": "Mayorista",
+                "desc": "Soporte a clientes B2B, información de listas de precios personalizadas y recopilación de pedidos."
+            },
+            "industry": {
+                "title": "Industria",
+                "desc": "Soporte técnico de maquinaria, preguntas frecuentes de productos y recopilación de informes de mantenimiento."
+            },
+            "finance": {
+                "title": "Finanzas",
+                "desc": "Proporciona soporte seguro para preguntas sobre cuentas, préstamos e inversiones, respetando la privacidad."
+            },
+            "it": {
+                "title": "Servicios TI",
+                "desc": "Helpdesk de primer nivel, recopila informes para el equipo técnico y responde preguntas comunes."
+            },
+            "creative": {
+                "title": "Servicios Creativos",
+                "desc": "Briefing automatizado de clientes, recopilación de feedback y respuestas a preguntas sobre proyectos."
+            },
+            "education": {
+                "title": "Educación",
+                "desc": "Información de cursos, recopilación de solicitudes de inscripción y comunicación con estudiantes y padres."
+            },
+            "media": {
+                "title": "Medios",
+                "desc": "Soporte a suscriptores, información de contenido e interacción con la comunidad."
+            }
+        },
+        "custom": {
+            "title": "¿No encuentras tu sector?",
+            "desc": "Nuestra IA es flexible y puede entrenarse para cualquier tipo de negocio. Habla con uno de nuestros expertos para una solución personalizada.",
+            "cta": "Hablar con un Experto"
+        },
+        "page": {
+            "title": "Nuestros Sectores",
+            "subtitle": "Soluciones de IA personalizadas para cada industria"
+        },
+        "ctaSection": {
+            "title": "¿No encuentras tu industria?",
+            "desc": "Crea y prueba tu agente de IA personalizado en minutos.",
+            "button": "Comenzar Ahora"
+        },
+        "hero": {
+            "tryFree": "Prueba Gratis",
+            "noCreditCard": "No se requiere tarjeta de crédito",
+            "startFreeTrial": "Iniciar Prueba Gratuita"
+        },
+        "faq": {
+            "title": "Preguntas Frecuentes",
+            "subtitle": "Todo lo que necesitas saber sobre Leader24"
+        },
+        "usecases": {
+            "titleTemplate": "Cómo Leader24 ayuda a {sector}"
+        },
+        "finalCta": {
+            "titleTemplate": "¿Listo para transformar tu {sector}?",
+            "subtitle": "Comienza tu prueba gratuita hoy. No se requiere tarjeta de crédito."
+        },
+        "backToSectors": "Volver a Sectores",
+        "notFound": {
+            "title": "Sector no encontrado",
+            "desc": "El sector que buscas no existe o ha sido eliminado.",
+            "cta": "Volver a sectores"
+        }
+    },
+    "ecommerce": {
+        "seo": {
+            "title": "Automatización E-commerce - Soporte 24/7 | Leader24",
+            "description": "Ofrece soporte 24/7 a los clientes de tu e-commerce con tu agente de IA en WhatsApp. Responde preguntas sobre productos, pedidos y envíos."
+        },
+        "badge": "Automatización E-commerce",
+        "title": "Soporte al Cliente 24/7",
+        "subtitle": "Ofrece soporte al cliente 24/7, responde preguntas sobre productos y pedidos con tu agente de IA en WhatsApp.",
+        "hero": {
+            "title": "Tu Soporte al Cliente,",
+            "highlight": "Siempre Online.",
+            "desc": "Tu agente Leader24 nunca duerme. Responde preguntas sobre productos, proporciona información de pedidos y envíos, y recopila solicitudes, a cualquier hora del día o la noche.",
+            "list": {
+                "carts": "Soporte al cliente automático 24/7",
+                "notifications": "Respuestas inmediatas sobre pedidos y envíos",
+                "upsell": "Calificación de clientes y recopilación de leads"
+            },
+            "cta": "Comenzar"
+        },
+        "features": {
+            "tracking": {
+                "title": "Info de Pedidos",
+                "desc": "Respuestas automáticas sobre estado de envío, reduciendo los tickets de \"¿Dónde está mi paquete?\"."
+            },
+            "recommendations": {
+                "title": "Información de Productos",
+                "desc": "La IA accede a tu catálogo WooCommerce y proporciona detalles precisos sobre productos y disponibilidad."
+            },
+            "reviews": {
+                "title": "Recopilación de Solicitudes",
+                "desc": "Recopila solicitudes de clientes y genera leads calificados listos para seguimiento."
+            }
+        },
+        "roi": {
+            "title": "Los Beneficios",
+            "desc": "Ofrece soporte al cliente automatizado 24/7 y reduce la carga de trabajo de tu equipo.",
+            "stats": {
+                "carts": {
+                    "value": "24/7",
+                    "label": "Disponibilidad"
+                },
+                "support": {
+                    "value": "∞",
+                    "label": "Respuestas Automáticas"
+                },
+                "availability": {
+                    "value": "WooCommerce",
+                    "label": "Integración"
+                }
+            }
+        }
+    },
+    "pricing": {
+        "title": "Elige el Plan Perfecto para Ti",
+        "subtitle": "Invierte en el crecimiento de tu negocio con planes transparentes y escalables. Sin costos ocultos.",
+        "popular": "Más Popular",
+        "monthly": "Mensual",
+        "yearly": "Anual",
+        "perMonth": "mes",
+        "yearlyDiscount": "20% de descuento en planes anuales",
+        "billedAnnually": "facturado anualmente",
+        "year": "año",
+        "plans": {
+            "starter": {
+                "name": "Starter",
+                "desc": "Para pequeños negocios que comienzan con la automatización.",
+                "cta": "Empezar con Starter",
+                "features": [
+                    "Hasta 500 conversaciones/mes",
+                    "1 Agente de IA",
+                    "Base de Conocimientos Básica (PDF)",
+                    "Soporte por Email",
+                    "Integración WhatsApp Básica",
+                    "Panel de Estadísticas"
+                ],
+                "notIncluded": [
+                    "Entrenamiento Personalizado",
+                    "Acceso API",
+                    "Soporte Prioritario"
+                ]
+            },
+            "growth": {
+                "name": "Growth",
+                "desc": "Para empresas en crecimiento que necesitan funciones avanzadas.",
+                "cta": "Elegir Growth",
+                "features": [
+                    "Hasta 2.000 conversaciones/mes",
+                    "3 Agentes de IA",
+                    "Base de Conocimientos Avanzada (Web + PDF)",
+                    "Soporte Prioritario",
+                    "Integraciones (Gmail, Calendar, Slack, Zendesk)",
+                    "Analíticas e Informes",
+                    "Entrenamiento IA Personalizado"
+                ],
+                "notIncluded": [
+                    "Agentes Ilimitados",
+                    "Account Manager Dedicado"
+                ]
+            },
+            "enterprise": {
+                "name": "Enterprise",
+                "desc": "Para altos volúmenes y soluciones personalizadas.",
+                "cta": "Contactar Ventas",
+                "features": [
+                    "Conversaciones Ilimitadas",
+                    "Agentes de IA Ilimitados",
+                    "Base de Conocimientos Ilimitada",
+                    "Soporte Dedicado 24/7",
+                    "Todas las integraciones",
+                    "SLAs Garantizados",
+                    "Onboarding Dedicado",
+                    "Account Manager Personal"
+                ]
+            },
+            "custom": {
+                "text": "¿Necesitas una solución personalizada?",
+                "link": "Habla con nuestro equipo de ventas"
+            }
+        }
+    },
+    "casestudies": {
+        "seo": {
+            "title": "Casos de Éxito - Historias de Éxito | Leader24",
+            "description": "Descubre cómo las empresas están transformando su servicio al cliente con Leader24. Casos de estudio reales con resultados medibles."
+        },
+        "title": "Casos de Éxito",
+        "subtitle": "Descubre cómo las empresas están transformando su servicio al cliente con Leader24.",
+        "cases": {
+            "fibernet": {
+                "tag": "Telecomunicaciones",
+                "title": "Empresa Telecom: Soporte Técnico Automatizado",
+                "challenge": {
+                    "title": "El Desafío",
+                    "desc": "Gestionar un alto volumen de solicitudes de soporte técnico con largos tiempos de espera para los clientes."
+                },
+                "solution": {
+                    "title": "La Solución",
+                    "desc": "Implementación de un agente de IA para responder preguntas frecuentes, verificar el estado del servicio y recopilar información antes del contacto con el operador."
+                },
+                "results": {
+                    "title": "Los Resultados",
+                    "list": [
+                        "Respuestas inmediatas 24/7",
+                        "Carga reducida en el soporte humano",
+                        "Clientes precalificados con información ya recopilada"
+                    ]
+                },
+                "stat": {
+                    "value": "24/7",
+                    "label": "Disponibilidad"
+                }
+            },
+            "rentrush": {
+                "tag": "Alquiler",
+                "title": "Empresa de Alquiler: Servicio al Cliente Multilingüe",
+                "challenge": {
+                    "title": "El Desafío",
+                    "desc": "Clientes internacionales que requieren asistencia para reservas e información fuera del horario de oficina."
+                },
+                "solution": {
+                    "title": "La Solución",
+                    "desc": "Agente de IA multilingüe que responde en italiano, inglés y otros idiomas, manejando preguntas frecuentes y recopilando solicitudes de reserva."
+                },
+                "results": {
+                    "title": "Los Resultados",
+                    "list": [
+                        "Cobertura multilingüe automática",
+                        "Respuestas incluso fuera de horario",
+                        "Solicitudes recopiladas y organizadas"
+                    ]
+                },
+                "stat": {
+                    "value": "5+",
+                    "label": "Idiomas Soportados"
+                }
+            }
+        },
+        "cta": {
+            "title": "¿Listo para escribir tu historia de éxito?",
+            "button": "Comenzar Ahora"
+        }
+    },
+    "policies": {
+        "privacy": {
+            "title": "Política de Privacidad",
+            "lastUpdated": "Última actualización: Enero 2026",
+            "sections": {
+                "dataController": {
+                    "title": "1. Responsable del Tratamiento",
+                    "intro": "El Responsable del tratamiento de sus datos personales es:",
+                    "dpoLabel": "Delegado de Protección de Datos (DPO):",
+                    "contactLabel": "Contacto:"
+                },
+                "dataCollected": {
+                    "title": "2. Datos Personales Recopilados",
+                    "intro": "Recopilamos las siguientes categorías de datos personales:",
+                    "directData": {
+                        "title": "Datos proporcionados directamente por el usuario:",
+                        "items": ["Nombre completo", "Dirección de correo electrónico", "Número de teléfono", "Información de facturación (procesada a través de Stripe)"]
+                    },
+                    "autoData": {
+                        "title": "Datos recopilados automáticamente:",
+                        "items": ["Datos de navegación y uso del servicio", "Dirección IP", "Tipo de navegador y dispositivo", "Datos de interacción con la plataforma"]
+                    },
+                    "serviceData": {
+                        "title": "Datos relacionados con el uso del servicio:",
+                        "items": ["Conversaciones de WhatsApp gestionadas a través de la plataforma", "Configuraciones de agentes de IA creadas por el usuario", "Registros del sistema y datos de rendimiento"]
+                    },
+                    "disclaimer": "No recopilamos datos de voz, datos biométricos ni categorías especiales de datos personales (datos sensibles)."
+                },
+                "purposes": {
+                    "title": "3. Finalidades y Base Legal del Tratamiento",
+                    "intro": "Los datos personales se procesan para las siguientes finalidades:",
+                    "tableHeaders": ["Finalidad", "Base Legal"],
+                    "rows": [
+                        ["Prestación del servicio y gestión de la cuenta", "Ejecución del contrato"],
+                        ["Procesamiento de pagos", "Ejecución del contrato"],
+                        ["Atención al cliente", "Ejecución del contrato"],
+                        ["Comunicaciones del servicio", "Ejecución del contrato"],
+                        ["Análisis estadístico y mejora del servicio", "Interés legítimo"],
+                        ["Marketing y remarketing", "Consentimiento"],
+                        ["Cumplimiento legal y fiscal", "Obligación legal"]
+                    ]
+                },
+                "thirdParty": {
+                    "title": "4. Servicios de Terceros",
+                    "intro": "Para proporcionar nuestro servicio, utilizamos los siguientes proveedores externos que pueden procesar sus datos personales:",
+                    "services": {
+                        "stripe": "Procesamiento de pagos",
+                        "analytics": "Análisis de tráfico web",
+                        "meta": "Análisis y remarketing publicitario",
+                        "supabase": "Base de datos e infraestructura",
+                        "whatsapp": "Integración de mensajería"
+                    },
+                    "disclaimer": "Estos proveedores actúan como Encargados del tratamiento y procesan los datos exclusivamente según nuestras instrucciones y en cumplimiento de las normativas aplicables."
+                },
+                "cookies": {
+                    "title": "5. Cookies y Tecnologías de Seguimiento",
+                    "intro": "Nuestro sitio web utiliza cookies y tecnologías similares para:",
+                    "types": {
+                        "technical": { "title": "Cookies técnicas:", "desc": "necesarias para el funcionamiento del sitio web y del servicio" },
+                        "analytics": { "title": "Cookies analíticas:", "desc": "para comprender cómo los usuarios interactúan con el servicio (Google Analytics)" },
+                        "marketing": { "title": "Cookies de marketing:", "desc": "para remarketing y publicidad personalizada (Facebook Pixel)" }
+                    },
+                    "management": "Puede gestionar sus preferencias de cookies a través del banner de nuestro sitio web o la configuración de su navegador."
+                },
+                "retention": {
+                    "title": "6. Conservación de Datos",
+                    "intro": "Los datos personales se conservan durante el tiempo necesario para cumplir con las finalidades para las que fueron recopilados:",
+                    "periods": {
+                        "account": { "title": "Datos de la cuenta:", "desc": "conservados durante la relación contractual y eliminados a solicitud del usuario" },
+                        "whatsapp": { "title": "Conversaciones de WhatsApp:", "desc": "conservadas hasta que el usuario solicite su eliminación" },
+                        "billing": { "title": "Datos de facturación:", "desc": "conservados durante 10 años según lo exigido por las normativas fiscales" },
+                        "analytics": { "title": "Datos de navegación y analíticas:", "desc": "conservados durante un máximo de 26 meses" }
+                    }
+                },
+                "transfers": {
+                    "title": "7. Transferencias de Datos",
+                    "intro": "Sus datos personales pueden ser transferidos a países fuera del Espacio Económico Europeo (EEE). En tales casos, implementamos las siguientes garantías:",
+                    "safeguards": [
+                        "Cláusulas Contractuales Tipo aprobadas por la Comisión Europea",
+                        "Verificación de que los proveedores se adhieren a marcos reconocidos (ej. EU-US Data Privacy Framework)",
+                        "Medidas técnicas y organizativas apropiadas para garantizar la seguridad de los datos"
+                    ]
+                },
+                "rights": {
+                    "title": "8. Derechos del Interesado",
+                    "intro": "De acuerdo con el Reglamento UE 2016/679 (RGPD) y las normativas aplicables, tiene derecho a:",
+                    "list": {
+                        "access": { "title": "Acceso:", "desc": "obtener confirmación del tratamiento y una copia de sus datos" },
+                        "rectification": { "title": "Rectificación:", "desc": "corregir datos inexactos o incompletos" },
+                        "erasure": { "title": "Supresión:", "desc": "solicitar la eliminación de sus datos (\"derecho al olvido\")" },
+                        "restriction": { "title": "Limitación:", "desc": "limitar el tratamiento en determinadas circunstancias" },
+                        "portability": { "title": "Portabilidad:", "desc": "recibir sus datos en un formato estructurado y legible" },
+                        "objection": { "title": "Oposición:", "desc": "oponerse al tratamiento basado en interés legítimo" },
+                        "withdraw": { "title": "Retirar consentimiento:", "desc": "retirar el consentimiento en cualquier momento" }
+                    },
+                    "exerciseRights": "Para ejercer sus derechos, contáctenos en:",
+                    "complaint": "También tiene derecho a presentar una reclamación ante la Autoridad de Protección de Datos de su país de residencia."
+                },
+                "security": {
+                    "title": "9. Seguridad de los Datos",
+                    "intro": "Implementamos medidas técnicas y organizativas apropiadas para proteger los datos personales, incluyendo:",
+                    "measures": [
+                        "Cifrado de datos en tránsito (HTTPS/TLS)",
+                        "Cifrado de datos en reposo",
+                        "Controles de acceso basados en roles",
+                        "Monitoreo continuo de seguridad",
+                        "Copias de seguridad regulares",
+                        "Formación del personal"
+                    ]
+                },
+                "age": {
+                    "title": "10. Requisitos de Edad",
+                    "content": "El servicio Leader24.ai está destinado exclusivamente a usuarios mayores de 18 años. No recopilamos conscientemente datos personales de menores. Si cree que hemos recopilado datos de un menor, contáctenos inmediatamente."
+                },
+                "changes": {
+                    "title": "11. Cambios en la Política de Privacidad",
+                    "content": "Nos reservamos el derecho de modificar esta Política de Privacidad en cualquier momento. Los cambios se publicarán en esta página con la fecha de actualización indicada. Le recomendamos revisar esta página periódicamente.",
+                    "notification": "Para cambios sustanciales, le notificaremos por correo electrónico o notificación en la plataforma."
+                },
+                "contact": {
+                    "title": "12. Contacto",
+                    "intro": "Para cualquier pregunta o solicitud relacionada con esta Política de Privacidad o el tratamiento de sus datos personales, puede contactarnos:",
+                    "addressLabel": "Dirección"
+                }
+            }
+        },
+        "terms": {
+            "title": "Términos de Servicio",
+            "lastUpdated": "Última actualización: Enero 2026",
+            "sections": {
+                "introduction": {
+                    "title": "1. Introducción",
+                    "content": "Bienvenido a Leader24.ai (\"Servicio\"), una plataforma SaaS proporcionada por Sevedo Co. Ltd. (\"Compañía\", \"nosotros\", \"nuestro\"). Estos Términos de Servicio (\"Términos\") rigen su acceso y uso de nuestra plataforma para crear agentes de IA para atención al cliente."
+                },
+                "acceptance": {
+                    "title": "2. Aceptación de los Términos",
+                    "content1": "Al acceder o utilizar el Servicio, acepta estar sujeto a estos Términos. Si no acepta estos Términos, no puede acceder ni utilizar el Servicio.",
+                    "content2": "Si utiliza el Servicio en nombre de una organización, acepta estos Términos en nombre de dicha organización y declara que tiene la autoridad para vincular a la organización a estos Términos.",
+                    "warning": "Al utilizar el Servicio, confirma que ha leído, entendido y aceptado estos Términos y nuestra Política de Privacidad."
+                },
+                "serviceDescription": {
+                    "title": "3. Descripción del Servicio",
+                    "intro": "Leader24.ai es una plataforma que permite a los usuarios:",
+                    "features": [
+                        "Crear y configurar agentes de IA para atención al cliente",
+                        "Integrar agentes de IA con WhatsApp Business",
+                        "Incorporar widgets de chat en sus sitios web",
+                        "Cargar documentos para crear una base de conocimientos",
+                        "Gestionar conversaciones y recopilar leads",
+                        "Analizar el rendimiento de los agentes de IA"
+                    ],
+                    "disclaimer": "El Servicio está en continua evolución. Nos reservamos el derecho de modificar, suspender o discontinuar cualquier función en cualquier momento."
+                },
+                "userAccounts": {
+                    "title": "4. Cuentas de Usuario",
+                    "registration": {
+                        "title": "Requisitos de Registro",
+                        "items": [
+                            "Debe tener al menos 18 años para usar el Servicio",
+                            "Debe proporcionar información precisa y completa durante el registro",
+                            "Debe mantener actualizada la información de su cuenta"
+                        ]
+                    },
+                    "security": {
+                        "title": "Seguridad de la Cuenta",
+                        "items": [
+                            "Es responsable de la seguridad de las credenciales de su cuenta",
+                            "Debe notificarnos inmediatamente cualquier acceso no autorizado",
+                            "Es responsable de todas las actividades que ocurran bajo su cuenta"
+                        ]
+                    },
+                    "organizations": {
+                        "title": "Organizaciones y Equipos",
+                        "content": "Cada cuenta está asociada a una organización. El propietario de la organización puede invitar a otros miembros y gestionar los permisos de acceso a los agentes de IA."
+                    }
+                },
+                "pricing": {
+                    "title": "5. Precios y Pagos",
+                    "credits": {
+                        "title": "Sistema de Créditos",
+                        "content": "El Servicio utiliza un sistema basado en créditos. Cada mensaje procesado por el agente de IA consume créditos según su plan suscrito."
+                    },
+                    "subscriptions": {
+                        "title": "Suscripciones",
+                        "items": [
+                            "Las suscripciones se facturan mensual o anualmente",
+                            "Los créditos no utilizados no se transfieren al mes siguiente",
+                            "Los pagos se procesan de forma segura a través de Stripe"
+                        ]
+                    },
+                    "priceChanges": {
+                        "title": "Cambios de Precio",
+                        "content": "Nos reservamos el derecho de cambiar los precios. Le notificaremos con al menos 30 días de anticipación antes de que cualquier aumento de precio entre en vigor."
+                    },
+                    "refunds": {
+                        "title": "Reembolsos",
+                        "content": "Los pagos no son reembolsables, excepto cuando lo exija la ley aplicable. Puede cancelar su suscripción en cualquier momento, pero no recibirá un reembolso por el período restante."
+                    }
+                },
+                "acceptableUse": {
+                    "title": "6. Uso Aceptable",
+                    "intro": "Al usar el Servicio, acepta NO:",
+                    "prohibitedActions": [
+                        "Enviar spam, mensajes no solicitados o comunicaciones masivas a través de WhatsApp",
+                        "Violar las políticas de WhatsApp Business o Meta",
+                        "Usar el Servicio para fines ilegales o fraudulentos",
+                        "Cargar contenido que infrinja derechos de propiedad intelectual",
+                        "Intentar acceder a sistemas o datos no autorizados",
+                        "Interferir con el funcionamiento del Servicio",
+                        "Revender o sublicenciar el Servicio sin autorización",
+                        "Usar el Servicio para acosar, amenazar o difamar a otros"
+                    ],
+                    "warning": "La violación de estas reglas puede resultar en la suspensión o terminación inmediata de su cuenta sin reembolso."
+                },
+                "thirdPartyServices": {
+                    "title": "7. Servicios de Terceros",
+                    "intro": "El Servicio se integra con productos, servicios o aplicaciones de terceros que no son propiedad ni están controlados por Leader24 (\"Servicios de Terceros\"). Estos incluyen:",
+                    "services": {
+                        "stripe": "Procesamiento de pagos",
+                        "analytics": "Análisis de tráfico web",
+                        "meta": "Remarketing publicitario (Facebook Pixel)",
+                        "supabase": "Base de datos y autenticación",
+                        "whatsapp": "Integración de mensajería"
+                    },
+                    "termsNote": "Al usar funciones que involucran Servicios de Terceros, puede necesitar aceptar sus términos separados. Declara que tiene la autoridad para usar dichos servicios.",
+                    "disclaimer": "Leader24 no respalda ni garantiza los Servicios de Terceros y renuncia a toda responsabilidad respecto a ellos. El uso de Servicios de Terceros es bajo su propio riesgo. Para cualquier problema relacionado con dichos servicios, debe contactar directamente a los respectivos proveedores."
+                },
+                "technicalRestrictions": {
+                    "title": "8. Restricciones Técnicas",
+                    "useRestrictions": {
+                        "title": "Restricciones de Uso",
+                        "intro": "No puede:",
+                        "items": [
+                            "Modificar, traducir, copiar o crear obras derivadas del Servicio",
+                            "Descompilar, desensamblar o intentar extraer el código fuente",
+                            "Sublicenciar o explotar comercialmente el Servicio sin autorización",
+                            "Eliminar avisos de propiedad o derechos de autor",
+                            "Probar vulnerabilidades sin autorización escrita",
+                            "Usar el Servicio para desarrollar productos competidores"
+                        ]
+                    },
+                    "apiLimits": {
+                        "title": "Límites de API y Widget",
+                        "intro": "Leader24 puede proporcionar acceso a APIs y widgets como parte del Servicio. Nos reservamos el derecho de:",
+                        "items": [
+                            "Establecer y aplicar límites de uso (rate limiting)",
+                            "Requerir la configuración de dominios autorizados para el widget (CORS)",
+                            "Suspender o terminar el acceso a la API en cualquier momento",
+                            "Modificar las especificaciones técnicas con aviso razonable"
+                        ],
+                        "disclaimer": "El uso significativamente dañino puede resultar en la suspensión del acceso después de un aviso razonable."
+                    }
+                },
+                "confidentiality": {
+                    "title": "9. Confidencialidad",
+                    "confidentialInfo": {
+                        "title": "Información Confidencial",
+                        "content": "Cada parte puede compartir información comercial, técnica o financiera considerada confidencial. Para Leader24, esto incluye detalles no públicos del servicio. Para usted, incluye documentos cargados, configuraciones de agentes y datos de conversaciones."
+                    },
+                    "protection": {
+                        "title": "Protección y Uso",
+                        "content": "Nos comprometemos a proteger su información confidencial con el mismo grado de cuidado que usamos para nuestra propia información similar, y en cualquier caso con un nivel razonable de protección. El acceso está limitado al personal autorizado sujeto a obligaciones de confidencialidad."
+                    },
+                    "compelledDisclosure": {
+                        "title": "Divulgación Obligatoria",
+                        "content": "Cuando lo exija la ley, podemos necesitar divulgar información confidencial. En tales casos, le proporcionaremos aviso previo (cuando esté legalmente permitido) y asistencia razonable para impugnar la divulgación."
+                    },
+                    "feedback": {
+                        "title": "Comentarios",
+                        "content": "Nos otorga una licencia libre de regalías, mundial, perpetua e irrevocable para usar, modificar y explotar cualquier comentario, sugerencia o idea que proporcione sobre el Servicio, sin obligación de identificarlo como fuente."
+                    }
+                },
+                "dataRetention": {
+                    "title": "10. Datos y Conservación",
+                    "userInfo": {
+                        "title": "Información del Usuario",
+                        "content": "Recopilamos información como nombre, correo electrónico, dirección IP, navegador y sistema operativo. Nos autoriza a almacenar, procesar y recuperar esta información como parte del uso del Servicio."
+                    },
+                    "userSubmissions": {
+                        "title": "Contenido Cargado",
+                        "content": "Nos otorga una licencia no exclusiva, mundial y libre de regalías para usar, procesar y mostrar su contenido cargado únicamente para proporcionar el Servicio. Conserva todos los derechos más allá de los otorgados."
+                    },
+                    "serviceData": {
+                        "title": "Datos del Servicio",
+                        "content": "Recopilamos datos de rendimiento y operativos. Cuando están agregados y anonimizados sin revelar información personal, podemos usar estos datos libremente para mejorar el Servicio. No lo identificaremos a usted ni a sus usuarios como fuente."
+                    },
+                    "retention": {
+                        "title": "Conservación de Datos",
+                        "items": [
+                            "Conversaciones: conservadas hasta la eliminación manual o cierre de cuenta",
+                            "Documentos y base de conocimientos: conservados hasta la eliminación manual",
+                            "Leads extraídos: conservados hasta la eliminación manual",
+                            "Registros de uso de créditos: conservados permanentemente para auditoría",
+                            "Datos después de eliminar la cuenta: eliminados dentro de 30 días"
+                        ]
+                    },
+                    "protection": {
+                        "title": "Protección de Datos",
+                        "content": "Mantenemos prácticas de seguridad razonables para proteger sus datos. Sin embargo, usted es responsable de asegurar sus propios sistemas y datos. Para más detalles, consulte nuestra Política de Privacidad."
+                    }
+                },
+                "intellectualProperty": {
+                    "title": "11. Propiedad Intelectual",
+                    "ourProperty": {
+                        "title": "Nuestra Propiedad",
+                        "content": "El Servicio, incluyendo software, diseño, logotipos, texto y todo el contenido creado por nosotros, son propiedad exclusiva de Sevedo Co. Ltd. y están protegidos por las leyes de propiedad intelectual."
+                    },
+                    "yourProperty": {
+                        "title": "Su Propiedad",
+                        "content": "Conserva todos los derechos sobre el contenido que carga en el Servicio, incluyendo documentos, configuraciones de agentes y datos de conversaciones."
+                    },
+                    "license": {
+                        "title": "Licencia de Uso",
+                        "content": "Le otorgamos una licencia limitada, no exclusiva, intransferible y revocable para usar el Servicio de acuerdo con estos Términos."
+                    }
+                },
+                "aiDisclaimer": {
+                    "title": "12. Descargo de Responsabilidad sobre Inteligencia Artificial",
+                    "intro": "El Servicio utiliza tecnologías de inteligencia artificial generativa para crear respuestas automatizadas. Es importante entender las siguientes limitaciones:",
+                    "limitations": [
+                        "Las respuestas generadas por IA pueden contener errores, inexactitudes o información desactualizada",
+                        "La IA no puede reemplazar el juicio profesional en asuntos legales, médicos o financieros",
+                        "Es responsable de revisar y aprobar las configuraciones de su agente de IA",
+                        "Leader24 no es responsable de las decisiones tomadas por sus clientes basándose en las respuestas de la IA"
+                    ],
+                    "recommendation": "Recomendamos monitorear regularmente las conversaciones y configurar su agente de IA apropiadamente para su industria."
+                },
+                "liability": {
+                    "title": "13. Limitación de Responsabilidad",
+                    "intro": "EN LA MEDIDA MÁXIMA PERMITIDA POR LA LEY APLICABLE:",
+                    "limitations": [
+                        "El Servicio se proporciona \"TAL CUAL\" y \"SEGÚN DISPONIBILIDAD\" sin garantías de ningún tipo",
+                        "No garantizamos que el Servicio será ininterrumpido, seguro o libre de errores",
+                        "No somos responsables por daños indirectos, incidentales, especiales o consecuentes",
+                        "Nuestra responsabilidad total está limitada al monto pagado por el Servicio en los últimos 12 meses"
+                    ]
+                },
+                "termination": {
+                    "title": "14. Terminación",
+                    "byYou": {
+                        "title": "Terminación por Usted",
+                        "content": "Puede cancelar su cuenta en cualquier momento desde la configuración del panel. La cancelación será efectiva al final del período de facturación actual."
+                    },
+                    "byUs": {
+                        "title": "Terminación por Nosotros",
+                        "intro": "Podemos suspender o terminar su cuenta inmediatamente si:",
+                        "reasons": [
+                            "Viola estos Términos o las políticas de uso aceptable",
+                            "Su uso causa daño al Servicio o a otros usuarios",
+                            "Estamos obligados a hacerlo por ley"
+                        ]
+                    },
+                    "effects": {
+                        "title": "Efectos de la Terminación",
+                        "content": "Tras la terminación, sus datos se conservarán durante 30 días, durante los cuales puede solicitar una exportación. Después de eso, los datos se eliminarán permanentemente."
+                    }
+                },
+                "changes": {
+                    "title": "15. Cambios en los Términos",
+                    "content1": "Nos reservamos el derecho de modificar estos Términos en cualquier momento. Los cambios se publicarán en esta página con la fecha actualizada.",
+                    "content2": "Para cambios sustanciales, le notificaremos por correo electrónico con al menos 30 días de anticipación antes de que entren en vigor. Al continuar usando el Servicio después de esa fecha, acepta los nuevos Términos."
+                },
+                "governingLaw": {
+                    "title": "16. Ley Aplicable y Jurisdicción",
+                    "content1": "Estos Términos se rigen por las leyes del Reino de Tailandia, sin tener en cuenta los principios de conflicto de leyes.",
+                    "content2": "Cualquier disputa que surja de o esté relacionada con estos Términos estará sujeta a la jurisdicción exclusiva de los tribunales de Phuket, Tailandia.",
+                    "euNote": "Para usuarios de la Unión Europea: esto no afecta sus derechos como consumidor según las leyes de su país de residencia."
+                },
+                "disputeResolution": {
+                    "title": "17. Resolución de Disputas",
+                    "content1": "Antes de tomar cualquier acción legal, le animamos a contactarnos para intentar resolver la disputa de manera amistosa.",
+                    "content2": "Puede contactarnos en info@leader24.ai. Nos comprometemos a responder dentro de 15 días hábiles."
+                },
+                "miscellaneous": {
+                    "title": "18. Disposiciones Generales",
+                    "items": {
+                        "entireAgreement": { "title": "Acuerdo Completo:", "content": "Estos Términos constituyen el acuerdo completo entre usted y nosotros con respecto al Servicio." },
+                        "severability": { "title": "Divisibilidad:", "content": "Si alguna disposición se considera inválida, las demás disposiciones permanecerán en vigor." },
+                        "waiver": { "title": "Renuncia:", "content": "El no ejercicio de un derecho no constituye una renuncia a ese derecho." },
+                        "assignment": { "title": "Cesión:", "content": "No puede ceder sus derechos sin nuestro consentimiento escrito. Podemos ceder nuestros derechos a un sucesor." },
+                        "forceMajeure": { "title": "Fuerza Mayor:", "content": "No seremos responsables por retrasos o incumplimientos debido a causas fuera de nuestro control razonable." }
+                    }
+                },
+                "contact": {
+                    "title": "19. Contacto",
+                    "intro": "Para cualquier pregunta sobre estos Términos de Servicio, puede contactarnos:",
+                    "addressLabel": "Dirección"
+                }
+            }
+        },
+        "cookie": {
+            "title": "Política de Cookies",
+            "lastUpdated": "Última actualización: Enero 2026",
+            "sections": {
+                "intro": {
+                    "content1": "En Leader24 creemos en la transparencia sobre los datos que recopilamos sobre usted y cómo se utilizan. Esta política proporciona información sobre las cookies y cómo puede controlarlas.",
+                    "content2": "Las cookies son pequeños archivos de texto almacenados en su computadora o dispositivo móvil cuando visita nuestro sitio. Nos permiten hacer que el sitio funcione, hacerlo más seguro, proporcionarle una mejor experiencia y entender cómo se utiliza."
+                },
+                "howWeUse": {
+                    "title": "Cómo Usamos las Cookies",
+                    "intro": "Usamos cookies para varios propósitos:",
+                    "purposes": {
+                        "authentication": {
+                            "title": "Autenticación",
+                            "content": "Usamos cookies para verificar su identidad cuando inicia sesión en el panel de Leader24. Esto nos permite mostrarle la información correcta y mantener su sesión activa de forma segura."
+                        },
+                        "security": {
+                            "title": "Seguridad",
+                            "content": "Las cookies nos ayudan a proteger su cuenta y datos detectando actividad sospechosa o acceso no autorizado."
+                        },
+                        "preferences": {
+                            "title": "Preferencias",
+                            "content": "Las cookies nos permiten recordar sus preferencias, como su idioma seleccionado y configuración de visualización, para proporcionarle una experiencia personalizada."
+                        },
+                        "analytics": {
+                            "title": "Analíticas y Rendimiento",
+                            "content": "Usamos cookies analíticas para entender cómo los visitantes interactúan con nuestro sitio. Esto nos ayuda a mejorar continuamente Leader24 y solucionar cualquier problema."
+                        },
+                        "marketing": {
+                            "title": "Marketing",
+                            "content": "Usamos cookies de marketing para medir la efectividad de nuestras campañas publicitarias y mostrarle contenido relevante basado en sus intereses."
+                        }
+                    }
+                },
+                "yourChoices": {
+                    "title": "Sus Opciones",
+                    "intro": "Tiene control sobre las cookies. Puede gestionar sus preferencias de varias maneras:",
+                    "options": {
+                        "banner": { "title": "Banner de Cookies:", "content": "Cuando visita nuestro sitio, puede elegir qué categorías de cookies aceptar a través del banner." },
+                        "browser": { "title": "Configuración del Navegador:", "content": "La mayoría de los navegadores le permiten bloquear o eliminar cookies. Consulte la configuración de su navegador para más detalles." }
+                    },
+                    "warning": "Nota: Deshabilitar las cookies necesarias puede comprometer la funcionalidad del sitio web e impedirle acceder al panel."
+                },
+                "doNotTrack": {
+                    "title": "Señales Do Not Track",
+                    "content": "Algunos navegadores ofrecen una opción \"Do Not Track\" que envía una señal a los sitios web. Actualmente no respondemos a estas señales, pero respetamos sus elecciones de cookies realizadas a través de nuestro banner."
+                },
+                "thirdParty": {
+                    "title": "Servicios de Terceros",
+                    "intro": "Algunas cookies son establecidas por servicios de terceros que utilizamos. Para más información sobre cómo estos servicios manejan sus datos, consulte sus políticas de privacidad:"
+                },
+                "updates": {
+                    "title": "Actualizaciones",
+                    "content": "Podemos actualizar esta Política de Cookies periódicamente. Le animamos a revisar esta página regularmente para mantenerse informado sobre nuestro uso de cookies."
+                },
+                "contact": {
+                    "title": "Contacto",
+                    "intro": "Para cualquier pregunta sobre nuestra Política de Cookies, contáctenos:"
+                },
+                "cookieList": {
+                    "title": "Lista de Cookies",
+                    "tableHeaders": { "cookie": "Cookie", "type": "Tipo", "purpose": "Propósito" },
+                    "types": { "firstParty": "Primera parte", "thirdParty": "Tercera parte" },
+                    "necessary": {
+                        "title": "Cookies Estrictamente Necesarias",
+                        "items": [
+                            { "cookie": "sb-*-auth-token", "purpose": "Autenticación de usuario" },
+                            { "cookie": "sb-*-auth-token-code-verifier", "purpose": "Verificación de seguridad PKCE" },
+                            { "cookie": "__stripe_mid", "purpose": "Prevención de fraude en pagos" },
+                            { "cookie": "__stripe_sid", "purpose": "Sesión de pagos" }
+                        ]
+                    },
+                    "performance": {
+                        "title": "Cookies de Rendimiento",
+                        "items": [
+                            { "cookie": "_ga", "purpose": "Distinguir usuarios únicos" },
+                            { "cookie": "_ga_*", "purpose": "Estado de sesión de Google Analytics" }
+                        ]
+                    },
+                    "marketing": {
+                        "title": "Cookies de Marketing",
+                        "items": [
+                            { "cookie": "_fbp", "purpose": "Seguimiento publicitario de Facebook" },
+                            { "cookie": "_gcl_au", "purpose": "Conversiones de Google Ads" }
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}

@@ -25,12 +25,12 @@ export default async function Footer() {
   const locale = await getLocale()
   const logoSettings = await getLogoSettings()
 
-  // Route mapping
+  // Route mapping (all use English slugs now)
   const routes = {
-    sectors: locale === 'it' ? '/settori' : '/sectors',
-    pricing: locale === 'it' ? '/prezzi' : '/pricing',
-    cases: locale === 'it' ? '/casi-studio' : '/case-studies',
-    contact: locale === 'it' ? '/contatti' : '/contact',
+    sectors: '/sectors',
+    pricing: '/pricing',
+    cases: '/case-studies',
+    contact: '/contact',
     privacy: '/privacy-policy',
     cookie: '/cookie-policy',
     terms: '/terms-of-service',

@@ -3,16 +3,17 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronDown, ChevronUp } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 import { getLocalizedValue } from '@/lib/cms/types'
 import type { FAQ } from '@/lib/cms/types'
 
 interface SectorFAQProps {
   faqs: FAQ[]
-  locale: 'it' | 'en'
+  locale: string
 }
 
 export default function SectorFAQ({ faqs, locale }: SectorFAQProps) {
-  const isEnglish = locale === 'en'
+  const t = useTranslations('sectors')
   const [activeIndex, setActiveIndex] = useState<number | null>(null)
 
   const toggleAccordion = (index: number) => {
@@ -33,13 +34,10 @@ export default function SectorFAQ({ faqs, locale }: SectorFAQProps) {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            {isEnglish ? 'Frequently Asked Questions' : 'Domande Frequenti'}
+            {t('faq.title')}
           </h2>
           <p className="text-gray-600 dark:text-gray-400">
-            {isEnglish
-              ? 'Everything you need to know about Leader24'
-              : 'Tutto quello che devi sapere su Leader24'
-            }
+            {t('faq.subtitle')}
           </p>
         </motion.div>
 

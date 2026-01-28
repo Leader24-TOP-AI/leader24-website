@@ -4,22 +4,23 @@ import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
+import { useTranslations } from 'next-intl'
 import { getLocalizedValue } from '@/lib/cms/types'
 import type { Sector } from '@/lib/cms/types'
 import { useNavbarContext } from '@/context/NavbarContext'
 
 interface SectorHeroProps {
   sector: Sector
-  locale: 'it' | 'en'
+  locale: string
 }
 
 export default function SectorHero({ sector, locale }: SectorHeroProps) {
-  const isEnglish = locale === 'en'
+  const t = useTranslations('sectors')
   const { setForceDarkText } = useNavbarContext()
 
   const title = getLocalizedValue(sector, 'hero_title', locale) || getLocalizedValue(sector, 'title', locale)
   const subtitle = getLocalizedValue(sector, 'hero_subtitle', locale) || getLocalizedValue(sector, 'description', locale)
-  const ctaText = getLocalizedValue(sector, 'hero_cta_text', locale) || (isEnglish ? 'Try Free' : 'Prova Gratis')
+  const ctaText = getLocalizedValue(sector, 'hero_cta_text', locale) || t('hero.tryFree')
   const ctaUrl = sector?.hero_cta_url || `https://dash.leader24.ai/${locale}/signup`
   const hasBackgroundImage = !!sector?.hero_background_url
 
@@ -51,7 +52,7 @@ export default function SectorHero({ sector, locale }: SectorHeroProps) {
 
       {/* Back to Sectors Link - Top Left */}
       <Link
-        href={isEnglish ? '/en/sectors' : '/it/settori'}
+        href={`/${locale}/sectors`}
         className={`absolute top-24 left-4 sm:left-6 lg:left-8 z-20 inline-flex items-center gap-2 px-3 py-2 rounded-full backdrop-blur-sm transition-all ${
           hasBackgroundImage
             ? 'text-white/90 hover:text-white bg-white/10 hover:bg-white/20'
@@ -60,7 +61,7 @@ export default function SectorHero({ sector, locale }: SectorHeroProps) {
       >
         <ArrowLeft className="w-4 h-4" />
         <span className="text-sm font-medium">
-          {isEnglish ? 'Back to Sectors' : 'Torna ai Settori'}
+          {t('backToSectors')}
         </span>
       </Link>
 
@@ -107,7 +108,7 @@ export default function SectorHero({ sector, locale }: SectorHeroProps) {
                 ? 'text-gray-300'
                 : 'text-gray-500 dark:text-gray-500'
             }`}>
-              {isEnglish ? 'No credit card required' : 'Nessuna carta di credito richiesta'}
+              {t('hero.noCreditCard')}
             </p>
           </motion.div>
         </motion.div>

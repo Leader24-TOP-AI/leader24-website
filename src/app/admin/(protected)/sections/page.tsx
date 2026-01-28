@@ -8,7 +8,7 @@ import {
     LucideIcon
 } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
-import { translateText } from '@/services/deeplService'
+import { translateToAllLanguages } from '@/services/deeplService'
 
 // Configurazione sezioni - una card per ogni pagina del sito
 interface SectionItem {
@@ -277,14 +277,14 @@ export default function SectionsPage() {
             const contentUpdates: Array<{
                 key: string
                 content_it: string
-                content_en?: string
+                translations?: { en: string; es: string; fr: string; de: string }
                 needsTranslation?: boolean
             }> = []
             const settingsUpdates: Array<{
                 key: string
                 category?: string
                 value_it: string
-                value_en?: string
+                translations?: { en: string; es: string; fr: string; de: string }
                 needsTranslation?: boolean
             }> = []
             let translationsCount = 0
@@ -299,15 +299,15 @@ export default function SectionsPage() {
                     const update: {
                         key: string
                         content_it: string
-                        content_en?: string
+                        translations?: { en: string; es: string; fr: string; de: string }
                         needsTranslation?: boolean
                     } = {
                         key: item.key,
                         content_it: value_it
                     }
-                    // Traduce SOLO se modificato
-                    if (hasChanged) {
-                        update.content_en = await translateText(value_it)
+                    // Traduce SOLO se modificato - in TUTTE le lingue (EN, ES, FR, DE)
+                    if (hasChanged && value_it) {
+                        update.translations = await translateToAllLanguages(value_it)
                         update.needsTranslation = true
                         translationsCount++
                     }
@@ -317,16 +317,16 @@ export default function SectionsPage() {
                         key: string
                         category?: string
                         value_it: string
-                        value_en?: string
+                        translations?: { en: string; es: string; fr: string; de: string }
                         needsTranslation?: boolean
                     } = {
                         key: item.key,
                         category: item.category,
                         value_it: value_it
                     }
-                    // Traduce SOLO se modificato
-                    if (hasChanged) {
-                        update.value_en = await translateText(value_it)
+                    // Traduce SOLO se modificato - in TUTTE le lingue (EN, ES, FR, DE)
+                    if (hasChanged && value_it) {
+                        update.translations = await translateToAllLanguages(value_it)
                         update.needsTranslation = true
                         translationsCount++
                     }
@@ -335,7 +335,7 @@ export default function SectionsPage() {
             }
 
             if (translationsCount > 0) {
-                setSuccess('Traduzione automatica in corso...')
+                setSuccess('Traduzione automatica in corso (EN, ES, FR, DE)...')
             }
 
             // Update section_content
@@ -344,9 +344,15 @@ export default function SectionsPage() {
                     content_it: update.content_it,
                     updated_at: new Date().toISOString()
                 }
-                if (update.needsTranslation) {
-                    updateData.content_en = update.content_en
+                if (update.needsTranslation && update.translations) {
+                    updateData.content_en = update.translations.en
+                    updateData.content_es = update.translations.es
+                    updateData.content_fr = update.translations.fr
+                    updateData.content_de = update.translations.de
                     updateData.auto_translated_en = true
+                    updateData.auto_translated_es = true
+                    updateData.auto_translated_fr = true
+                    updateData.auto_translated_de = true
                 }
                 await supabase
                     .from('section_content')
@@ -360,9 +366,15 @@ export default function SectionsPage() {
                     value_it: update.value_it,
                     updated_at: new Date().toISOString()
                 }
-                if (update.needsTranslation) {
-                    updateData.value_en = update.value_en
+                if (update.needsTranslation && update.translations) {
+                    updateData.value_en = update.translations.en
+                    updateData.value_es = update.translations.es
+                    updateData.value_fr = update.translations.fr
+                    updateData.value_de = update.translations.de
                     updateData.auto_translated_en = true
+                    updateData.auto_translated_es = true
+                    updateData.auto_translated_fr = true
+                    updateData.auto_translated_de = true
                 }
                 await supabase
                     .from('site_settings')
@@ -373,7 +385,7 @@ export default function SectionsPage() {
             await fetchData()
             setOriginalValues({ ...editForm })
             setSuccess(translationsCount > 0
-                ? 'Salvato con traduzione automatica!'
+                ? 'Salvato con traduzione automatica (5 lingue)!'
                 : 'Salvato!')
             setTimeout(() => setSuccess(''), 3000)
         } catch (err: unknown) {

@@ -2,29 +2,24 @@
 
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 import { getLocalizedValue } from '@/lib/cms/types'
 import type { Sector } from '@/lib/cms/types'
 
 interface SectorFinalCTAProps {
   sector: Sector
-  locale: 'it' | 'en'
+  locale: string
 }
 
 export default function SectorFinalCTA({ sector, locale }: SectorFinalCTAProps) {
-  const isEnglish = locale === 'en'
+  const t = useTranslations('sectors')
 
   const sectorTitle = getLocalizedValue(sector, 'title', locale)
   const title = getLocalizedValue(sector, 'final_cta_title', locale) ||
-    (isEnglish
-      ? `Ready to transform your ${sectorTitle}?`
-      : `Pronto a trasformare il tuo ${sectorTitle}?`
-    )
+    t('finalCta.titleTemplate', { sector: sectorTitle })
   const subtitle = getLocalizedValue(sector, 'final_cta_subtitle', locale) ||
-    (isEnglish
-      ? 'Start your free trial today. No credit card required.'
-      : 'Inizia la tua prova gratuita oggi. Nessuna carta di credito richiesta.'
-    )
-  const ctaText = getLocalizedValue(sector, 'hero_cta_text', locale) || (isEnglish ? 'Start Free Trial' : 'Inizia Prova Gratuita')
+    t('finalCta.subtitle')
+  const ctaText = getLocalizedValue(sector, 'hero_cta_text', locale) || t('hero.startFreeTrial')
   const ctaUrl = sector?.hero_cta_url || `https://dash.leader24.ai/${locale}/signup`
 
   return (

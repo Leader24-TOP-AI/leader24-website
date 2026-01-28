@@ -129,3 +129,118 @@ export const translateChangedFields = async (
 export const hasArrayChanged = (current: unknown[], original: unknown[]): boolean => {
     return JSON.stringify(current) !== JSON.stringify(original)
 }
+
+/**
+ * Supported target languages for multi-language translation
+ */
+export const TARGET_LANGUAGES = ['EN', 'ES', 'FR', 'DE'] as const
+export type TargetLanguage = typeof TARGET_LANGUAGES[number]
+
+/**
+ * Traduce un testo in tutte le lingue supportate (EN, ES, FR, DE) in parallelo.
+ *
+ * @param text - Il testo italiano da tradurre
+ * @returns Oggetto con le traduzioni in tutte le lingue
+ *
+ * @example
+ * const translations = await translateToAllLanguages('Ciao mondo');
+ * // Returns: { en: 'Hello world', es: 'Hola mundo', fr: 'Bonjour monde', de: 'Hallo Welt' }
+ */
+export const translateToAllLanguages = async (
+    text: string
+): Promise<{ en: string; es: string; fr: string; de: string }> => {
+    if (!text || !text.trim()) {
+        return { en: '', es: '', fr: '', de: '' }
+    }
+
+    const [en, es, fr, de] = await Promise.all([
+        translateText(text, 'EN'),
+        translateText(text, 'ES'),
+        translateText(text, 'FR'),
+        translateText(text, 'DE')
+    ])
+
+    return { en, es, fr, de }
+}
+
+/**
+ * Traduce un array di stringhe in tutte le lingue supportate.
+ *
+ * @param array - Array di stringhe in italiano
+ * @returns Oggetto con gli array tradotti per ogni lingua
+ */
+export const translateArrayToAllLanguages = async (
+    array: string[]
+): Promise<{ en: string[]; es: string[]; fr: string[]; de: string[] }> => {
+    if (!Array.isArray(array) || array.length === 0) {
+        return { en: [], es: [], fr: [], de: [] }
+    }
+
+    const [en, es, fr, de] = await Promise.all([
+        Promise.all(array.map(item => translateText(item, 'EN'))),
+        Promise.all(array.map(item => translateText(item, 'ES'))),
+        Promise.all(array.map(item => translateText(item, 'FR'))),
+        Promise.all(array.map(item => translateText(item, 'DE')))
+    ])
+
+    return { en, es, fr, de }
+}
+
+/**
+ * Traduce solo i campi che sono stati modificati, in tutte le lingue supportate.
+ * Risparmia chiamate API DeepL evitando traduzioni ridondanti.
+ *
+ * @param currentValues - Valori correnti del form
+ * @param originalValues - Valori originali prima dell'edit
+ * @param fieldsToCheck - Array di nomi campi italiani da controllare (es. ['title_it', 'description_it'])
+ * @returns Oggetto con le traduzioni dei campi modificati per tutte le lingue
+ *
+ * @example
+ * const translations = await translateChangedFieldsMultiLang(
+ *   editForm,
+ *   originalValues,
+ *   ['title_it', 'description_it']
+ * );
+ * // Returns: {
+ * //   title_en: 'Hello', title_es: 'Hola', title_fr: 'Bonjour', title_de: 'Hallo',
+ * //   description_en: '...', description_es: '...', etc.
+ * // }
+ */
+export const translateChangedFieldsMultiLang = async (
+    currentValues: Record<string, unknown>,
+    originalValues: Record<string, unknown>,
+    fieldsToCheck: string[]
+): Promise<Record<string, string>> => {
+    const translations: Record<string, string> = {}
+
+    // Filtra solo i campi che sono cambiati
+    const changedFields = fieldsToCheck.filter(field =>
+        currentValues[field] !== originalValues[field]
+    )
+
+    if (changedFields.length === 0) {
+        return translations
+    }
+
+    // Traduce in parallelo tutti i campi modificati in tutte le lingue
+    const translationPromises = changedFields.map(async (field) => {
+        const baseField = field.replace('_it', '')
+        const allTranslations = await translateToAllLanguages(currentValues[field] as string)
+        return {
+            baseField,
+            translations: allTranslations
+        }
+    })
+
+    const results = await Promise.all(translationPromises)
+
+    // Costruisce l'oggetto risultato con tutte le lingue
+    results.forEach(({ baseField, translations: trans }) => {
+        translations[`${baseField}_en`] = trans.en
+        translations[`${baseField}_es`] = trans.es
+        translations[`${baseField}_fr`] = trans.fr
+        translations[`${baseField}_de`] = trans.de
+    })
+
+    return translations
+}

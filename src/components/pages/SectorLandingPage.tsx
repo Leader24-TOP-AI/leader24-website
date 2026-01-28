@@ -1,6 +1,6 @@
 'use client'
 
-import { useLocale } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
 import type { Sector, FAQ } from '@/lib/cms/types'
@@ -18,28 +18,25 @@ interface SectorLandingPageProps {
 }
 
 export default function SectorLandingPage({ sector, sectorFAQs }: SectorLandingPageProps) {
-  const locale = useLocale() as 'it' | 'en'
-  const isEnglish = locale === 'en'
+  const locale = useLocale()
+  const t = useTranslations('sectors')
 
   // Error or not found state
   if (!sector) {
     return (
       <main className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto text-center">
         <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-          {isEnglish ? 'Sector not found' : 'Settore non trovato'}
+          {t('notFound.title')}
         </h1>
         <p className="text-gray-600 dark:text-gray-400 mb-8">
-          {isEnglish
-            ? 'The sector you are looking for does not exist.'
-            : 'Il settore che stai cercando non esiste.'
-          }
+          {t('notFound.desc')}
         </p>
         <Link
-          href={isEnglish ? '/en/sectors' : '/it/settori'}
+          href={`/${locale}/sectors`}
           className="btn-primary inline-flex items-center gap-2"
         >
           <ArrowLeft className="w-4 h-4" />
-          {isEnglish ? 'Back to sectors' : 'Torna ai settori'}
+          {t('notFound.cta')}
         </Link>
       </main>
     )

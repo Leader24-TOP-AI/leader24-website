@@ -1,5 +1,4 @@
 import { getTranslations } from 'next-intl/server'
-import { redirect } from 'next/navigation'
 import type { Metadata } from 'next'
 import PricingPage from '@/components/pages/PricingPage'
 import { getPricingPlans } from '@/lib/cms/server'
@@ -18,14 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-export default async function PricingPageRoute({ params }: Props) {
-  const { locale } = await params
-
-  // Redirect Italian users to /prezzi
-  if (locale === 'it') {
-    redirect('/it/prezzi')
-  }
-
+export default async function PricingPageRoute() {
   const plans = await getPricingPlans()
 
   return <PricingPage plans={plans} />

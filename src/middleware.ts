@@ -17,7 +17,7 @@ export const config = {
   // Exclude: api routes, _next, static files, admin routes
   matcher: [
     '/',
-    '/(it|en)/:path*',
+    '/(it|en|es|fr|de)/:path*',
     // Exclude these paths from i18n
     '/((?!api|_next|_vercel|admin|.*\\..*).*)'
   ]

@@ -1,25 +1,40 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useTranslations } from 'next-intl'
 import { getLocalizedValue } from '@/lib/cms/types'
-import type { Sector } from '@/lib/cms/types'
+import type { Sector, UseCase } from '@/lib/cms/types'
 import { getIconComponent } from '@/lib/iconMap'
 
 interface SectorUseCasesProps {
   sector: Sector
-  locale: 'it' | 'en'
+  locale: string
 }
 
 export default function SectorUseCases({ sector, locale }: SectorUseCasesProps) {
-  const isEnglish = locale === 'en'
+  const t = useTranslations('sectors')
   const sectorTitle = getLocalizedValue(sector, 'title', locale)
 
   const title = getLocalizedValue(sector, 'usecases_title', locale) ||
-    (isEnglish ? `How Leader24 helps ${sectorTitle}` : `Come Leader24 aiuta ${sectorTitle}`)
+    t('usecases.titleTemplate', { sector: sectorTitle })
 
-  const usecases = locale === 'en'
-    ? (sector.usecases_en || sector.usecases_it || [])
-    : (sector.usecases_it || [])
+  // Get usecases for the current locale with fallback chain
+  const getUsecases = (): UseCase[] => {
+    const localeMap: Record<string, keyof Sector> = {
+      it: 'usecases_it',
+      en: 'usecases_en',
+      es: 'usecases_es',
+      fr: 'usecases_fr',
+      de: 'usecases_de'
+    }
+    const primaryKey = localeMap[locale] || 'usecases_en'
+    const primaryUsecases = sector[primaryKey] as UseCase[] | undefined
+    if (primaryUsecases && primaryUsecases.length > 0) return primaryUsecases
+    // Fallback to English, then Italian
+    return (sector.usecases_en || sector.usecases_it || [])
+  }
+
+  const usecases = getUsecases()
 
   // Don't render if no use cases
   if (!usecases || usecases.length === 0) return null

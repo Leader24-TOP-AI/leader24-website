@@ -1,6 +1,6 @@
 'use client'
 
-import { useLocale } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
@@ -14,27 +14,19 @@ interface SectorsPageProps {
 }
 
 export default function SectorsPage({ sectors, sectionContent }: SectorsPageProps) {
-  const locale = useLocale() as 'it' | 'en'
+  const locale = useLocale()
+  const t = useTranslations('sectors')
 
   // Helper to get CMS content with fallback
   const getCMS = (key: string, fallback: string) => {
     return getLocalizedValue(sectionContent[key], 'content', locale) || fallback
   }
 
-  // Generate sector landing page link
-  const getSectorLink = (slug: string) => {
-    if (locale === 'en') {
-      return `/en/sectors/${slug}`
-    }
-    return `/it/settori/${slug}`
-  }
+  // Generate sector landing page link (all use English slugs now)
+  const getSectorLink = (slug: string) => `/${locale}/sectors/${slug}`
 
-  const pageTitle = getCMS('sectors_title', locale === 'it' ? 'I Nostri Settori' : 'Our Sectors')
-  const pageSubtitle = getCMS('sectors_subtitle',
-    locale === 'it'
-      ? 'Soluzioni AI personalizzate per ogni settore'
-      : 'Custom AI solutions for every industry'
-  )
+  const pageTitle = getCMS('sectors_title', t('page.title'))
+  const pageSubtitle = getCMS('sectors_subtitle', t('page.subtitle'))
 
   return (
     <main className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
@@ -98,7 +90,7 @@ export default function SectorsPage({ sectors, sectionContent }: SectorsPageProp
                       {description}
                     </p>
                     <span className="text-gray-900 dark:text-white font-medium inline-flex items-center group-hover:text-primary transition-colors">
-                      {locale === 'it' ? 'Scopri di più' : 'Learn more'}
+                      {t('cta')}
                       <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                     </span>
                   </div>
@@ -118,20 +110,16 @@ export default function SectorsPage({ sectors, sectionContent }: SectorsPageProp
         <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 z-0" />
         <div className="relative z-10 p-12 md:p-16 text-center">
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
-            {getCMS('sectors_cta_title', locale === 'it' ? 'Non trovi il tuo settore?' : "Don't see your industry?")}
+            {getCMS('sectors_cta_title', t('ctaSection.title'))}
           </h2>
           <p className="text-gray-700 dark:text-gray-300 mb-8 max-w-2xl mx-auto text-lg">
-            {getCMS('sectors_cta_desc',
-              locale === 'it'
-                ? 'Crea e testa il tuo agente AI personalizzato in pochi minuti.'
-                : 'Create and test your custom AI agent in minutes.'
-            )}
+            {getCMS('sectors_cta_desc', t('ctaSection.desc'))}
           </p>
           <a
             href={`https://dash.leader24.ai/${locale}`}
             className="btn-primary inline-flex items-center gap-2"
           >
-            {getCMS('sectors_cta_button', locale === 'it' ? 'Inizia Ora' : 'Start Now')}
+            {getCMS('sectors_cta_button', t('ctaSection.button'))}
             <ArrowRight className="w-5 h-5" />
           </a>
         </div>

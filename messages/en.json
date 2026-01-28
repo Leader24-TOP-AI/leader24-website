@@ -320,7 +320,26 @@
         "privacy": "Privacy Policy",
         "terms": "Terms of Service",
         "refund": "Refund Policy",
-        "vat": "VAT"
+        "vat": "VAT",
+        "address": "Address",
+        "phone": "Phone",
+        "lastUpdated": "Last updated: January 2026",
+        "moreInfo": "For more information, contact us using the details below."
+    },
+    "legal": {
+        "contact": "Contact",
+        "titles": {
+            "privacy": "Privacy Policy",
+            "cookie": "Cookie Policy",
+            "terms": "Terms of Service",
+            "refund": "Refund Policy"
+        },
+        "descriptions": {
+            "privacy": "This policy describes how Leader24 (Sevedo Co. Ltd.) collects, uses, and protects users' personal information.",
+            "cookie": "This policy describes how Leader24 uses cookies and similar technologies on our website.",
+            "terms": "These terms govern the use of Leader24 services. By using our services, you accept these terms.",
+            "refund": "This policy describes the conditions for requesting a refund for Leader24 services."
+        }
     },
     "footer": {
         "description": "Advanced AI solutions for your business. Automate, optimize, and grow with Leader24.",
@@ -458,6 +477,37 @@
             "title": "Can't find your sector?",
             "desc": "Our AI is flexible and can be trained for any type of business. Talk to one of our experts for a custom solution.",
             "cta": "Talk to an Expert"
+        },
+        "page": {
+            "title": "Our Sectors",
+            "subtitle": "Custom AI solutions for every industry"
+        },
+        "ctaSection": {
+            "title": "Don't see your industry?",
+            "desc": "Create and test your custom AI agent in minutes.",
+            "button": "Start Now"
+        },
+        "hero": {
+            "tryFree": "Try Free",
+            "noCreditCard": "No credit card required",
+            "startFreeTrial": "Start Free Trial"
+        },
+        "faq": {
+            "title": "Frequently Asked Questions",
+            "subtitle": "Everything you need to know about Leader24"
+        },
+        "usecases": {
+            "titleTemplate": "How Leader24 helps {sector}"
+        },
+        "finalCta": {
+            "titleTemplate": "Ready to transform your {sector}?",
+            "subtitle": "Start your free trial today. No credit card required."
+        },
+        "backToSectors": "Back to Sectors",
+        "notFound": {
+            "title": "Sector not found",
+            "desc": "The sector you're looking for doesn't exist or has been removed.",
+            "cta": "Back to sectors"
         }
     },
     "ecommerce": {
@@ -640,6 +690,486 @@
         "cta": {
             "title": "Ready to write your success story?",
             "button": "Start Now"
+        }
+    },
+    "policies": {
+        "privacy": {
+            "title": "Privacy Policy",
+            "lastUpdated": "Last updated: January 2026",
+            "sections": {
+                "dataController": {
+                    "title": "1. Data Controller",
+                    "intro": "The Data Controller for your personal data is:",
+                    "dpoLabel": "Data Protection Officer (DPO):",
+                    "contactLabel": "Contact:"
+                },
+                "dataCollected": {
+                    "title": "2. Personal Data Collected",
+                    "intro": "We collect the following categories of personal data:",
+                    "directData": {
+                        "title": "Data provided directly by the user:",
+                        "items": ["Full name", "Email address", "Phone number", "Billing information (processed through Stripe)"]
+                    },
+                    "autoData": {
+                        "title": "Data collected automatically:",
+                        "items": ["Browsing and service usage data", "IP address", "Browser type and device", "Platform interaction data"]
+                    },
+                    "serviceData": {
+                        "title": "Data related to service usage:",
+                        "items": ["WhatsApp conversations managed through the platform", "AI agent configurations created by the user", "System logs and performance data"]
+                    },
+                    "disclaimer": "We do not collect voice data, biometric data, or special categories of personal data (sensitive data)."
+                },
+                "purposes": {
+                    "title": "3. Purposes and Legal Basis for Processing",
+                    "intro": "Personal data is processed for the following purposes:",
+                    "tableHeaders": ["Purpose", "Legal Basis"],
+                    "rows": [
+                        ["Service provision and account management", "Contract performance"],
+                        ["Payment processing", "Contract performance"],
+                        ["Customer support", "Contract performance"],
+                        ["Service communications", "Contract performance"],
+                        ["Statistical analysis and service improvement", "Legitimate interest"],
+                        ["Marketing and remarketing", "Consent"],
+                        ["Legal and tax compliance", "Legal obligation"]
+                    ]
+                },
+                "thirdParty": {
+                    "title": "4. Third-Party Services",
+                    "intro": "To provide our service, we use the following third-party providers who may process your personal data:",
+                    "services": {
+                        "stripe": "Payment processing",
+                        "analytics": "Web traffic analysis",
+                        "meta": "Analytics and advertising remarketing",
+                        "supabase": "Database and infrastructure",
+                        "whatsapp": "Messaging integration"
+                    },
+                    "disclaimer": "These providers act as Data Processors and process data exclusively according to our instructions and in compliance with applicable regulations."
+                },
+                "cookies": {
+                    "title": "5. Cookies and Tracking Technologies",
+                    "intro": "Our website uses cookies and similar technologies for:",
+                    "types": {
+                        "technical": { "title": "Technical cookies:", "desc": "necessary for website and service operation" },
+                        "analytics": { "title": "Analytics cookies:", "desc": "to understand how users interact with the service (Google Analytics)" },
+                        "marketing": { "title": "Marketing cookies:", "desc": "for remarketing and personalized advertising (Facebook Pixel)" }
+                    },
+                    "management": "You can manage your cookie preferences through the banner on our website or your browser settings."
+                },
+                "retention": {
+                    "title": "6. Data Retention",
+                    "intro": "Personal data is retained for the time necessary to fulfill the purposes for which it was collected:",
+                    "periods": {
+                        "account": { "title": "Account data:", "desc": "retained for the duration of the contractual relationship and deleted upon user request" },
+                        "whatsapp": { "title": "WhatsApp conversations:", "desc": "retained until the user requests deletion" },
+                        "billing": { "title": "Billing data:", "desc": "retained for 10 years as required by tax regulations" },
+                        "analytics": { "title": "Browsing and analytics data:", "desc": "retained for a maximum of 26 months" }
+                    }
+                },
+                "transfers": {
+                    "title": "7. Data Transfers",
+                    "intro": "Your personal data may be transferred to countries outside the European Economic Area (EEA). In such cases, we implement the following safeguards:",
+                    "safeguards": [
+                        "Standard Contractual Clauses approved by the European Commission",
+                        "Verification that providers adhere to recognized frameworks (e.g., EU-US Data Privacy Framework)",
+                        "Appropriate technical and organizational measures to ensure data security"
+                    ]
+                },
+                "rights": {
+                    "title": "8. Data Subject Rights",
+                    "intro": "In accordance with EU Regulation 2016/679 (GDPR) and applicable regulations, you have the right to:",
+                    "list": {
+                        "access": { "title": "Access:", "desc": "obtain confirmation of processing and a copy of your data" },
+                        "rectification": { "title": "Rectification:", "desc": "correct inaccurate or incomplete data" },
+                        "erasure": { "title": "Erasure:", "desc": "request deletion of your data (\"right to be forgotten\")" },
+                        "restriction": { "title": "Restriction:", "desc": "restrict processing in certain circumstances" },
+                        "portability": { "title": "Portability:", "desc": "receive your data in a structured, readable format" },
+                        "objection": { "title": "Objection:", "desc": "object to processing based on legitimate interest" },
+                        "withdraw": { "title": "Withdraw consent:", "desc": "withdraw consent at any time" }
+                    },
+                    "exerciseRights": "To exercise your rights, contact us at:",
+                    "complaint": "You also have the right to lodge a complaint with the Data Protection Authority in your country of residence."
+                },
+                "security": {
+                    "title": "9. Data Security",
+                    "intro": "We implement appropriate technical and organizational measures to protect personal data, including:",
+                    "measures": [
+                        "Data encryption in transit (HTTPS/TLS)",
+                        "Data encryption at rest",
+                        "Role-based access controls",
+                        "Continuous security monitoring",
+                        "Regular backups",
+                        "Staff training"
+                    ]
+                },
+                "age": {
+                    "title": "10. Age Requirements",
+                    "content": "The Leader24.ai service is intended exclusively for users aged 18 years or older. We do not knowingly collect personal data from minors. If you believe we have collected data from a minor, please contact us immediately."
+                },
+                "changes": {
+                    "title": "11. Changes to the Privacy Policy",
+                    "content": "We reserve the right to modify this Privacy Policy at any time. Changes will be posted on this page with the updated date indicated. We encourage you to review this page periodically.",
+                    "notification": "For substantial changes, we will notify you via email or platform notification."
+                },
+                "contact": {
+                    "title": "12. Contact Us",
+                    "intro": "For any questions or requests regarding this Privacy Policy or the processing of your personal data, you can contact us:",
+                    "addressLabel": "Address"
+                }
+            }
+        },
+        "terms": {
+            "title": "Terms of Service",
+            "lastUpdated": "Last updated: January 2026",
+            "sections": {
+                "introduction": {
+                    "title": "1. Introduction",
+                    "content": "Welcome to Leader24.ai (\"Service\"), a SaaS platform provided by Sevedo Co. Ltd. (\"Company\", \"we\", \"our\"). These Terms of Service (\"Terms\") govern your access to and use of our platform for creating AI customer service agents."
+                },
+                "acceptance": {
+                    "title": "2. Acceptance of Terms",
+                    "content1": "By accessing or using the Service, you agree to be bound by these Terms. If you do not agree to these Terms, you may not access or use the Service.",
+                    "content2": "If you are using the Service on behalf of an organization, you are agreeing to these Terms on behalf of that organization and represent that you have the authority to bind the organization to these Terms.",
+                    "warning": "By using the Service, you confirm that you have read, understood, and accepted these Terms and our Privacy Policy."
+                },
+                "serviceDescription": {
+                    "title": "3. Service Description",
+                    "intro": "Leader24.ai is a platform that allows users to:",
+                    "features": [
+                        "Create and configure AI agents for customer service",
+                        "Integrate AI agents with WhatsApp Business",
+                        "Embed chat widgets on their websites",
+                        "Upload documents to create a knowledge base",
+                        "Manage conversations and collect leads",
+                        "Analyze AI agent performance"
+                    ],
+                    "disclaimer": "The Service is continuously evolving. We reserve the right to modify, suspend, or discontinue any feature at any time."
+                },
+                "userAccounts": {
+                    "title": "4. User Accounts",
+                    "registration": {
+                        "title": "Registration Requirements",
+                        "items": [
+                            "You must be at least 18 years old to use the Service",
+                            "You must provide accurate and complete information during registration",
+                            "You must keep your account information up to date"
+                        ]
+                    },
+                    "security": {
+                        "title": "Account Security",
+                        "items": [
+                            "You are responsible for the security of your account credentials",
+                            "You must notify us immediately of any unauthorized access",
+                            "You are responsible for all activities that occur under your account"
+                        ]
+                    },
+                    "organizations": {
+                        "title": "Organizations and Teams",
+                        "content": "Each account is associated with an organization. The organization owner can invite other members and manage access permissions to AI agents."
+                    }
+                },
+                "pricing": {
+                    "title": "5. Pricing and Payments",
+                    "credits": {
+                        "title": "Credit System",
+                        "content": "The Service uses a credit-based system. Each message processed by the AI agent consumes credits according to your subscribed plan."
+                    },
+                    "subscriptions": {
+                        "title": "Subscriptions",
+                        "items": [
+                            "Subscriptions are billed monthly or annually",
+                            "Unused credits do not roll over to the next month",
+                            "Payments are processed securely through Stripe"
+                        ]
+                    },
+                    "priceChanges": {
+                        "title": "Price Changes",
+                        "content": "We reserve the right to change prices. We will notify you at least 30 days before any price increases take effect."
+                    },
+                    "refunds": {
+                        "title": "Refunds",
+                        "content": "Payments are non-refundable, except as required by applicable law. You may cancel your subscription at any time, but you will not receive a refund for the remaining period."
+                    }
+                },
+                "acceptableUse": {
+                    "title": "6. Acceptable Use",
+                    "intro": "By using the Service, you agree NOT to:",
+                    "prohibitedActions": [
+                        "Send spam, unsolicited messages, or mass communications through WhatsApp",
+                        "Violate WhatsApp Business or Meta policies",
+                        "Use the Service for illegal or fraudulent purposes",
+                        "Upload content that infringes intellectual property rights",
+                        "Attempt to access unauthorized systems or data",
+                        "Interfere with the operation of the Service",
+                        "Resell or sublicense the Service without authorization",
+                        "Use the Service to harass, threaten, or defame others"
+                    ],
+                    "warning": "Violation of these rules may result in immediate suspension or termination of your account without refund."
+                },
+                "thirdPartyServices": {
+                    "title": "7. Third-Party Services",
+                    "intro": "The Service integrates with third-party products, services, or applications that are not owned or controlled by Leader24 (\"Third-Party Services\"). These include:",
+                    "services": {
+                        "stripe": "Payment processing",
+                        "analytics": "Web traffic analytics",
+                        "meta": "Advertising remarketing (Facebook Pixel)",
+                        "supabase": "Database and authentication",
+                        "whatsapp": "Messaging integration"
+                    },
+                    "termsNote": "When using features involving Third-Party Services, you may need to accept their separate terms. You represent that you have the authority to use such services.",
+                    "disclaimer": "Leader24 does not endorse or warrant Third-Party Services and disclaims all liability regarding them. Use of Third-Party Services is at your own risk. For any issues related to such services, you must contact the respective providers directly."
+                },
+                "technicalRestrictions": {
+                    "title": "8. Technical Restrictions",
+                    "useRestrictions": {
+                        "title": "Use Restrictions",
+                        "intro": "You may not:",
+                        "items": [
+                            "Modify, translate, copy, or create derivative works from the Service",
+                            "Decompile, disassemble, or attempt to extract source code",
+                            "Sublicense or commercially exploit the Service without authorization",
+                            "Remove proprietary or copyright notices",
+                            "Test for vulnerabilities without written authorization",
+                            "Use the Service to develop competing products"
+                        ]
+                    },
+                    "apiLimits": {
+                        "title": "API and Widget Limits",
+                        "intro": "Leader24 may provide access to APIs and widgets as part of the Service. We reserve the right to:",
+                        "items": [
+                            "Set and enforce usage limits (rate limiting)",
+                            "Require configuration of authorized domains for the widget (CORS)",
+                            "Suspend or terminate API access at any time",
+                            "Modify technical specifications with reasonable notice"
+                        ],
+                        "disclaimer": "Significantly harmful use may result in access suspension after reasonable notice."
+                    }
+                },
+                "confidentiality": {
+                    "title": "9. Confidentiality",
+                    "confidentialInfo": {
+                        "title": "Confidential Information",
+                        "content": "Each party may share business, technical, or financial information considered confidential. For Leader24, this includes non-public service details. For you, this includes uploaded documents, agent configurations, and conversation data."
+                    },
+                    "protection": {
+                        "title": "Protection and Use",
+                        "content": "We commit to protecting your confidential information with the same degree of care we use for our own similar information, and in any case with a reasonable level of protection. Access is limited to authorized personnel bound by confidentiality obligations."
+                    },
+                    "compelledDisclosure": {
+                        "title": "Compelled Disclosure",
+                        "content": "When required by law, we may need to disclose confidential information. In such cases, we will provide you with advance notice (when legally permitted) and reasonable assistance to contest the disclosure."
+                    },
+                    "feedback": {
+                        "title": "Feedback",
+                        "content": "You grant us a royalty-free, worldwide, perpetual, and irrevocable license to use, modify, and exploit any feedback, suggestions, or ideas you provide regarding the Service, without obligation to identify you as the source."
+                    }
+                },
+                "dataRetention": {
+                    "title": "10. Data and Retention",
+                    "userInfo": {
+                        "title": "User Information",
+                        "content": "We collect information such as name, email, IP address, browser, and operating system. You authorize us to store, process, and retrieve this information as part of using the Service."
+                    },
+                    "userSubmissions": {
+                        "title": "User Submissions",
+                        "content": "You grant us a non-exclusive, worldwide, royalty-free license to use, process, and display your uploaded content solely to provide the Service. You retain all rights beyond those granted."
+                    },
+                    "serviceData": {
+                        "title": "Service Data",
+                        "content": "We collect performance and operational data. When aggregated and anonymized without revealing personal information, we may use this data freely to improve the Service. We will not identify you or your users as the source."
+                    },
+                    "retention": {
+                        "title": "Data Retention",
+                        "items": [
+                            "Conversations: retained until manual deletion or account closure",
+                            "Documents and Knowledge Base: retained until manual deletion",
+                            "Extracted leads: retained until manual deletion",
+                            "Credit usage logs: retained permanently for audit",
+                            "Post-account deletion data: deleted within 30 days"
+                        ]
+                    },
+                    "protection": {
+                        "title": "Data Protection",
+                        "content": "We maintain reasonable security practices to protect your data. However, you are responsible for securing your own systems and data. For more details, see our Privacy Policy."
+                    }
+                },
+                "intellectualProperty": {
+                    "title": "11. Intellectual Property",
+                    "ourProperty": {
+                        "title": "Our Property",
+                        "content": "The Service, including software, design, logos, text, and all content created by us, are the exclusive property of Sevedo Co. Ltd. and are protected by intellectual property laws."
+                    },
+                    "yourProperty": {
+                        "title": "Your Property",
+                        "content": "You retain all rights to the content you upload to the Service, including documents, agent configurations, and conversation data."
+                    },
+                    "license": {
+                        "title": "License to Use",
+                        "content": "We grant you a limited, non-exclusive, non-transferable, and revocable license to use the Service in accordance with these Terms."
+                    }
+                },
+                "aiDisclaimer": {
+                    "title": "12. Artificial Intelligence Disclaimer",
+                    "intro": "The Service uses generative artificial intelligence technologies to create automated responses. It is important to understand the following limitations:",
+                    "limitations": [
+                        "AI-generated responses may contain errors, inaccuracies, or outdated information",
+                        "AI cannot replace professional judgment in legal, medical, or financial matters",
+                        "You are responsible for reviewing and approving your AI agent configurations",
+                        "Leader24 is not responsible for decisions made by your customers based on AI responses"
+                    ],
+                    "recommendation": "We recommend regularly monitoring conversations and configuring your AI agent appropriately for your industry."
+                },
+                "liability": {
+                    "title": "13. Limitation of Liability",
+                    "intro": "TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW:",
+                    "limitations": [
+                        "The Service is provided \"AS IS\" and \"AS AVAILABLE\" without warranties of any kind",
+                        "We do not guarantee that the Service will be uninterrupted, secure, or error-free",
+                        "We are not liable for indirect, incidental, special, or consequential damages",
+                        "Our total liability is limited to the amount paid for the Service in the last 12 months"
+                    ]
+                },
+                "termination": {
+                    "title": "14. Termination",
+                    "byYou": {
+                        "title": "Termination by You",
+                        "content": "You may cancel your account at any time from the dashboard settings. Cancellation will be effective at the end of the current billing period."
+                    },
+                    "byUs": {
+                        "title": "Termination by Us",
+                        "intro": "We may suspend or terminate your account immediately if:",
+                        "reasons": [
+                            "You violate these Terms or acceptable use policies",
+                            "Your use causes harm to the Service or other users",
+                            "We are required to do so by law"
+                        ]
+                    },
+                    "effects": {
+                        "title": "Effects of Termination",
+                        "content": "Upon termination, your data will be retained for 30 days, during which you may request an export. After that, data will be permanently deleted."
+                    }
+                },
+                "changes": {
+                    "title": "15. Changes to Terms",
+                    "content1": "We reserve the right to modify these Terms at any time. Changes will be posted on this page with the updated date.",
+                    "content2": "For substantial changes, we will notify you via email at least 30 days before they take effect. By continuing to use the Service after that date, you accept the new Terms."
+                },
+                "governingLaw": {
+                    "title": "16. Governing Law and Jurisdiction",
+                    "content1": "These Terms are governed by the laws of the Kingdom of Thailand, without regard to conflict of law principles.",
+                    "content2": "Any dispute arising out of or relating to these Terms shall be subject to the exclusive jurisdiction of the courts of Phuket, Thailand.",
+                    "euNote": "For European Union users: this does not affect your rights as a consumer under the laws of your country of residence."
+                },
+                "disputeResolution": {
+                    "title": "17. Dispute Resolution",
+                    "content1": "Before taking any legal action, we encourage you to contact us to try to resolve the dispute amicably.",
+                    "content2": "You can contact us at info@leader24.ai. We commit to responding within 15 business days."
+                },
+                "miscellaneous": {
+                    "title": "18. Miscellaneous",
+                    "items": {
+                        "entireAgreement": { "title": "Entire Agreement:", "content": "These Terms constitute the entire agreement between you and us regarding the Service." },
+                        "severability": { "title": "Severability:", "content": "If any provision is found invalid, the other provisions will remain in effect." },
+                        "waiver": { "title": "Waiver:", "content": "Failure to exercise a right does not constitute a waiver of that right." },
+                        "assignment": { "title": "Assignment:", "content": "You may not assign your rights without our written consent. We may assign our rights to a successor." },
+                        "forceMajeure": { "title": "Force Majeure:", "content": "We will not be liable for delays or failures due to causes beyond our reasonable control." }
+                    }
+                },
+                "contact": {
+                    "title": "19. Contact Us",
+                    "intro": "For any questions about these Terms of Service, you can contact us:",
+                    "addressLabel": "Address"
+                }
+            }
+        },
+        "cookie": {
+            "title": "Cookie Policy",
+            "lastUpdated": "Last updated: January 2026",
+            "sections": {
+                "intro": {
+                    "content1": "At Leader24 we believe in being transparent about the data we collect about you and how it is used. This policy provides information about cookies and how you can control them.",
+                    "content2": "Cookies are small text files stored on your computer or mobile device when you visit our site. They allow us to make the site work, make it more secure, provide you with a better experience, and understand how it is used."
+                },
+                "howWeUse": {
+                    "title": "How We Use Cookies",
+                    "intro": "We use cookies for several purposes:",
+                    "purposes": {
+                        "authentication": {
+                            "title": "Authentication",
+                            "content": "We use cookies to verify your identity when you log into the Leader24 dashboard. This allows us to show you the correct information and keep your session active securely."
+                        },
+                        "security": {
+                            "title": "Security",
+                            "content": "Cookies help us protect your account and data by detecting suspicious activity or unauthorized access."
+                        },
+                        "preferences": {
+                            "title": "Preferences",
+                            "content": "Cookies allow us to remember your preferences, such as your selected language and display settings, to provide you with a personalized experience."
+                        },
+                        "analytics": {
+                            "title": "Analytics and Performance",
+                            "content": "We use analytics cookies to understand how visitors interact with our site. This helps us continuously improve Leader24 and fix any issues."
+                        },
+                        "marketing": {
+                            "title": "Marketing",
+                            "content": "We use marketing cookies to measure the effectiveness of our advertising campaigns and show you relevant content based on your interests."
+                        }
+                    }
+                },
+                "yourChoices": {
+                    "title": "Your Choices",
+                    "intro": "You have control over cookies. You can manage your preferences in several ways:",
+                    "options": {
+                        "banner": { "title": "Cookie Banner:", "content": "When you visit our site, you can choose which categories of cookies to accept through the banner." },
+                        "browser": { "title": "Browser Settings:", "content": "Most browsers allow you to block or delete cookies. Check your browser settings for more details." }
+                    },
+                    "warning": "Note: Disabling necessary cookies may compromise website functionality and prevent you from accessing the dashboard."
+                },
+                "doNotTrack": {
+                    "title": "Do Not Track Signals",
+                    "content": "Some browsers offer a \"Do Not Track\" option that sends a signal to websites. We do not currently respond to these signals, but we respect your cookie choices made through our banner."
+                },
+                "thirdParty": {
+                    "title": "Third-Party Services",
+                    "intro": "Some cookies are set by third-party services we use. For more information about how these services handle your data, see their privacy policies:"
+                },
+                "updates": {
+                    "title": "Updates",
+                    "content": "We may update this Cookie Policy periodically. We encourage you to review this page regularly to stay informed about our use of cookies."
+                },
+                "contact": {
+                    "title": "Contact Us",
+                    "intro": "For any questions about our Cookie Policy, contact us:"
+                },
+                "cookieList": {
+                    "title": "Cookie List",
+                    "tableHeaders": { "cookie": "Cookie", "type": "Type", "purpose": "Purpose" },
+                    "types": { "firstParty": "First party", "thirdParty": "Third party" },
+                    "necessary": {
+                        "title": "Strictly Necessary Cookies",
+                        "items": [
+                            { "cookie": "sb-*-auth-token", "purpose": "User authentication" },
+                            { "cookie": "sb-*-auth-token-code-verifier", "purpose": "PKCE security verification" },
+                            { "cookie": "__stripe_mid", "purpose": "Payment fraud prevention" },
+                            { "cookie": "__stripe_sid", "purpose": "Payment session" }
+                        ]
+                    },
+                    "performance": {
+                        "title": "Performance Cookies",
+                        "items": [
+                            { "cookie": "_ga", "purpose": "Distinguish unique users" },
+                            { "cookie": "_ga_*", "purpose": "Google Analytics session state" }
+                        ]
+                    },
+                    "marketing": {
+                        "title": "Marketing Cookies",
+                        "items": [
+                            { "cookie": "_fbp", "purpose": "Facebook advertising tracking" },
+                            { "cookie": "_gcl_au", "purpose": "Google Ads conversions" }
+                        ]
+                    }
+                }
+            }
         }
     }
 }

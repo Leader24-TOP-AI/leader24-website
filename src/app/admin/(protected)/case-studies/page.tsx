@@ -7,7 +7,7 @@ import {
     ChevronUp, ChevronDown, Plus, Trash2, Eye, EyeOff
 } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
-import { translateText, translateChangedFields, hasArrayChanged } from '@/services/deeplService'
+import { translateToAllLanguages, translateChangedFieldsMultiLang, translateArrayToAllLanguages, hasArrayChanged } from '@/services/deeplService'
 import ConfirmModal from '@/components/admin/ConfirmModal'
 
 const colorOptions = [
@@ -134,31 +134,35 @@ export default function CaseStudiesPage() {
                 updated_at: new Date().toISOString()
             }
 
-            // Traduce SOLO i campi testuali modificati
-            const translations = await translateChangedFields(
+            // Traduce SOLO i campi testuali modificati in TUTTE le lingue (EN, ES, FR, DE)
+            const translations = await translateChangedFieldsMultiLang(
                 editForm as Record<string, unknown>,
                 originalValues as Record<string, unknown>,
                 ['tag_it', 'title_it', 'challenge_desc_it', 'solution_desc_it', 'stat_label_it']
             )
 
-            // Traduce l'array solo se modificato
+            // Traduce l'array solo se modificato - in tutte le lingue
             const arrayChanged = hasArrayChanged(
                 editForm.results_list_it || [],
                 originalValues.results_list_it || []
             )
             if (arrayChanged) {
-                const results_list_en = await Promise.all(
-                    (editForm.results_list_it || []).map(item => translateText(item))
-                )
-                updateData.results_list_en = results_list_en
+                const resultsTrans = await translateArrayToAllLanguages(editForm.results_list_it || [])
+                updateData.results_list_en = resultsTrans.en
+                updateData.results_list_es = resultsTrans.es
+                updateData.results_list_fr = resultsTrans.fr
+                updateData.results_list_de = resultsTrans.de
             }
 
             const hasTranslations = Object.keys(translations).length > 0 || arrayChanged
 
             if (hasTranslations) {
-                setSuccess('Traduzione automatica in corso...')
+                setSuccess('Traduzione automatica in corso (EN, ES, FR, DE)...')
                 Object.assign(updateData, translations)
                 updateData.auto_translated_en = true
+                updateData.auto_translated_es = true
+                updateData.auto_translated_fr = true
+                updateData.auto_translated_de = true
             }
 
             const { error } = await supabase
@@ -171,7 +175,7 @@ export default function CaseStudiesPage() {
             setEditingId(null)
             setOriginalValues({})
             setSuccess(hasTranslations
-                ? 'Salvato con traduzione automatica!'
+                ? 'Salvato con traduzione automatica (5 lingue)!'
                 : 'Salvato!')
             setTimeout(() => setSuccess(''), 3000)
         } catch (err: unknown) {
@@ -205,21 +209,20 @@ export default function CaseStudiesPage() {
         }
 
         setSaving(true)
-        setSuccess('Creazione e traduzione in corso...')
+        setSuccess('Creazione e traduzione in corso (EN, ES, FR, DE)...')
         try {
-            const [
-                tag_en, title_en, challenge_desc_en, solution_desc_en, stat_label_en
-            ] = await Promise.all([
-                translateText(createForm.tag_it),
-                translateText(createForm.title_it),
-                translateText(createForm.challenge_desc_it || ''),
-                translateText(createForm.solution_desc_it || ''),
-                translateText(createForm.stat_label_it || '')
+            // Traduce tutti i campi testuali in tutte le lingue
+            const [tagTrans, titleTrans, challengeTrans, solutionTrans, statLabelTrans] = await Promise.all([
+                translateToAllLanguages(createForm.tag_it),
+                translateToAllLanguages(createForm.title_it),
+                translateToAllLanguages(createForm.challenge_desc_it || ''),
+                translateToAllLanguages(createForm.solution_desc_it || ''),
+                translateToAllLanguages(createForm.stat_label_it || '')
             ])
 
-            const results_list_en = await Promise.all(
-                (createForm.results_list_it || []).filter(r => r.trim()).map(item => translateText(item))
-            )
+            // Traduce l'array in tutte le lingue
+            const filteredResults = (createForm.results_list_it || []).filter(r => r.trim())
+            const resultsTrans = await translateArrayToAllLanguages(filteredResults)
 
             const maxOrder = caseStudies.length > 0
                 ? Math.max(...caseStudies.map(c => c.display_order || 0))
@@ -230,28 +233,49 @@ export default function CaseStudiesPage() {
                 .insert({
                     case_key: createForm.case_key.toLowerCase().replace(/\s+/g, '_'),
                     tag_it: createForm.tag_it,
-                    tag_en,
+                    tag_en: tagTrans.en,
+                    tag_es: tagTrans.es,
+                    tag_fr: tagTrans.fr,
+                    tag_de: tagTrans.de,
                     tag_color: createForm.tag_color,
                     title_it: createForm.title_it,
-                    title_en,
+                    title_en: titleTrans.en,
+                    title_es: titleTrans.es,
+                    title_fr: titleTrans.fr,
+                    title_de: titleTrans.de,
                     challenge_desc_it: createForm.challenge_desc_it,
-                    challenge_desc_en,
+                    challenge_desc_en: challengeTrans.en,
+                    challenge_desc_es: challengeTrans.es,
+                    challenge_desc_fr: challengeTrans.fr,
+                    challenge_desc_de: challengeTrans.de,
                     solution_desc_it: createForm.solution_desc_it,
-                    solution_desc_en,
-                    results_list_it: createForm.results_list_it.filter(r => r.trim()),
-                    results_list_en: results_list_en.filter(r => r.trim()),
+                    solution_desc_en: solutionTrans.en,
+                    solution_desc_es: solutionTrans.es,
+                    solution_desc_fr: solutionTrans.fr,
+                    solution_desc_de: solutionTrans.de,
+                    results_list_it: filteredResults,
+                    results_list_en: resultsTrans.en,
+                    results_list_es: resultsTrans.es,
+                    results_list_fr: resultsTrans.fr,
+                    results_list_de: resultsTrans.de,
                     stat_value: createForm.stat_value,
                     stat_label_it: createForm.stat_label_it,
-                    stat_label_en,
+                    stat_label_en: statLabelTrans.en,
+                    stat_label_es: statLabelTrans.es,
+                    stat_label_fr: statLabelTrans.fr,
+                    stat_label_de: statLabelTrans.de,
                     is_reversed: createForm.is_reversed,
                     display_order: maxOrder + 1,
-                    auto_translated_en: true
+                    auto_translated_en: true,
+                    auto_translated_es: true,
+                    auto_translated_fr: true,
+                    auto_translated_de: true
                 })
 
             if (error) throw error
             await fetchCaseStudies()
             setShowCreateModal(false)
-            setSuccess('Case study creato con successo!')
+            setSuccess('Case study creato con traduzione automatica (5 lingue)!')
             setTimeout(() => setSuccess(''), 3000)
         } catch (err: unknown) {
             const message = err instanceof Error ? err.message : 'Errore nella creazione'

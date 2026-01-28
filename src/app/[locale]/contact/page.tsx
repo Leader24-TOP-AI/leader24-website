@@ -1,5 +1,4 @@
 import { getTranslations } from 'next-intl/server'
-import { redirect } from 'next/navigation'
 import type { Metadata } from 'next'
 import ContactPage from '@/components/pages/ContactPage'
 import { getSiteSettings, getSectionContent } from '@/lib/cms/server'
@@ -18,13 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-export default async function ContactPageRoute({ params }: Props) {
-  const { locale } = await params
-
-  if (locale === 'it') {
-    redirect('/it/contatti')
-  }
-
+export default async function ContactPageRoute() {
   const [contactSettings, sectionContent] = await Promise.all([
     getSiteSettings('contact'),
     getSectionContent([

@@ -8,7 +8,7 @@ import type { Sector } from '@/lib/cms/types'
 
 interface SectorSocialProofProps {
   sector: Sector
-  locale: 'it' | 'en'
+  locale: string
 }
 
 export default function SectorSocialProof({ sector, locale }: SectorSocialProofProps) {

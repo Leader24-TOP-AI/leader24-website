@@ -14,15 +14,13 @@ interface SectorPreviewProps {
 
 export default function SectorPreview({ sectors }: SectorPreviewProps) {
   const t = useTranslations('home.sectorPreview')
-  const locale = useLocale() as 'it' | 'en'
+  const locale = useLocale()
 
-  // Get sector link based on locale
-  const getSectorLink = (slug: string) =>
-    locale === 'en' ? `/en/sectors/${slug}` : `/it/settori/${slug}`
+  // Get sector link (all use English slugs now)
+  const getSectorLink = (slug: string) => `/${locale}/sectors/${slug}`
 
-  // Get all sectors link based on locale
-  const getAllSectorsLink = () =>
-    locale === 'en' ? '/en/sectors' : '/it/settori'
+  // Get all sectors link
+  const getAllSectorsLink = () => `/${locale}/sectors`
 
   // Take first 4 sectors
   const displaySectors = sectors.slice(0, 4)

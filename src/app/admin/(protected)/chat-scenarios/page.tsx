@@ -7,7 +7,7 @@ import {
     Check, AlertCircle, User, Bot, Eye, AlertTriangle
 } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
-import { translateText, translateChangedFields } from '@/services/deeplService'
+import { translateToAllLanguages, translateChangedFieldsMultiLang } from '@/services/deeplService'
 import IconPicker, { getIconComponent } from '@/components/admin/IconPicker'
 import ColorPicker from '@/components/admin/ColorPicker'
 import ChatPreview from '@/components/admin/ChatPreview'
@@ -135,35 +135,45 @@ export default function ChatScenariosPage() {
             }
 
             if (isCreating) {
-                // INSERT: Traduce SEMPRE tutti i campi
-                setSuccess('Traduzione automatica in corso...')
-                const [
-                    sector_name_en,
-                    user_message_en,
-                    ai_message_en,
-                    stat_en
-                ] = await Promise.all([
-                    translateText(editForm.sector_name_it || ''),
-                    translateText(editForm.user_message_it || ''),
-                    translateText(editForm.ai_message_it || ''),
-                    translateText(editForm.stat_it || '')
+                // INSERT: Traduce SEMPRE tutti i campi in TUTTE le lingue (EN, ES, FR, DE)
+                setSuccess('Traduzione automatica in corso (EN, ES, FR, DE)...')
+                const [sectorNameTrans, userMsgTrans, aiMsgTrans, statTrans] = await Promise.all([
+                    translateToAllLanguages(editForm.sector_name_it || ''),
+                    translateToAllLanguages(editForm.user_message_it || ''),
+                    translateToAllLanguages(editForm.ai_message_it || ''),
+                    translateToAllLanguages(editForm.stat_it || '')
                 ])
 
-                saveData.sector_name_en = sector_name_en
-                saveData.user_message_en = user_message_en
-                saveData.ai_message_en = ai_message_en
-                saveData.stat_en = stat_en
+                saveData.sector_name_en = sectorNameTrans.en
+                saveData.sector_name_es = sectorNameTrans.es
+                saveData.sector_name_fr = sectorNameTrans.fr
+                saveData.sector_name_de = sectorNameTrans.de
+                saveData.user_message_en = userMsgTrans.en
+                saveData.user_message_es = userMsgTrans.es
+                saveData.user_message_fr = userMsgTrans.fr
+                saveData.user_message_de = userMsgTrans.de
+                saveData.ai_message_en = aiMsgTrans.en
+                saveData.ai_message_es = aiMsgTrans.es
+                saveData.ai_message_fr = aiMsgTrans.fr
+                saveData.ai_message_de = aiMsgTrans.de
+                saveData.stat_en = statTrans.en
+                saveData.stat_es = statTrans.es
+                saveData.stat_fr = statTrans.fr
+                saveData.stat_de = statTrans.de
                 saveData.auto_translated_en = true
+                saveData.auto_translated_es = true
+                saveData.auto_translated_fr = true
+                saveData.auto_translated_de = true
 
                 const { error } = await supabase
                     .from('hero_chat_scenarios')
                     .insert([saveData])
 
                 if (error) throw error
-                setSuccess('Settore creato con traduzione automatica!')
+                setSuccess('Settore creato con traduzione automatica (5 lingue)!')
             } else {
-                // UPDATE: Traduce SOLO i campi modificati
-                const translations = await translateChangedFields(
+                // UPDATE: Traduce SOLO i campi modificati in TUTTE le lingue (EN, ES, FR, DE)
+                const translations = await translateChangedFieldsMultiLang(
                     editForm as Record<string, unknown>,
                     originalValues as Record<string, unknown>,
                     ['sector_name_it', 'user_message_it', 'ai_message_it', 'stat_it']
@@ -172,9 +182,12 @@ export default function ChatScenariosPage() {
                 const hasTranslations = Object.keys(translations).length > 0
 
                 if (hasTranslations) {
-                    setSuccess('Traduzione automatica in corso...')
+                    setSuccess('Traduzione automatica in corso (EN, ES, FR, DE)...')
                     Object.assign(saveData, translations)
                     saveData.auto_translated_en = true
+                    saveData.auto_translated_es = true
+                    saveData.auto_translated_fr = true
+                    saveData.auto_translated_de = true
                 }
 
                 const { error } = await supabase
@@ -184,7 +197,7 @@ export default function ChatScenariosPage() {
 
                 if (error) throw error
                 setSuccess(hasTranslations
-                    ? 'Salvato con traduzione automatica!'
+                    ? 'Salvato con traduzione automatica (5 lingue)!'
                     : 'Salvato!')
             }
 

@@ -7,7 +7,7 @@ import {
     Plus, Trash2, ChevronDown, ChevronUp
 } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
-import { translateText, translateChangedFields } from '@/services/deeplService'
+import { translateToAllLanguages, translateChangedFieldsMultiLang } from '@/services/deeplService'
 import ConfirmModal from '@/components/admin/ConfirmModal'
 
 interface FAQ {
@@ -79,8 +79,8 @@ export default function FAQsPage() {
                 updated_at: new Date().toISOString()
             }
 
-            // Traduce SOLO i campi modificati
-            const translations = await translateChangedFields(
+            // Traduce SOLO i campi modificati in TUTTE le lingue (EN, ES, FR, DE)
+            const translations = await translateChangedFieldsMultiLang(
                 editForm as Record<string, unknown>,
                 originalValues as Record<string, unknown>,
                 ['question_it', 'answer_it']
@@ -88,9 +88,12 @@ export default function FAQsPage() {
 
             // Se ci sono traduzioni, aggiungile all'update
             if (Object.keys(translations).length > 0) {
-                setSuccess('Traduzione automatica in corso...')
+                setSuccess('Traduzione automatica in corso (EN, ES, FR, DE)...')
                 Object.assign(updateData, translations)
                 updateData.auto_translated_en = true
+                updateData.auto_translated_es = true
+                updateData.auto_translated_fr = true
+                updateData.auto_translated_de = true
             }
 
             const { error } = await supabase
@@ -128,12 +131,12 @@ export default function FAQsPage() {
         }
 
         setSaving(true)
-        setSuccess('Traduzione automatica in corso...')
+        setSuccess('Traduzione automatica in corso (EN, ES, FR, DE)...')
         try {
-            // Auto-translate Italian to English
-            const [question_en, answer_en] = await Promise.all([
-                translateText(createForm.question_it),
-                translateText(createForm.answer_it)
+            // Auto-translate Italian to ALL languages (EN, ES, FR, DE)
+            const [questionTrans, answerTrans] = await Promise.all([
+                translateToAllLanguages(createForm.question_it),
+                translateToAllLanguages(createForm.answer_it)
             ])
 
             const maxOrder = Math.max(...faqs.map(f => f.display_order || 0), 0)
@@ -141,19 +144,28 @@ export default function FAQsPage() {
                 .from('faqs')
                 .insert({
                     question_it: createForm.question_it,
-                    question_en: question_en,
+                    question_en: questionTrans.en,
+                    question_es: questionTrans.es,
+                    question_fr: questionTrans.fr,
+                    question_de: questionTrans.de,
                     answer_it: createForm.answer_it,
-                    answer_en: answer_en,
+                    answer_en: answerTrans.en,
+                    answer_es: answerTrans.es,
+                    answer_fr: answerTrans.fr,
+                    answer_de: answerTrans.de,
                     display_order: maxOrder + 1,
                     is_active: true,
-                    auto_translated_en: true
+                    auto_translated_en: true,
+                    auto_translated_es: true,
+                    auto_translated_fr: true,
+                    auto_translated_de: true
                 })
 
             if (error) throw error
             await fetchFAQs()
             setShowCreateModal(false)
             setCreateForm({ question_it: '', answer_it: '' })
-            setSuccess('FAQ creata con traduzione automatica!')
+            setSuccess('FAQ creata con traduzione automatica (5 lingue)!')
             setTimeout(() => setSuccess(''), 3000)
         } catch (err: unknown) {
             const message = err instanceof Error ? err.message : 'Errore nella creazione'
