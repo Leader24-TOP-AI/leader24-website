@@ -76,7 +76,7 @@ export default async function Footer() {
 
         <div className="border-t border-gray-200 dark:border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-left gap-4">
           <p className="text-base text-gray-500 order-2 md:order-1 w-full md:w-auto text-center md:text-left">
-            &copy; {new Date().getFullYear()} Leader24. {t('footer.rights')}
+            &copy; {new Date().getFullYear()} Leader24 - Sevedo Co. Ltd. {t('footer.rights')}
           </p>
           <div className="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-2 order-1 md:order-2 w-full md:w-auto">
             <Link href={`/${locale}${routes.privacy}`} className="text-sm text-gray-500 hover:text-gray-900 dark:hover:text-white">{t('footer.privacy')}</Link>
