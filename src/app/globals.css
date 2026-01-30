@@ -139,3 +139,64 @@ html::-webkit-scrollbar {
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+/* Cookie Consent - Light Mode */
+#cc-main {
+  --cc-font-family: 'Inter', sans-serif;
+  --cc-bg: #ffffff;
+  --cc-primary-color: #111827;
+  --cc-secondary-color: #4b5563;
+  --cc-btn-primary-bg: #3662E3;
+  --cc-btn-primary-color: #ffffff;
+  --cc-btn-primary-border-color: #3662E3;
+  --cc-btn-primary-hover-bg: #2952CC;
+  --cc-btn-primary-hover-color: #ffffff;
+  --cc-btn-primary-hover-border-color: #2952CC;
+  --cc-btn-secondary-bg: #f3f4f6;
+  --cc-btn-secondary-color: #111827;
+  --cc-btn-secondary-border-color: #e5e7eb;
+  --cc-btn-secondary-hover-bg: #e5e7eb;
+  --cc-btn-secondary-hover-color: #111827;
+  --cc-btn-secondary-hover-border-color: #d1d5db;
+  --cc-separator-border-color: #e5e7eb;
+  --cc-cookie-category-block-bg: #f9fafb;
+  --cc-cookie-category-block-border: #e5e7eb;
+  --cc-cookie-category-block-hover-bg: #f3f4f6;
+  --cc-cookie-category-block-hover-border: #d1d5db;
+  --cc-overlay-bg: rgba(0, 0, 0, 0.5);
+  --cc-toggle-on-bg: #3662E3;
+  --cc-toggle-off-bg: #d1d5db;
+  --cc-toggle-readonly-bg: #9ca3af;
+  --cc-modal-border-radius: 1rem;
+  --cc-btn-border-radius: 0.75rem;
+  --cc-link-color: #3662E3;
+}
+
+/* Cookie Consent - Dark Mode */
+.dark #cc-main {
+  --cc-bg: #262626;
+  --cc-primary-color: #ffffff;
+  --cc-secondary-color: #a3a3a3;
+  --cc-btn-primary-bg: #3662E3;
+  --cc-btn-primary-color: #ffffff;
+  --cc-btn-primary-border-color: #3662E3;
+  --cc-btn-primary-hover-bg: #5B86EA;
+  --cc-btn-primary-hover-color: #ffffff;
+  --cc-btn-primary-hover-border-color: #5B86EA;
+  --cc-btn-secondary-bg: rgba(255, 255, 255, 0.05);
+  --cc-btn-secondary-color: #ffffff;
+  --cc-btn-secondary-border-color: rgba(255, 255, 255, 0.1);
+  --cc-btn-secondary-hover-bg: rgba(255, 255, 255, 0.1);
+  --cc-btn-secondary-hover-color: #ffffff;
+  --cc-btn-secondary-hover-border-color: rgba(255, 255, 255, 0.2);
+  --cc-separator-border-color: rgba(255, 255, 255, 0.1);
+  --cc-cookie-category-block-bg: rgba(255, 255, 255, 0.05);
+  --cc-cookie-category-block-border: rgba(255, 255, 255, 0.1);
+  --cc-cookie-category-block-hover-bg: rgba(255, 255, 255, 0.1);
+  --cc-cookie-category-block-hover-border: rgba(255, 255, 255, 0.2);
+  --cc-overlay-bg: rgba(0, 0, 0, 0.7);
+  --cc-toggle-on-bg: #3662E3;
+  --cc-toggle-off-bg: #525252;
+  --cc-toggle-readonly-bg: #6b7280;
+  --cc-link-color: #5B86EA;
+}

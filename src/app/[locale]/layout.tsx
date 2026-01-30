@@ -7,6 +7,7 @@ import { NavbarProvider } from '@/context/NavbarContext'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { getSiteSettings } from '@/lib/cms/server'
+import CookieConsentBanner from '@/components/CookieConsent'
 
 type Props = {
   children: React.ReactNode
@@ -29,6 +30,7 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   return (
     <NextIntlClientProvider messages={messages}>
+      <CookieConsentBanner locale={locale} />
       <ThemeProvider>
         <NavbarProvider>
           <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-dark-bg transition-colors duration-300">
