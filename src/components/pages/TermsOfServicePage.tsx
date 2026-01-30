@@ -33,10 +33,10 @@ const TermsOfServicePage = () => {
             {t('sections.acceptance.title')}
           </h2>
           <p className="mb-4">
-            {t('sections.acceptance.content')}
+            {t('sections.acceptance.content1')}
           </p>
           <p className="mb-4">
-            {t('sections.acceptance.organizationUse')}
+            {t('sections.acceptance.content2')}
           </p>
           <div className="bg-yellow-100 dark:bg-yellow-900/20 border border-yellow-300 dark:border-yellow-700 rounded-lg p-4">
             <p className="text-yellow-800 dark:text-yellow-200 font-medium">
@@ -118,10 +118,10 @@ const TermsOfServicePage = () => {
           </ul>
 
           <h3 className="font-semibold text-gray-900 dark:text-white mt-4 mb-2">
-            {t('sections.pricing.changes.title')}
+            {t('sections.pricing.priceChanges.title')}
           </h3>
           <p className="mb-4">
-            {t('sections.pricing.changes.content')}
+            {t('sections.pricing.priceChanges.content')}
           </p>
 
           <h3 className="font-semibold text-gray-900 dark:text-white mt-4 mb-2">
@@ -218,10 +218,10 @@ const TermsOfServicePage = () => {
           </h2>
 
           <h3 className="font-semibold text-gray-900 dark:text-white mt-4 mb-2">
-            {t('sections.confidentiality.information.title')}
+            {t('sections.confidentiality.confidentialInfo.title')}
           </h3>
           <p className="mb-4">
-            {t('sections.confidentiality.information.content')}
+            {t('sections.confidentiality.confidentialInfo.content')}
           </p>
 
           <h3 className="font-semibold text-gray-900 dark:text-white mt-4 mb-2">
@@ -232,10 +232,10 @@ const TermsOfServicePage = () => {
           </p>
 
           <h3 className="font-semibold text-gray-900 dark:text-white mt-4 mb-2">
-            {t('sections.confidentiality.disclosure.title')}
+            {t('sections.confidentiality.compelledDisclosure.title')}
           </h3>
           <p className="mb-4">
-            {t('sections.confidentiality.disclosure.content')}
+            {t('sections.confidentiality.compelledDisclosure.content')}
           </p>
 
           <h3 className="font-semibold text-gray-900 dark:text-white mt-4 mb-2">
@@ -347,7 +347,7 @@ const TermsOfServicePage = () => {
             {t('sections.liability.intro')}
           </p>
           <ul className="list-disc pl-6 space-y-2 mb-4">
-            {(t.raw('sections.liability.items') as string[]).map((item, i) => (
+            {(t.raw('sections.liability.limitations') as string[]).map((item, i) => (
               <li key={i}>{item}</li>
             ))}
           </ul>
@@ -392,10 +392,10 @@ const TermsOfServicePage = () => {
             {t('sections.changes.title')}
           </h2>
           <p className="mb-4">
-            {t('sections.changes.content')}
+            {t('sections.changes.content1')}
           </p>
           <p className="mb-4">
-            {t('sections.changes.notification')}
+            {t('sections.changes.content2')}
           </p>
         </section>
 
@@ -405,10 +405,10 @@ const TermsOfServicePage = () => {
             {t('sections.governingLaw.title')}
           </h2>
           <p className="mb-4">
-            {t('sections.governingLaw.content')}
+            {t('sections.governingLaw.content1')}
           </p>
           <p className="mb-4">
-            {t('sections.governingLaw.jurisdiction')}
+            {t('sections.governingLaw.content2')}
           </p>
           <p className="text-sm italic text-gray-500 dark:text-gray-400">
             {t('sections.governingLaw.euNote')}
@@ -418,13 +418,13 @@ const TermsOfServicePage = () => {
         {/* Section 17 - Dispute Resolution */}
         <section className="bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-2xl p-8">
           <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-            {t('sections.disputes.title')}
+            {t('sections.disputeResolution.title')}
           </h2>
           <p className="mb-4">
-            {t('sections.disputes.content')}
+            {t('sections.disputeResolution.content1')}
           </p>
           <p>
-            {t('sections.disputes.contact')}
+            {t('sections.disputeResolution.content2')}
           </p>
         </section>
 
@@ -435,24 +435,24 @@ const TermsOfServicePage = () => {
           </h2>
           <ul className="list-disc pl-6 space-y-2">
             <li>
-              <strong>{t('sections.miscellaneous.entireAgreement.title')}</strong>{' '}
-              {t('sections.miscellaneous.entireAgreement.content')}
+              <strong>{t('sections.miscellaneous.items.entireAgreement.title')}</strong>{' '}
+              {t('sections.miscellaneous.items.entireAgreement.content')}
             </li>
             <li>
-              <strong>{t('sections.miscellaneous.severability.title')}</strong>{' '}
-              {t('sections.miscellaneous.severability.content')}
+              <strong>{t('sections.miscellaneous.items.severability.title')}</strong>{' '}
+              {t('sections.miscellaneous.items.severability.content')}
             </li>
             <li>
-              <strong>{t('sections.miscellaneous.waiver.title')}</strong>{' '}
-              {t('sections.miscellaneous.waiver.content')}
+              <strong>{t('sections.miscellaneous.items.waiver.title')}</strong>{' '}
+              {t('sections.miscellaneous.items.waiver.content')}
             </li>
             <li>
-              <strong>{t('sections.miscellaneous.assignment.title')}</strong>{' '}
-              {t('sections.miscellaneous.assignment.content')}
+              <strong>{t('sections.miscellaneous.items.assignment.title')}</strong>{' '}
+              {t('sections.miscellaneous.items.assignment.content')}
             </li>
             <li>
-              <strong>{t('sections.miscellaneous.forceMajeure.title')}</strong>{' '}
-              {t('sections.miscellaneous.forceMajeure.content')}
+              <strong>{t('sections.miscellaneous.items.forceMajeure.title')}</strong>{' '}
+              {t('sections.miscellaneous.items.forceMajeure.content')}
             </li>
           </ul>
         </section>
