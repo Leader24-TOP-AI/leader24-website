@@ -238,7 +238,11 @@ export default function CookieConsentBanner({ locale }: { locale: string }) {
         },
       },
     })
-  }, [])
+  }, [locale])
+
+  useEffect(() => {
+    CookieConsent.setLanguage(locale)
+  }, [locale])
 
   return null
 }
