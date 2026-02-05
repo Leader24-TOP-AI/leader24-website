@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Outfit } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const inter = Inter({
@@ -66,6 +67,16 @@ export default function RootLayout({
     <html suppressHydrationWarning>
       <body className={`${inter.variable} ${outfit.variable} antialiased`}>
         {children}
+        <Script id="leader24-widget-config" strategy="afterInteractive">
+          {`window.Leader24WidgetConfig = {
+            agentId: '5ba57b54-4e50-4823-812d-bf812ad668ad',
+            apiUrl: 'https://api.leader24.ai'
+          };`}
+        </Script>
+        <Script
+          src="https://api.leader24.ai/widget-public/5ba57b54-4e50-4823-812d-bf812ad668ad/widget.js"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
