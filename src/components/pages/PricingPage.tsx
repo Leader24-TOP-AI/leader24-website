@@ -322,9 +322,12 @@ export default function PricingPage({ plans: dbPlans }: PricingPageProps) {
                     {/* Yearly price (only for recurring addons) */}
                     {type === 'recurring' && priceYearly && (
                       <div className="flex items-center justify-between">
-                        <span className="text-xs font-medium text-gray-500 dark:text-gray-400">
-                          {t('addons.yearlyLabel')}
-                        </span>
+                        <div className="flex items-center gap-2">
+                          <span className="text-xs font-medium text-gray-500 dark:text-gray-400">
+                            {t('addons.yearlyLabel')}
+                          </span>
+                          <span className="text-emerald-600 bg-emerald-500/10 text-xs font-medium px-1.5 py-0.5 rounded-full">-20%</span>
+                        </div>
                         <div>
                           <span className="text-lg font-bold text-gray-900 dark:text-white">€{priceYearly}</span>
                           <span className="text-xs text-gray-500 dark:text-gray-400 ml-1">
