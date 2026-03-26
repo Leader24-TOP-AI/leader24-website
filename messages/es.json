@@ -564,70 +564,48 @@
         }
     },
     "pricing": {
-        "title": "Elige el Plan Perfecto para Ti",
-        "subtitle": "Invierte en el crecimiento de tu negocio con planes transparentes y escalables. Sin costos ocultos.",
-        "popular": "Más Popular",
+        "title": "Planes escalables, precios transparentes",
+        "subtitle": "Elige el plan que mejor se adapte a tus necesidades. Todos los planes incluyen WhatsApp y las integraciones principales.",
+        "popular": "Recomendado",
         "monthly": "Mensual",
         "yearly": "Anual",
-        "perMonth": "mes",
+        "perMonth": "al mes",
+        "perMonthBilledYearly": "al mes, facturado {total} al año",
         "yearlyDiscount": "20% de descuento en planes anuales",
         "billedAnnually": "facturado anualmente",
         "year": "año",
-        "plans": {
-            "starter": {
-                "name": "Starter",
-                "desc": "Para pequeños negocios que comienzan con la automatización.",
-                "cta": "Empezar con Starter",
-                "features": [
-                    "Hasta 500 conversaciones/mes",
-                    "1 Agente de IA",
-                    "Base de Conocimientos Básica (PDF)",
-                    "Soporte por Email",
-                    "Integración WhatsApp Básica",
-                    "Panel de Estadísticas"
-                ],
-                "notIncluded": [
-                    "Entrenamiento Personalizado",
-                    "Acceso API",
-                    "Soporte Prioritario"
-                ]
+        "everythingIn": "Todo en {plan} +",
+        "trialBullet1": "30 días gratis, cancela cuando quieras",
+        "trialBullet2": "Sin cargos hoy",
+        "trialBullet3": "Tarjeta requerida para activar la prueba",
+        "addons": {
+            "title": "Personaliza tu plan",
+            "subtitle": "Potencia tu workspace con complementos.",
+            "monthlyLabel": "Mensual",
+            "yearlyLabel": "Anual",
+            "oneTime": "Pago único",
+            "creditRecharge": {
+                "name": "Recarga de créditos",
+                "description": "Añade 1000 mensajes extra a tu saldo. No caducan.",
+                "priceUnit": "/ 1000 mensajes"
             },
-            "growth": {
-                "name": "Growth",
-                "desc": "Para empresas en crecimiento que necesitan funciones avanzadas.",
-                "cta": "Elegir Growth",
-                "features": [
-                    "Hasta 2.000 conversaciones/mes",
-                    "3 Agentes de IA",
-                    "Base de Conocimientos Avanzada (Web + PDF)",
-                    "Soporte Prioritario",
-                    "Integraciones (Gmail, Calendar, Slack, Zendesk)",
-                    "Analíticas e Informes",
-                    "Entrenamiento IA Personalizado"
-                ],
-                "notIncluded": [
-                    "Agentes Ilimitados",
-                    "Account Manager Dedicado"
-                ]
+            "extraAgent": {
+                "name": "Agente IA extra",
+                "description": "Añade un agente IA a tu workspace.",
+                "priceUnit": "/ agente / mes",
+                "priceYearUnit": "/ agente / año"
             },
-            "enterprise": {
-                "name": "Enterprise",
-                "desc": "Para altos volúmenes y soluciones personalizadas.",
-                "cta": "Contactar Ventas",
-                "features": [
-                    "Conversaciones Ilimitadas",
-                    "Agentes de IA Ilimitados",
-                    "Base de Conocimientos Ilimitada",
-                    "Soporte Dedicado 24/7",
-                    "Todas las integraciones",
-                    "SLAs Garantizados",
-                    "Onboarding Dedicado",
-                    "Account Manager Personal"
-                ]
+            "extraMember": {
+                "name": "Miembro extra",
+                "description": "Añade un miembro a tu organización.",
+                "priceUnit": "/ miembro / mes",
+                "priceYearUnit": "/ miembro / año"
             },
-            "custom": {
-                "text": "¿Necesitas una solución personalizada?",
-                "link": "Habla con nuestro equipo de ventas"
+            "brandRemoval": {
+                "name": "Eliminar branding",
+                "description": "Elimina \"Powered by Leader24\" del widget.",
+                "priceUnit": "/ mes",
+                "priceYearUnit": "/ año"
             }
         }
     },

@@ -564,70 +564,48 @@
         }
     },
     "pricing": {
-        "title": "Wählen Sie den perfekten Plan für Sie",
-        "subtitle": "Investieren Sie in das Wachstum Ihres Unternehmens mit transparenten und skalierbaren Plänen. Keine versteckten Kosten.",
-        "popular": "Am beliebtesten",
+        "title": "Skalierbare Pläne, transparente Preise",
+        "subtitle": "Wählen Sie den Plan, der am besten zu Ihren Bedürfnissen passt. Alle Pläne beinhalten WhatsApp und die wichtigsten Integrationen.",
+        "popular": "Empfohlen",
         "monthly": "Monatlich",
         "yearly": "Jährlich",
-        "perMonth": "Monat",
+        "perMonth": "pro Monat",
+        "perMonthBilledYearly": "pro Monat, {total} jährlich abgerechnet",
         "yearlyDiscount": "20% Rabatt auf Jahrespläne",
         "billedAnnually": "jährlich abgerechnet",
         "year": "Jahr",
-        "plans": {
-            "starter": {
-                "name": "Starter",
-                "desc": "Für kleine Unternehmen, die mit der Automatisierung beginnen.",
-                "cta": "Mit Starter starten",
-                "features": [
-                    "Bis zu 500 Gespräche/Monat",
-                    "1 KI-Agent",
-                    "Basis-Wissensdatenbank (PDF)",
-                    "E-Mail-Support",
-                    "Grundlegende WhatsApp-Integration",
-                    "Statistik-Dashboard"
-                ],
-                "notIncluded": [
-                    "Individuelles Training",
-                    "API-Zugang",
-                    "Prioritäts-Support"
-                ]
+        "everythingIn": "Alles in {plan} +",
+        "trialBullet1": "30 Tage kostenlos, jederzeit kündbar",
+        "trialBullet2": "Keine Gebühren heute",
+        "trialBullet3": "Karte erforderlich zur Aktivierung der Testversion",
+        "addons": {
+            "title": "Passen Sie Ihren Plan an",
+            "subtitle": "Erweitern Sie Ihren Workspace mit leistungsstarken Zusatzmodulen.",
+            "monthlyLabel": "Monatlich",
+            "yearlyLabel": "Jährlich",
+            "oneTime": "Einmalig",
+            "creditRecharge": {
+                "name": "Guthaben aufladen",
+                "description": "Fügen Sie 1000 zusätzliche Nachrichten zu Ihrem Guthaben hinzu. Sie verfallen nie.",
+                "priceUnit": "/ 1000 Nachrichten"
             },
-            "growth": {
-                "name": "Growth",
-                "desc": "Für wachsende Unternehmen, die erweiterte Funktionen benötigen.",
-                "cta": "Growth wählen",
-                "features": [
-                    "Bis zu 2.000 Gespräche/Monat",
-                    "3 KI-Agenten",
-                    "Erweiterte Wissensdatenbank (Website + PDF)",
-                    "Prioritäts-Support",
-                    "Integrationen (Gmail, Kalender, Slack, Zendesk)",
-                    "Analytik & Berichte",
-                    "Individuelles KI-Training"
-                ],
-                "notIncluded": [
-                    "Unbegrenzte Agenten",
-                    "Dedizierter Account Manager"
-                ]
+            "extraAgent": {
+                "name": "Zusätzlicher KI-Agent",
+                "description": "Fügen Sie einen KI-Agenten zu Ihrem Workspace hinzu.",
+                "priceUnit": "/ Agent / Monat",
+                "priceYearUnit": "/ Agent / Jahr"
             },
-            "enterprise": {
-                "name": "Enterprise",
-                "desc": "Für hohe Volumen und individuelle Lösungen.",
-                "cta": "Vertrieb kontaktieren",
-                "features": [
-                    "Unbegrenzte Gespräche",
-                    "Unbegrenzte KI-Agenten",
-                    "Unbegrenzte Wissensdatenbank",
-                    "Dedizierter 24/7 Support",
-                    "Alle Integrationen",
-                    "Garantierte SLAs",
-                    "Dediziertes Onboarding",
-                    "Persönlicher Account Manager"
-                ]
+            "extraMember": {
+                "name": "Zusätzliches Teammitglied",
+                "description": "Fügen Sie ein Mitglied zu Ihrer Organisation hinzu.",
+                "priceUnit": "/ Mitglied / Monat",
+                "priceYearUnit": "/ Mitglied / Jahr"
             },
-            "custom": {
-                "text": "Benötigen Sie eine individuelle Lösung?",
-                "link": "Sprechen Sie mit unserem Vertriebsteam"
+            "brandRemoval": {
+                "name": "Branding entfernen",
+                "description": "Entfernen Sie \"Powered by Leader24\" vom Widget.",
+                "priceUnit": "/ Monat",
+                "priceYearUnit": "/ Jahr"
             }
         }
     },
