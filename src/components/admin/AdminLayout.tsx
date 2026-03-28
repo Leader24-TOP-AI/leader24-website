@@ -12,7 +12,7 @@ import {
   Puzzle,
   CreditCard,
   FileText,
-  Image,
+  Image as ImageIcon,
   LogOut,
   ChevronLeft,
   ChevronRight,
@@ -27,6 +27,7 @@ import {
   BookOpen,
   Grid3x3
 } from 'lucide-react'
+import Image from 'next/image'
 import { useAdmin } from '@/context/AdminContext'
 import { useTheme } from 'next-themes'
 
@@ -43,7 +44,7 @@ const navItems = [
   { path: '/admin/testimonials', icon: Quote, label: 'Testimonianze' },
   { path: '/admin/integrations', icon: Puzzle, label: 'Integrazioni' },
   { path: '/admin/pricing', icon: CreditCard, label: 'Prezzi' },
-  { path: '/admin/media', icon: Image, label: 'Media' },
+  { path: '/admin/media', icon: ImageIcon, label: 'Media' },
 ]
 
 interface AdminLayoutProps {
@@ -98,22 +99,15 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
     <div className="flex flex-col h-full overflow-x-hidden">
       {/* Logo */}
       <div className={`flex items-center ${sidebarCollapsed && !isMobile ? 'justify-center px-2' : 'px-4'} h-16 border-b border-gray-200 dark:border-white/10`}>
-        <Link href="/admin/dashboard" className="flex items-center gap-2">
-          <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-lg shadow-primary/30">
-            <span className="text-white font-bold text-lg">L</span>
-          </div>
-          <AnimatePresence mode="wait">
-            {(!sidebarCollapsed || isMobile) && (
-              <motion.span
-                initial={{ opacity: 0, width: 0 }}
-                animate={{ opacity: 1, width: 'auto' }}
-                exit={{ opacity: 0, width: 0 }}
-                className="font-heading font-bold text-xl text-gray-900 dark:text-white whitespace-nowrap"
-              >
-                Leader24
-              </motion.span>
-            )}
-          </AnimatePresence>
+        <Link href="/admin/dashboard" className="flex items-center">
+          {sidebarCollapsed && !isMobile ? (
+            <Image src="/favicon-32x32.png" alt="Leader24" width={32} height={32} className="w-8 h-8" />
+          ) : (
+            <>
+              <Image src="/logo-dark.png" alt="Leader24" width={150} height={48} className="h-8 w-auto dark:hidden" />
+              <Image src="/logo.png" alt="Leader24" width={150} height={48} className="h-8 w-auto hidden dark:block" />
+            </>
+          )}
         </Link>
       </div>
 

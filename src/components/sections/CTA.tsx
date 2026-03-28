@@ -19,7 +19,7 @@ const CTA = ({ sectionContent }: CTAProps) => {
   return (
     <div className="py-24 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-primary-dark to-dark-bg z-0"></div>
-      <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 z-0 mix-blend-overlay"></div>
+      <div className="absolute inset-0 bg-[url('/noise.svg')] opacity-20 z-0 mix-blend-overlay"></div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-heading">

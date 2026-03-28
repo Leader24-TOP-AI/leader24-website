@@ -63,10 +63,16 @@ const SECTION_CONFIG: SectionConfig[] = [
         description: 'Tutti i testi della homepage',
         items: [
             // Hero
+            { key: 'hero_badge', type: 'text', label: '🏠 Hero: Badge (es. AI Attiva 24/7)', source: 'content' },
             { key: 'hero_title', type: 'text', label: '🏠 Hero: Titolo', source: 'content' },
+            { key: 'hero_title_prefix', type: 'text', label: '🏠 Hero: Prefisso parola rotante (es. Anche quando)', source: 'content' },
+            { key: 'hero_rotating_words', type: 'text', label: '🏠 Hero: Parole rotanti (separate da virgola)', source: 'content' },
+            { key: 'hero_title_highlight', type: 'text', label: '🏠 Hero: Riga evidenziata (verde)', source: 'content' },
             { key: 'hero_subtitle', type: 'textarea', label: '🏠 Hero: Sottotitolo', source: 'content' },
             { key: 'hero_cta_primary', type: 'text', label: '🏠 Hero: CTA Primario', source: 'content' },
             { key: 'hero_cta_secondary', type: 'text', label: '🏠 Hero: CTA Secondario', source: 'content' },
+            { key: 'hero_check_1', type: 'text', label: '🏠 Hero: Check 1 (es. Nessuna carta richiesta)', source: 'content' },
+            { key: 'hero_check_2', type: 'text', label: '🏠 Hero: Check 2 (es. 14 giorni di prova)', source: 'content' },
             // How It Works
             { key: 'how_it_works_title', type: 'text', label: '⚙️ Come Funziona: Titolo', source: 'content' },
             { key: 'how_it_works_subtitle', type: 'textarea', label: '⚙️ Come Funziona: Sottotitolo', source: 'content' },

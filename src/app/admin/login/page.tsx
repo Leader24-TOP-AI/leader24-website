@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
 import { Mail, Lock, Eye, EyeOff, AlertCircle, ArrowRight, Loader2 } from 'lucide-react'
+import Image from 'next/image'
 import { useAdmin } from '@/context/AdminContext'
 
 export default function AdminLoginPage() {
@@ -98,18 +99,12 @@ export default function AdminLoginPage() {
               transition={{ delay: 0.1 }}
               className="flex justify-center mb-8"
             >
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-lg shadow-primary/30">
-                  <span className="text-white font-bold text-2xl font-heading">L</span>
-                </div>
-                <div>
-                  <h1 className="font-heading font-bold text-2xl text-gray-900 dark:text-white">
-                    Leader24
-                  </h1>
-                  <p className="text-xs text-gray-500 dark:text-gray-400 font-medium tracking-wide">
-                    ADMIN PANEL
-                  </p>
-                </div>
+              <div className="flex flex-col items-center gap-2">
+                <Image src="/logo-dark.png" alt="Leader24" width={180} height={57} className="h-10 w-auto dark:hidden" priority />
+                <Image src="/logo.png" alt="Leader24" width={180} height={57} className="h-10 w-auto hidden dark:block" priority />
+                <p className="text-xs text-gray-500 dark:text-gray-400 font-medium tracking-wide">
+                  ADMIN PANEL
+                </p>
               </div>
             </motion.div>
 

@@ -1,21 +1,41 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { ArrowRight, CheckCircle2 } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { useTranslations, useLocale } from 'next-intl'
 import { useTheme } from '@/context/ThemeContext'
 import HeroChatRotator from './HeroChatRotator'
-import type { ChatScenario, SiteSetting } from '@/lib/cms/types'
+import { getLocalizedValue } from '@/lib/cms/types'
+import type { ChatScenario, SiteSetting, SectionContent } from '@/lib/cms/types'
 
 interface HeroProps {
   chatScenarios: ChatScenario[]
   heroSettings: Record<string, SiteSetting>
+  sectionContent: Record<string, SectionContent>
 }
 
-const Hero = ({ chatScenarios, heroSettings }: HeroProps) => {
+const Hero = ({ chatScenarios, heroSettings, sectionContent }: HeroProps) => {
   const t = useTranslations('hero')
   const locale = useLocale()
   const { theme } = useTheme()
+
+  const getCMS = (key: string, i18nKey: string) => {
+    return getLocalizedValue(sectionContent[key], 'content', locale) || t(i18nKey)
+  }
+
+  // Rotating words
+  const rotatingWordsRaw = getLocalizedValue(sectionContent['hero_rotating_words'], 'content', locale) || 'dormi'
+  const rotatingWords = rotatingWordsRaw.split(',').map(w => w.trim()).filter(Boolean)
+  const [wordIndex, setWordIndex] = useState(0)
+
+  useEffect(() => {
+    if (rotatingWords.length <= 1) return
+    const interval = setInterval(() => {
+      setWordIndex(prev => (prev + 1) % rotatingWords.length)
+    }, 2500)
+    return () => clearInterval(interval)
+  }, [rotatingWords.length])
 
   // Use scenarios from props, with fallback
   const scenarios = chatScenarios.length > 0 ? chatScenarios : [
@@ -59,7 +79,7 @@ const Hero = ({ chatScenarios, heroSettings }: HeroProps) => {
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/5 via-white/30 to-white/30 dark:from-primary/20 dark:via-dark-bg dark:to-dark-bg opacity-30 dark:opacity-50"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-12 items-center">
 
         {/* Left Column: Text */}
         <div className="text-left space-y-8">
@@ -68,35 +88,59 @@ const Hero = ({ chatScenarios, heroSettings }: HeroProps) => {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
             </span>
-            <span className="text-sm font-medium text-gray-600 dark:text-gray-300">{t('badge')}</span>
+            <span className="text-sm font-medium text-gray-600 dark:text-gray-300">{getCMS('hero_badge', 'badge')}</span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold font-heading leading-[1.1] text-gray-900 dark:text-white">
-            {t('title')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600">WhatsApp</span>
+          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold font-heading leading-[1.1] text-gray-900 dark:text-white">
+            {getCMS('hero_title', 'title')}
+            <br />
+            {getCMS('hero_title_prefix', '')}{' '}
+            <span className="inline-block relative align-bottom">
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={rotatingWords[wordIndex]}
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: -20, opacity: 0 }}
+                  transition={{ duration: 0.4 }}
+                  className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary"
+                >
+                  {rotatingWords[wordIndex]}
+                </motion.span>
+              </AnimatePresence>
+            </span>
+            {getCMS('hero_title_highlight', '') && (
+              <>
+                <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600">
+                  {getCMS('hero_title_highlight', '')}
+                </span>
+              </>
+            )}
           </h1>
 
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-xl leading-relaxed">
-            {t('subtitle')}
+            {getCMS('hero_subtitle', 'subtitle')}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
             <a href={`https://dash.leader24.ai/${locale}/signup`} className="btn-primary group">
-              {t('ctaPrimary')}
+              {getCMS('hero_cta_primary', 'ctaPrimary')}
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
             <a href="#features" className="btn-secondary">
-              {t('ctaSecondary')}
+              {getCMS('hero_cta_secondary', 'ctaSecondary')}
             </a>
           </div>
 
           <div className="flex items-center gap-6 text-sm text-gray-500 pt-4">
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-primary" />
-              <span>{t('noCard')}</span>
+              <span>{getCMS('hero_check_1', 'noCard')}</span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-primary" />
-              <span>{t('trial')}</span>
+              <span>{getCMS('hero_check_2', 'trial')}</span>
             </div>
           </div>
         </div>

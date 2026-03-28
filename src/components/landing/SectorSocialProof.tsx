@@ -29,7 +29,7 @@ export default function SectorSocialProof({ sector, locale }: SectorSocialProofP
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary-dark to-dark-bg relative overflow-hidden">
       {/* Background texture */}
-      <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay" />
+      <div className="absolute inset-0 bg-[url('/noise.svg')] opacity-20 mix-blend-overlay" />
 
       <div className="max-w-5xl mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

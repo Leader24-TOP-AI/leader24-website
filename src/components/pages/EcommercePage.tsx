@@ -135,7 +135,7 @@ export default function EcommercePage() {
         className="relative overflow-hidden rounded-3xl border border-gray-200 dark:border-white/10"
       >
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-gray-100 dark:from-primary-dark/50 dark:to-dark-card z-0"></div>
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 z-0 mix-blend-overlay"></div>
+        <div className="absolute inset-0 bg-[url('/noise.svg')] opacity-10 z-0 mix-blend-overlay"></div>
 
         <div className="relative z-10 p-12 md:p-20 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">{t('roi.title')}</h2>

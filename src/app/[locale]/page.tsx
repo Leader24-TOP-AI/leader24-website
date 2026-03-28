@@ -56,6 +56,7 @@ export default async function HomePage() {
     getHomepageSteps(),
     getFAQs(),
     getSectionContent([
+      'hero_badge', 'hero_title', 'hero_title_prefix', 'hero_rotating_words', 'hero_title_highlight', 'hero_subtitle', 'hero_cta_primary', 'hero_cta_secondary', 'hero_check_1', 'hero_check_2',
       'features_title', 'features_subtitle',
       'how_it_works_title', 'how_it_works_subtitle',
       'testimonials_title', 'testimonials_subtitle',
@@ -73,6 +74,7 @@ export default async function HomePage() {
       <Hero
         chatScenarios={chatScenarios}
         heroSettings={heroSettings}
+        sectionContent={sectionContent}
       />
       <HowItWorks
         steps={steps}
