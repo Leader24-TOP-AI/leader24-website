@@ -48,6 +48,37 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
     localStorage.setItem('theme', theme)
   }, [theme, mounted])
 
+  // Sync theme to dashboard links: append ?theme= to all dash.leader24.ai links
+  useEffect(() => {
+    if (!mounted) return
+
+    function updateDashboardLinks() {
+      document.querySelectorAll<HTMLAnchorElement>('a[href*="dash.leader24.ai"]').forEach(a => {
+        try {
+          const url = new URL(a.href)
+          url.searchParams.set('theme', theme)
+          a.href = url.toString()
+        } catch { /* ignore invalid URLs */ }
+      })
+    }
+
+    updateDashboardLinks()
+
+    // Capture-phase click handler as fallback for dynamically added links
+    function handleClick(e: MouseEvent) {
+      const anchor = (e.target as Element).closest<HTMLAnchorElement>('a[href*="dash.leader24.ai"]')
+      if (!anchor) return
+      try {
+        const url = new URL(anchor.href)
+        url.searchParams.set('theme', theme)
+        anchor.href = url.toString()
+      } catch { /* ignore invalid URLs */ }
+    }
+
+    document.addEventListener('click', handleClick, true)
+    return () => document.removeEventListener('click', handleClick, true)
+  }, [theme, mounted])
+
   const toggleTheme = () => {
     setTheme(prevTheme => prevTheme === 'dark' ? 'light' : 'dark')
   }
