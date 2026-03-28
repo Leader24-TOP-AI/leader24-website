@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Check, Zap, Sparkles, Crown, RefreshCw, Bot, Users } from 'lucide-react'
+import { Check, Zap, Sparkles, Crown, RefreshCw, Bot, Users, Info } from 'lucide-react'
 import { useTranslations, useLocale } from 'next-intl'
 import { getLocalizedValue } from '@/lib/cms/types'
 import type { PricingPlan } from '@/lib/cms/types'
@@ -27,8 +27,8 @@ const fallbackPlans: PricingPlan[] = [
     price_yearly: 336,
     billing_period_it: '/mese',
     billing_period_en: '/month',
-    features_it: ['500 messaggi/mese', '1 agente AI', '2 membri team', '20 pagine web', '30 MB upload documenti', 'WhatsApp, Shopify, WordPress, WooCommerce', 'Mailchimp e Calendly'],
-    features_en: ['500 messages/month', '1 AI agent', '2 team members', '20 web pages', '30 MB document upload', 'WhatsApp, Shopify, WordPress, WooCommerce', 'Mailchimp and Calendly'],
+    features_it: ['500 messaggi/mese', '1 agente AI', '2 membri team', '20 pagine web', '30 MB upload documenti'],
+    features_en: ['500 messages/month', '1 AI agent', '2 team members', '20 web pages', '30 MB document upload'],
     not_included_it: ['Gmail e Google Calendar', 'AI Insights', 'Supporto prioritario'],
     not_included_en: ['Gmail and Google Calendar', 'AI Insights', 'Priority support'],
     cta_text_it: 'Prova gratis 30 giorni',
@@ -53,8 +53,8 @@ const fallbackPlans: PricingPlan[] = [
     price_yearly: 1152,
     billing_period_it: '/mese',
     billing_period_en: '/month',
-    features_it: ['4.000 messaggi/mese', '3 agenti AI', '5 membri team', '50 pagine web', '100 MB upload documenti', 'Gmail e Google Calendar', 'AI Insights'],
-    features_en: ['4,000 messages/month', '3 AI agents', '5 team members', '50 web pages', '100 MB document upload', 'Gmail and Google Calendar', 'AI Insights'],
+    features_it: ['4.000 messaggi/mese', '3 agenti AI', '5 membri team', '50 pagine web', '100 MB upload documenti'],
+    features_en: ['4,000 messages/month', '3 AI agents', '5 team members', '50 web pages', '100 MB document upload'],
     not_included_it: ['Supporto prioritario', 'Manager dedicato'],
     not_included_en: ['Priority support', 'Dedicated manager'],
     cta_text_it: 'Inizia ora',
@@ -79,8 +79,8 @@ const fallbackPlans: PricingPlan[] = [
     price_yearly: 2880,
     billing_period_it: '/mese',
     billing_period_en: '/month',
-    features_it: ['15.000 messaggi/mese', '6 agenti AI', '8 membri team', '150 pagine web', '500 MB upload documenti', 'Supporto prioritario', 'Manager dedicato'],
-    features_en: ['15,000 messages/month', '6 AI agents', '8 team members', '150 web pages', '500 MB document upload', 'Priority support', 'Dedicated manager'],
+    features_it: ['15.000 messaggi/mese', '6 agenti AI', '8 membri team', '150 pagine web', '500 MB upload documenti'],
+    features_en: ['15,000 messages/month', '6 AI agents', '8 team members', '150 web pages', '500 MB document upload'],
     not_included_it: [],
     not_included_en: [],
     cta_text_it: 'Inizia ora',
@@ -97,6 +97,60 @@ const planStyles: Record<string, { color: string; bg: string; border: string }> 
   starter: { color: 'text-emerald-400', bg: 'bg-emerald-500/10', border: 'border-emerald-500/20' },
   business: { color: 'text-amber-400', bg: 'bg-amber-500/10', border: 'border-amber-500/20' },
   enterprise: { color: 'text-rose-400', bg: 'bg-rose-500/10', border: 'border-rose-500/20' }
+}
+
+// Integrations shown separately with label (aligned with dashboard)
+const PLAN_INTEGRATIONS: Record<string, string[]> = {
+  starter: ['WhatsApp', 'Shopify', 'WordPress', 'WooCommerce', 'Mailchimp', 'Calendly'],
+  business: ['Gmail', 'Google Calendar'],
+  enterprise: [],
+}
+
+const INTEGRATIONS_LABEL: Record<string, Record<string, string>> = {
+  starter: { it: 'Integrazioni: ', en: 'Integrations: ', es: 'Integraciones: ', fr: 'Intégrations : ', de: 'Integrationen: ' },
+  business: { it: 'Integrazioni avanzate: ', en: 'Advanced integrations: ', es: 'Integraciones avanzadas: ', fr: 'Intégrations avancées : ', de: 'Erweiterte Integrationen: ' },
+}
+
+// Features with tooltip hover (aligned with dashboard) — all 5 languages
+const PLAN_TOOLTIP_FEATURES: Record<string, { key: string; labels: Record<string, string>; descs: Record<string, string> }[]> = {
+  starter: [],
+  business: [
+    {
+      key: 'aiInsights',
+      labels: { it: 'AI Insights', en: 'AI Insights', es: 'AI Insights', fr: 'AI Insights', de: 'AI Insights' },
+      descs: {
+        it: 'Analisi intelligente delle conversazioni con suggerimenti automatici per migliorare le performance del tuo agente.',
+        en: 'Smart conversation analysis with automatic suggestions to improve your agent\'s performance.',
+        es: 'Análisis inteligente de conversaciones con sugerencias automáticas para mejorar el rendimiento de tu agente.',
+        fr: 'Analyse intelligente des conversations avec suggestions automatiques pour améliorer les performances de votre agent.',
+        de: 'Intelligente Gesprächsanalyse mit automatischen Vorschlägen zur Verbesserung der Leistung Ihres Agenten.',
+      },
+    },
+  ],
+  enterprise: [
+    {
+      key: 'prioritySupport',
+      labels: { it: 'Supporto prioritario', en: 'Priority support', es: 'Soporte prioritario', fr: 'Support prioritaire', de: 'Prioritäts-Support' },
+      descs: {
+        it: 'Assistenza dedicata con tempi di risposta garantiti e canale di supporto prioritario.',
+        en: 'Dedicated assistance with guaranteed response times and priority support channel.',
+        es: 'Asistencia dedicada con tiempos de respuesta garantizados y canal de soporte prioritario.',
+        fr: 'Assistance dédiée avec des temps de réponse garantis et un canal de support prioritaire.',
+        de: 'Dedizierte Unterstützung mit garantierten Reaktionszeiten und prioritärem Supportkanal.',
+      },
+    },
+    {
+      key: 'dedicatedManager',
+      labels: { it: 'Account manager dedicato', en: 'Dedicated account manager', es: 'Gestor de cuenta dedicado', fr: 'Responsable de compte dédié', de: 'Dedizierter Account-Manager' },
+      descs: {
+        it: 'Un account manager personale che ti segue nella configurazione e ottimizzazione dei tuoi agenti.',
+        en: 'A personal account manager who helps you configure and optimize your agents.',
+        es: 'Un gestor de cuenta personal que te ayuda a configurar y optimizar tus agentes.',
+        fr: 'Un responsable de compte personnel qui vous accompagne dans la configuration et l\'optimisation de vos agents.',
+        de: 'Ein persönlicher Account-Manager, der Sie bei der Konfiguration und Optimierung Ihrer Agenten unterstützt.',
+      },
+    },
+  ],
 }
 
 const ADDONS: { key: string; icon: LucideIcon; color: string; bg: string; type: 'onetime' | 'recurring'; priceMonthly: number; priceYearly?: number }[] = [
@@ -274,6 +328,33 @@ export default function PricingPage({ plans: dbPlans }: PricingPageProps) {
                     <div key={idx} className="flex items-start gap-2">
                       <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
                       <span className="text-gray-700 dark:text-gray-300">{feature}</span>
+                    </div>
+                  ))}
+
+                  {/* Integrations */}
+                  {(PLAN_INTEGRATIONS[planKey] || []).length > 0 && (
+                    <div className="flex items-start gap-2">
+                      <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                      <span className="text-gray-700 dark:text-gray-300">
+                        <span className="text-gray-500 dark:text-gray-400">
+                          {INTEGRATIONS_LABEL[planKey]?.[locale] || INTEGRATIONS_LABEL[planKey]?.it || ''}
+                        </span>
+                        {PLAN_INTEGRATIONS[planKey].join(', ')}
+                      </span>
+                    </div>
+                  )}
+
+                  {/* Features with tooltip */}
+                  {(PLAN_TOOLTIP_FEATURES[planKey] || []).map((feat) => (
+                    <div key={feat.key} className="flex items-start gap-2 group relative">
+                      <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                      <span className="text-gray-700 dark:text-gray-300 underline decoration-dotted underline-offset-4 cursor-help inline-flex items-center gap-1">
+                        {feat.labels[locale] || feat.labels.it}
+                        <Info className="w-3.5 h-3.5 text-gray-400" />
+                        <span className="absolute bottom-full left-6 mb-2 hidden group-hover:block bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-xs rounded-lg px-3 py-2 max-w-[250px] z-50 shadow-lg">
+                          {feat.descs[locale] || feat.descs.it}
+                        </span>
+                      </span>
                     </div>
                   ))}
                 </div>
