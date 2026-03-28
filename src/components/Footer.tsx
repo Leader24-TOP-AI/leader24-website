@@ -69,7 +69,6 @@ export default async function Footer() {
             <ul className="space-y-3">
               <li><Link href={`/${locale}${routes.contact}`} className="text-base text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">{t('nav.contact')}</Link></li>
               <li><a href={`https://docs.leader24.ai/${locale}/docs`} className="text-base text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">{t('footer.documentation')}</a></li>
-              <li><a href="#" className="text-base text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">{t('footer.status')}</a></li>
               <li className="text-base text-gray-600 dark:text-gray-400">info@leader24.ai</li>
             </ul>
           </div>
