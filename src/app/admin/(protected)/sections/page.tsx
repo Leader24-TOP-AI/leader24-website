@@ -8,7 +8,7 @@ import {
     LucideIcon
 } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
-import { translateToAllLanguages } from '@/services/deeplService'
+import { translateToAllLanguages, translateText } from '@/services/deeplService'
 
 // Configurazione sezioni - una card per ogni pagina del sito
 interface SectionItem {
@@ -17,6 +17,7 @@ interface SectionItem {
     label: string
     source: 'content' | 'settings'
     category?: string
+    commaSeparated?: boolean
 }
 
 interface SectionConfig {
@@ -66,7 +67,7 @@ const SECTION_CONFIG: SectionConfig[] = [
             { key: 'hero_badge', type: 'text', label: '🏠 Hero: Badge (es. AI Attiva 24/7)', source: 'content' },
             { key: 'hero_title', type: 'text', label: '🏠 Hero: Titolo', source: 'content' },
             { key: 'hero_title_prefix', type: 'text', label: '🏠 Hero: Prefisso parola rotante (es. Anche quando)', source: 'content' },
-            { key: 'hero_rotating_words', type: 'text', label: '🏠 Hero: Parole rotanti (separate da virgola)', source: 'content' },
+            { key: 'hero_rotating_words', type: 'text', label: '🏠 Hero: Parole rotanti (separate da virgola)', source: 'content', commaSeparated: true },
             { key: 'hero_title_highlight', type: 'text', label: '🏠 Hero: Riga evidenziata (verde)', source: 'content' },
             { key: 'hero_subtitle', type: 'textarea', label: '🏠 Hero: Sottotitolo', source: 'content' },
             { key: 'hero_cta_primary', type: 'text', label: '🏠 Hero: CTA Primario', source: 'content' },
@@ -215,6 +216,7 @@ export default function SectionsPage() {
     const [originalValues, setOriginalValues] = useState<Record<string, string>>({})
     const [loading, setLoading] = useState(true)
     const [saving, setSaving] = useState(false)
+    const [retranslating, setRetranslating] = useState(false)
     const [error, setError] = useState('')
     const [success, setSuccess] = useState('')
 
@@ -313,7 +315,20 @@ export default function SectionsPage() {
                     }
                     // Traduce SOLO se modificato - in TUTTE le lingue (EN, ES, FR, DE)
                     if (hasChanged && value_it) {
-                        update.translations = await translateToAllLanguages(value_it)
+                        if (item.commaSeparated) {
+                            // Traduce ogni elemento separatamente
+                            const items = value_it.split(',').map((s: string) => s.trim()).filter(Boolean)
+                            const langs = ['EN', 'ES', 'FR', 'DE'] as const
+                            const langResults = await Promise.all(
+                                langs.map(async (lang) => {
+                                    const translated = await Promise.all(items.map((w: string) => translateText(w, lang)))
+                                    return translated.join(', ')
+                                })
+                            )
+                            update.translations = { en: langResults[0], es: langResults[1], fr: langResults[2], de: langResults[3] }
+                        } else {
+                            update.translations = await translateToAllLanguages(value_it)
+                        }
                         update.needsTranslation = true
                         translationsCount++
                     }
@@ -403,6 +418,80 @@ export default function SectionsPage() {
         }
     }
 
+    const handleRetranslateAll = async () => {
+        if (!selectedSection) return
+        if (!confirm('Rigenerare tutte le traduzioni di questa sezione? Sovrascriverà le traduzioni esistenti.')) return
+
+        setRetranslating(true)
+        setError('')
+        try {
+            let count = 0
+            for (const item of selectedSection.items) {
+                if (item.type === 'image') continue
+                const value_it = editForm[item.key]
+                if (!value_it) continue
+
+                if (item.source === 'content') {
+                    let translations: { en: string; es: string; fr: string; de: string }
+                    if (item.commaSeparated) {
+                        const items = value_it.split(',').map((s: string) => s.trim()).filter(Boolean)
+                        const langs = ['EN', 'ES', 'FR', 'DE'] as const
+                        const langResults = await Promise.all(
+                            langs.map(async (lang) => {
+                                const translated = await Promise.all(items.map((w: string) => translateText(w, lang)))
+                                return translated.join(', ')
+                            })
+                        )
+                        translations = { en: langResults[0], es: langResults[1], fr: langResults[2], de: langResults[3] }
+                    } else {
+                        translations = await translateToAllLanguages(value_it)
+                    }
+                    await supabase
+                        .from('section_content')
+                        .update({
+                            content_en: translations.en,
+                            content_es: translations.es,
+                            content_fr: translations.fr,
+                            content_de: translations.de,
+                            auto_translated_en: true,
+                            auto_translated_es: true,
+                            auto_translated_fr: true,
+                            auto_translated_de: true,
+                            updated_at: new Date().toISOString()
+                        })
+                        .eq('section_key', item.key)
+                } else {
+                    const translations = await translateToAllLanguages(value_it)
+                    await supabase
+                        .from('site_settings')
+                        .update({
+                            value_en: translations.en,
+                            value_es: translations.es,
+                            value_fr: translations.fr,
+                            value_de: translations.de,
+                            auto_translated_en: true,
+                            auto_translated_es: true,
+                            auto_translated_fr: true,
+                            auto_translated_de: true,
+                            updated_at: new Date().toISOString()
+                        })
+                        .eq('key', item.key)
+                }
+                count++
+            }
+
+            await fetchData()
+            setSuccess(`Tradotte ${count} voci in 4 lingue (EN, ES, FR, DE)!`)
+            setTimeout(() => setSuccess(''), 4000)
+        } catch (err: unknown) {
+            const message = err instanceof Error ? err.message : 'Errore nella traduzione'
+            setError(message)
+            console.error(err)
+        } finally {
+            setRetranslating(false)
+        }
+    }
+
     if (loading) {
         return (
             <div className="flex items-center justify-center h-64">
@@ -488,25 +577,39 @@ export default function SectionsPage() {
                         </div>
                     ))}
 
-                    <div className="flex justify-end gap-3 pt-4 border-t border-gray-200 dark:border-white/10">
+                    <div className="flex justify-between items-center pt-4 border-t border-gray-200 dark:border-white/10">
                         <button
-                            onClick={() => setSelectedSection(null)}
-                            className="px-4 py-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+                            onClick={handleRetranslateAll}
+                            disabled={retranslating || saving}
+                            className="flex items-center gap-2 px-4 py-2 text-purple-600 dark:text-purple-400 border border-purple-200 dark:border-purple-500/30 rounded-lg hover:bg-purple-50 dark:hover:bg-purple-500/10 disabled:opacity-50"
                         >
-                            Annulla
-                        </button>
-                        <button
-                            onClick={handleSave}
-                            disabled={saving}
-                            className="flex items-center gap-2 px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 disabled:opacity-50"
-                        >
-                            {saving ? (
+                            {retranslating ? (
                                 <Loader2 className="w-4 h-4 animate-spin" />
                             ) : (
-                                <Save className="w-4 h-4" />
+                                <Languages className="w-4 h-4" />
                             )}
-                            Salva Modifiche
+                            {retranslating ? 'Traduzione in corso...' : 'Rigenera Traduzioni'}
                         </button>
+                        <div className="flex gap-3">
+                            <button
+                                onClick={() => setSelectedSection(null)}
+                                className="px-4 py-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+                            >
+                                Annulla
+                            </button>
+                            <button
+                                onClick={handleSave}
+                                disabled={saving || retranslating}
+                                className="flex items-center gap-2 px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 disabled:opacity-50"
+                            >
+                                {saving ? (
+                                    <Loader2 className="w-4 h-4 animate-spin" />
+                                ) : (
+                                    <Save className="w-4 h-4" />
+                                )}
+                                Salva Modifiche
+                            </button>
+                        </div>
                     </div>
                 </motion.div>
             </div>
